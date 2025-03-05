@@ -1,0 +1,43 @@
+<div class="tw-relative">
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <button
+        (click)="onClickBack()"
+        class="tw-w-10 tw-h-10 tw-rounded-full"
+        cButton
+        color="light"
+        variant="ghost"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.47811 7.00001H15.0613C15.6136 7.00001 16.0613 7.44773 16.0613 8.00001C16.0613 8.5523 15.6136 9.00001 15.0613 9.00001H3.47811L8.06942 13.5913C8.46031 13.9822 8.46031 14.616 8.06942 15.0068C7.67854 15.3977 7.04479 15.3977 6.6539 15.0068L0.354173 8.70712C-0.0363518 8.31659 -0.0363518 7.68343 0.354173 7.29291L6.6539 0.993177C7.04479 0.602291 7.67854 0.602291 8.06942 0.993177C8.46031 1.38406 8.46031 2.01781 8.06942 2.4087L3.47811 7.00001Z"
+            fill="#30313D"
+          />
+        </svg>
+      </button>
+      <div
+        class="tw-max-w-md tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold"
+      >
+        <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">MODIFICATION - IMPORTATION</span> <br>
+        <span>Demande d'autorisation de dépotage et de transit</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="!tw-border-b !tw-border-gray-200 tw-my-3"></div>
+<div class="tw-flex tw-flex-col sm:tw-flex-row tw-mt-8">
+  <div class="sm:tw-w-60 tw-min-w-64 tw-w-full sm:tw-mr-10">
+    <app-stepper [currentStep]="currentStep" [steps]="steps"></app-stepper>
+  </div>
+  <div class="form tw-flex-grow">
+    <router-outlet></router-outlet>
+  </div>
+</div>

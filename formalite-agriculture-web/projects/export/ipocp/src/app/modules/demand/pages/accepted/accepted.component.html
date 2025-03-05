@@ -1,0 +1,96 @@
+<table bordered  cTable>
+    <thead>
+      <tr>
+        <th class="tw-text-sm tw-text-secondary" scope="col">NUMERO</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">MOTIF</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">NAVIRE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">DATE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+    @for(element of elements; track element) {
+        <tr>
+            <th scope="row">{{element}}</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-purple-100 tw-text-purple-500 tw-rounded-full"
+              >
+                Acceptée
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.60614 10.4098L0.852727 6.69095C0.559833 6.39561 0.559833 5.91677 0.852727 5.62143C1.14562 5.32608 1.62049 5.32608 1.91339 5.62143L5.13356 8.7901L11.3497 2.59651C11.6426 2.30116 12.1175 2.30116 12.4104 2.59651C12.7033 2.89185 12.7033 3.37069 12.4104 3.66603L5.65761 10.4063C5.36674 10.6965 4.89889 10.6981 4.60614 10.4098Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </td>
+            <td>Otto</td>
+            <td>
+              <c-dropdown>
+                <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                      fill="#4F566B"
+                    />
+                    <path
+                      d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                      fill="#4F566B"
+                    />
+                    <path
+                      d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                      fill="#4F566B"
+                    />
+                  </svg>
+                </button>
+                <ul cDropdownMenu>
+                  <li><a  cDropdownItem>Details</a></li>
+                </ul>
+              </c-dropdown>
+            </td>
+          </tr>
+    }
+    </tbody>
+  </table>
+  <div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+    <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+      <div>919 resultats</div>
+    </div>
+    <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        
+        cButton
+        color="light"
+      >
+        <span>Préçédent</span>
+      </button>
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        
+        cButton
+        color="light"
+      >
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>
+  

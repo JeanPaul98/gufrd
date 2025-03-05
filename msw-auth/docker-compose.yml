@@ -1,0 +1,11 @@
+services:
+  server-keycloak-test:
+    build:
+      context: .
+      dockerfile: Dockerfileupdate
+    ports:
+      - "9001:9001"
+    volumes:
+      - F:\formalite:/uploads
+      - F:\jasper:/jasper
+    restart: always

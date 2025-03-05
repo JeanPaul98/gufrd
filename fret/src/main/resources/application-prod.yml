@@ -1,0 +1,28 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: guford-vbs-admin-auth
+            client-secret: npqGR1F210vZ2E496fVwZiCLiaZD9kZ4
+            authorization-grant-type: client_credentials
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: https://auth.guford.com/realms/guford
+            token-uri: https://auth.guford.com/realms/guford/protocol/openid-connect/token
+
+keycloak:
+  admin:
+    realm: guford
+    host: https://auth.guford.com
+    client:
+      ids:
+        - guford-fret-web
+        - guford-fret-test
+        - guford-fret-api
+    issuer: https://auth.guford.com/realms/guford
+
+msw:
+  host: https://test-apisandbox.guford.com/api/

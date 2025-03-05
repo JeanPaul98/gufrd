@@ -1,0 +1,7 @@
+
+FROM eclipse-temurin:17-jdk-jammy as base
+VOLUME /tmp
+COPY target/*.jar escale-navire
+ENTRYPOINT ["java","-jar","/escale-navire"]
+
+#Add non-free repositories to get MS fonts

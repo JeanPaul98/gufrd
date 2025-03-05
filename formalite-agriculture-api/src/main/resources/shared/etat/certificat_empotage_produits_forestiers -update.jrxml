@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test2Redesign" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6567f825-abbf-4c10-b42d-07ad141a469f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="nRef" class="java.lang.String"/>
+	<parameter name="comptableRegisseur" class="java.lang.String"/>
+	<parameter name="forestiers" class="java.lang.String"/>
+	<parameter name="nQuittance" class="java.lang.String"/>
+	<parameter name="dateQuittance" class="java.util.Date"/>
+	<parameter name="transitaire" class="java.lang.String"/>
+	<parameter name="observation" class="java.lang.String"/>
+	<parameter name="depositaire" class="java.lang.String"/>
+	<parameter name="destination" class="java.lang.String"/>
+	<parameter name="provenanceProduits" class="java.lang.String"/>
+	<parameter name="fournisseur" class="java.lang.String"/>
+	<parameter name="refPermis" class="java.lang.String"/>
+	<parameter name="refTransport" class="java.lang.String"/>
+	<parameter name="refExploitation" class="java.lang.String"/>
+	<parameter name="nbreProduitSCharges" class="java.lang.String"/>
+	<parameter name="natureProduitSCharges" class="java.lang.String"/>
+	<parameter name="lieuEmpotage" class="java.lang.String"/>
+	<parameter name="societe" class="java.lang.String"/>
+	<parameter name="soussignes" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="libelle" class="java.lang.String">
+		<fieldDescription><![CDATA[libelle]]></fieldDescription>
+	</field>
+	<field name="quantite" class="java.lang.Integer">
+		<fieldDescription><![CDATA[quantite]]></fieldDescription>
+	</field>
+	<sortField name="libelle" order="Descending"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="288" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="240" height="30" uuid="727ffbf2-8007-455c-9205-336a050dff18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTERE DE L'ENVIRONNEMENT ET DES RESSOURCES FORESTIERES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="10" width="140" height="20" uuid="44631e53-331d-4a8c-8c72-b0ba81c45bed"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Travail-Liberté-Patrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="0" width="140" height="30" uuid="9b5498ab-42e4-4a89-b486-f0d2884d86d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="30" width="80" height="20" uuid="83ea178c-87a4-46c2-a33e-5a1cdd91381a"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="100" width="80" height="20" uuid="45cfa02d-62e7-4201-932f-0a11b9589759"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="30" width="60" height="20" uuid="0ed0d691-1c5a-4f7c-a70f-74c301bda01a"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="40" width="170" height="20" uuid="a559fce1-3557-4160-bda0-ee1b708f8bcc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARIAT GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="65" y="60" width="80" height="20" uuid="bc43326d-2411-4727-b514-101ce6e9e0f1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="80" width="232" height="20" uuid="f6b1006a-f787-4544-b7c7-3cee12c974b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTION DES RESSOURCES FORESTIERES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="110" width="320" height="30" uuid="9d20d5b1-fea0-44c6-ad2e-0687033227bd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTION REGIONALE DE L'ENVIRONNEMENT ET DES RESSOURCES FORESTIERES DE LA MARITIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="140" width="75" height="20" uuid="12239662-fb50-4ba6-995e-204edd632f30"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDRERF-M]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="20" y="140" width="95" height="20" uuid="8f9af9c6-4f98-4339-a40a-c9b2316d2d9a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° " + $P{nRef}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="170" width="537" height="29" uuid="5493dd99-31c7-40e5-80d5-706a1f89a90e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[CERTIFICAT D'EMPOTAGE DES PRODUITS FORESTIERS EXPLOITES AU TOGO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="209" width="287" height="21" uuid="0fffc6ed-6ff6-431e-a4ee-1a4be10721d4"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{soussignes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="210" width="100" height="20" uuid="26bd8ba8-2972-4680-9e46-ddcea17d6c8e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Nous soussignés:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="231" width="544" height="19" uuid="de613424-7569-4747-8add-60d68be19c64"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Membres à la Direction Régionale  de l'Environnement  et des Ressources forrestières de la maritime,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="250" width="444" height="20" uuid="19fdfbde-3d14-4a01-a7f0-26443b3cfb23"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Certifions avoir suivie le chargement du (des) conteneurs (s).]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="3" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23">
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="-3" width="545" height="21" backcolor="#70A9A9" uuid="1293c65a-e04c-4b84-8fb8-1adc2c70a1f9"/>
+				<box>
+					<bottomPen lineWidth="1.0" lineColor="#CCCCCC"/>
+				</box>
+				<text><![CDATA[
+               
+            ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="-3" width="200" height="21" uuid="ba3a2242-c4d8-4ddc-9d67-74dfdf33e84e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° conteneur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="-3" width="166" height="21" uuid="ca61525f-6cd2-4d81-a0bc-c30792efe09e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantité]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<staticText>
+				<reportElement mode="Opaque" x="10" y="0" width="545" height="24" backcolor="#E5ECF9" uuid="de247a16-ac1f-49e2-83c1-a7b110eac657"/>
+				<box>
+					<bottomPen lineWidth="0.25" lineColor="#CCCCCC"/>
+				</box>
+				<text><![CDATA[
+               
+            ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="10" y="0" width="200" height="24" uuid="11777b20-166f-4fa0-8389-e562ce0d1a3d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libelle}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="0" width="166" height="24" uuid="e25e33ae-fe01-4ff9-8c14-c82ee4f8a9a6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantite}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="448" splitType="Stretch">
+			<textField>
+				<reportElement x="232" y="10" width="300" height="20" uuid="33764b6c-e991-4a4f-9bd1-f944a55dc9d8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{societe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="129" y="30" width="351" height="18" uuid="cde46362-6eb7-47f7-8e06-843aa450f439"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{lieuEmpotage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="48" width="339" height="17" uuid="a5298a74-e1d9-4415-b7c0-4b814f832c0e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{natureProduitSCharges}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="67" width="312" height="20" uuid="af311f6b-bc6d-40a8-a0f5-bbd914be44c6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{nbreProduitSCharges}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="90" width="244" height="20" uuid="c395e119-9dd7-4c5f-912d-7cd4e2faa3b2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{refExploitation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="110" width="157" height="20" uuid="6f763b9c-bcc4-49aa-9ecd-ce0e7f0f0826"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{refTransport}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="149" width="174" height="19" uuid="8356e766-1fa9-4a32-93d9-2499c264b5c0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{refPermis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="238" y="167" width="250" height="24" uuid="bb096f2f-adbd-42d7-a1c3-857cf6b8c9ae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{fournisseur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="130" width="285" height="20" uuid="ba7034f1-2a14-41df-8e57-cd9f26a3c122"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{provenanceProduits}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="191" width="148" height="19" uuid="60a5fa06-85e8-4792-bf1a-ec1ff95fd8b8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{destination}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="210" width="159" height="20" uuid="1ad4f225-f074-4f91-a502-ee52c89a6a1c"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{depositaire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="231" width="375" height="20" uuid="9c4bdcff-3fc1-41ac-b8b4-e0c0d8ac90f7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{observation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="290" width="111" height="26" uuid="f4d8d9c2-a046-41be-b8bf-142d041996eb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{transitaire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="447" y="309" width="107" height="20" uuid="90e5d9bc-0c6e-48eb-9bfd-65e16ce20a5e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[ $P{forestiers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="12" y="350" width="272" height="30" uuid="409b29c4-a637-4fab-8f2f-dace84e39928"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Numéro et date de quittance :  \u00a0" + $P{nQuittance}+"\u00a0" + $P{dateQuittance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="318" y="350" width="214" height="30" uuid="6e877303-f466-4844-8950-b5dd838a0ed5"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Le comptable régisseur  : \u00a0" + $P{comptableRegisseur}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="327" y="280" width="80" height="20" uuid="9c7d612f-0145-43ff-b5b4-ca405eae0478"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Fait à Lomé le, ]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM, yyyy">
+				<reportElement x="410" y="280" width="95" height="20" uuid="b5ee5715-0985-457f-85c3-bc94bbf41f94"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="407" y="420" width="40" height="20" uuid="8ed1c447-6e19-4170-a5bf-c1e8400355b0"/>
+				<text><![CDATA[Sur]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="454" y="420" width="100" height="20" uuid="692565ce-b80d-4a4b-b69a-7dd4b188c85a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="420" width="110" height="20" uuid="72391630-e7fa-4dc1-83a4-096a81fd7c35"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="10" width="220" height="20" uuid="b0e0fe5e-204a-4902-9931-0b3ba8d63a28"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom de la societé consignataire:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="30" width="119" height="18" uuid="ad4e144f-0200-4a92-9a62-8f41257cc079"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lieu d'empotage:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="50" width="210" height="17" uuid="95446406-a430-4694-804d-d585155ac726"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nature des produits chargées:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="70" width="220" height="20" uuid="130dfc9b-c26b-407c-92af-0faab7633136"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre des produits chargées:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="90" width="290" height="20" uuid="f8d2b7ff-8c12-415b-b05f-79cf6addc857"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Références de l'autorisation  d'exploitation:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="110" width="270" height="20" uuid="2fbc606a-801c-465d-9652-0f7b3e6b1b1e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Référence de l'autorisation de transport:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="130" width="180" height="20" uuid="990f76ea-03db-4caf-9912-10964e7ae642"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Provenance  des produits:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="150" width="254" height="17" uuid="f6485e1b-2387-4394-b2b0-94276d505c59"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Références de permis de circulation:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="167" width="230" height="24" uuid="043a9370-5783-46d4-8032-9ded112df658"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom et prenoms  du fournisseurs:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="190" width="80" height="20" uuid="3b7bf9a1-061f-4d56-a4e1-9f990989506a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Destination:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="210" width="387" height="20" uuid="48f8cda8-c113-41d3-a0ab-b63cd4645b41"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nom et Prénom(s) du dépositaire ou de son représentant:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="230" width="90" height="21" uuid="dac3c4bb-e858-4977-b8d9-a226d943bfc1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observation:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="290" width="90" height="26" uuid="8d0d1052-1a6c-43ba-9831-d99d2c341821"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Le transitaire:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="327" y="310" width="127" height="18" uuid="1e824e0a-3304-4dfb-9f5c-dfec332a4aa7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Les agents forestiers:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

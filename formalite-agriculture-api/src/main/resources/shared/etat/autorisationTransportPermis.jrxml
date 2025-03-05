@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="petsHealthCertificate" pageWidth="655" pageHeight="1200" columnWidth="615" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2207ca2-f425-4eee-98bd-44c341ab3924">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="dateQuittance" class="java.util.Date"/>
+	<parameter name="dateOperation" class="java.util.Date"/>
+	<parameter name="datePv" class="java.util.Date"/>
+	<parameter name="delaiRoute" class="java.lang.String"/>
+	<parameter name="modeTransport" class="java.lang.String"/>
+	<parameter name="nAutorisation" class="java.lang.String"/>
+	<parameter name="nQuittance" class="java.lang.String"/>
+	<parameter name="direction" class="java.lang.String"/>
+	<parameter name="nRef" class="java.lang.String"/>
+	<parameter name="lieuDepartProduit" class="java.lang.String"/>
+	<parameter name="destinationProduit" class="java.lang.String"/>
+	<parameter name="nPermisCirculation" class="java.lang.String"/>
+	<parameter name="itineraire" class="java.lang.String"/>
+	<parameter name="lieuEntrepot" class="java.lang.String"/>
+	<parameter name="nPv" class="java.lang.String"/>
+	<parameter name="nCoupe" class="java.lang.String"/>
+	<parameter name="titulaire" class="java.lang.String"/>
+	<parameter name="nPermis" class="java.lang.String"/>
+	<parameter name="pays" class="java.lang.String"/>
+	<parameter name="delivreur" class="java.lang.String"/>
+	<parameter name="beneficiaire" class="java.lang.String"/>
+	<parameter name="directeur" class="java.lang.String"/>
+	<parameter name="provenance" class="java.lang.String"/>
+	<parameter name="lieu" class="java.lang.String"/>
+	<parameter name="profession" class="java.lang.String"/>
+	<parameter name="residence" class="java.lang.String"/>
+	<parameter name="montant" class="java.lang.String"/>
+	<parameter name="nRecu" class="java.lang.String"/>
+	<parameter name="nSerie" class="java.lang.String"/>
+	<parameter name="nCarte" class="java.lang.String"/>
+	<parameter name="qte1" class="java.lang.String"/>
+	<parameter name="qte2" class="java.lang.String"/>
+	<parameter name="qte3" class="java.lang.String"/>
+	<parameter name="qte4" class="java.lang.String"/>
+	<parameter name="qte5" class="java.lang.String"/>
+	<parameter name="qte6" class="java.lang.String"/>
+	<parameter name="qte7" class="java.lang.String"/>
+	<parameter name="qte8" class="java.lang.String"/>
+	<parameter name="qte9" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="360" height="40" uuid="bf6eea6f-46a2-47e0-ae07-7146ce199351"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTERE DE L'ENVIRONNEMENT,DU DEVELOPPEMENT DURABLE ET DE LA PROTECTION DE LA NATURE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="140" height="30" uuid="49e480a0-b6f9-4dbd-ba4c-164d66d5bb69"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="10" width="140" height="20" uuid="62164556-2c3d-46e3-8134-2f0990ac4664"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Travail-Liberté-Patrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="30" width="80" height="20" uuid="3a860f12-2bb1-4878-96bb-8e1cc8086719"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="40" width="170" height="20" uuid="13f17e6c-323b-430a-a76a-6a4fd0ef7ea1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARIAT GENERAL
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="60" width="232" height="20" uuid="ca169b75-c89b-416a-a08f-5de310e70362"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTION DES RESSOURCES FORESTIERES
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="182" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="10" width="250" height="50" uuid="5e5c4631-267a-4f69-9dea-29c55e734ea1"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Direction Préfectorale de  \u00a0" + $P{direction}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="80" width="130" height="20" uuid="9eaa13dd-65ad-4cf1-a091-e9c40e0f928c"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N°  \u00a0" + $P{nRef}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="80" width="140" height="20" uuid="01225c4e-7c18-4673-b16b-9276f391bed0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IDRERF-M]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="0" width="220" height="50" uuid="2a3b9d21-67a7-48cf-ba55-8bf9294f1de7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Permis N°  \u00a0" + $P{nPermisCirculation}+"\u00a0 de Circulation et d'Entreposage sur le territoire national de sciages et produits ligneux divers."]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="60" width="220" height="70" uuid="cd5209f3-259f-4d65-81a4-e5c1abc3a36e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Conformément aux testes forestiers en vigueur au Togo, un Permis de Circulation et d'Entreposage de :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="30" y="140" width="590" height="30" uuid="2b026262-bae7-44b5-a75e-049432e8f134"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° Autorisation de Transport \u00a0" + $P{nAutorisation}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="300" y="10" width="100" height="100" uuid="fc973681-6daf-48d2-a0eb-e9078a1395e9"/>
+				<imageExpression><![CDATA["C:/Myrepository/etat/WebContent/META-INF/generation_des_etats/logo3.PNG"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="830" splitType="Stretch">
+			<textField>
+				<reportElement x="190" y="760" width="430" height="20" uuid="82ffbda9-5ff9-4196-ba19-0f830d367bce"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Lieu et Date :  \u00a0" + $P{lieu}+"\u00a0" +DATEFORMAT($P{dateOperation}, "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="380" width="320" height="20" uuid="b250d29e-5a14-4629-b1ea-6d4e6e8b11e9"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Délivré à M./Mme :  \u00a0" + $P{beneficiaire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="380" width="300" height="20" uuid="b233b014-b7f1-45cf-ab74-95adfbf8328e"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Profession :  \u00a0" + $P{profession}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="410" width="627" height="30" uuid="2c5d3ac5-b964-4591-abee-35b2ed34369f"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Résidence :  \u00a0" + $P{residence}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="440" width="630" height="30" uuid="85c51de4-1154-4b70-94b9-e9690e2df423"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Contre versement d'une de :  \u00a0" + $P{montant}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="470" width="330" height="30" uuid="b380db7f-8c0c-4d5b-a153-edac8710dab3"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["effectué sous reçu ou quittance N° " + $P{nRecu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-1" y="520" width="330" height="30" uuid="597a8e01-83bc-47b7-96f4-6002cd5ff883"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Provenance des produits : \u00a0" + $P{provenance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="580" width="635" height="20" uuid="0be4289a-af9a-4320-a0c0-d4062e21c4b2"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["la carte Professionnelle N°  " + $P{nCarte}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="600" width="585" height="20" uuid="2b29330a-fdbf-4d62-b2ff-92357a9ba23a"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["la quittance de dédouanement N° " + $P{nQuittance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="790" width="200" height="20" uuid="3c6c709f-724d-4d61-854c-5dcd8520924f"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Série N°" + $P{nSerie}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="225" y="780" width="395" height="20" uuid="18c1f085-3953-4517-8694-45dd928cc048"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<text><![CDATA[Directeur Préfectoral]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="230" y="810" width="280" height="20" uuid="baf921ab-ba46-4ce0-80da-2cda4e37bde6"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{directeur}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="10" width="585" height="350" backcolor="#F0F0F0" uuid="d24a19e9-7599-432f-8646-a6551cae3b4b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="20" width="370" height="330" uuid="760907df-d9cb-4842-9831-55b76f6125fe"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="20" width="200" height="30" uuid="2d9a2021-eb40-4f07-9228-acc32bb8bcd9"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="50" width="370" height="30" uuid="fa149b61-5f18-46ba-9004-233b56a713bb"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Planche et chevron d'industrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="80" width="370" height="30" uuid="6d1032aa-0069-473b-a4d0-0e7a49bf5d7a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Double Planche d'industrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="110" width="370" height="30" uuid="9fb31c18-e1e4-42bf-9f66-389a28d0bb9e"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Planche et chevron à la tronc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="140" width="370" height="30" uuid="4b8a1354-ffff-4c8f-8b9d-708632b76396"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Perche]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="170" width="370" height="30" uuid="f3b4f7a6-e952-4eda-84cc-0fb378a8ec45"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Poteau]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="200" width="370" height="30" uuid="1dfa034f-ac8c-4a8c-92ea-12ee10a2f006"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Coquaire]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="230" width="370" height="30" uuid="09dd6be1-3742-4b44-9dfc-7375ce9e33ae"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Double Planche]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="260" width="370" height="30" uuid="1c282b8f-7397-4df2-92c4-3a6f4f8c8d14"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Grume ou Bille]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="290" width="370" height="30" uuid="9ee312f7-2be3-47c8-9e0f-a4ded54f8cb1"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Matière ligneuse diverse]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="200" width="200" height="30" uuid="fb9ae8c8-5b2b-403f-ad21-f6d53e4624d2"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="170" width="200" height="30" uuid="152506f6-2108-4fe5-918c-8f76df9754d6"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="110" width="200" height="30" uuid="47fdadad-31e9-44df-b7aa-40be72c301be"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="140" width="200" height="30" uuid="c43803ba-38aa-40f0-9c17-db367d0c58df"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="80" width="200" height="30" uuid="ca5b75a9-f9aa-4c05-98c2-f82a9cefa160"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="50" width="200" height="30" uuid="7438bd0a-6a2a-4e38-a0b7-341450ed8278"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="260" width="200" height="30" uuid="b0121fd9-ffd1-403f-ac1c-e6a18eff9efe"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte8}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="230" width="200" height="30" uuid="00edad33-492a-4f0e-b309-5d30b0bc8e99"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="290" width="200" height="30" uuid="976f8714-a2b0-4420-b45e-7f2e2851c7f4"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{qte9}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="320" width="200" height="30" uuid="f4a07db0-da99-4af0-9ab9-12b4f2d1234e"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="320" width="370" height="30" uuid="19944ba6-7541-4885-87bf-ef52c9624568"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="330" y="470" width="300" height="30" uuid="faa208d5-92a3-4c08-a0d8-03e1a14cb14b"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["du \u00a0" +DATEFORMAT($P{dateQuittance}, "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="500" width="330" height="20" uuid="0e0cab2c-2166-478d-8042-45ce2f26cf38"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["délivré à \u00a0" + $P{beneficiaire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="500" width="250" height="20" uuid="3457ea85-df94-4b82-a841-29d0469b4296"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["par \u00a0" + $P{delivreur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="520" width="300" height="30" uuid="3fed27a1-3914-4c77-af9f-cc0275b6f84c"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pays : \u00a0" + $P{pays}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-3" y="550" width="633" height="30" uuid="25bbe742-e689-4597-8488-7220d4c8d937"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["M./Mme \u00a0" + $P{titulaire}+" \u00a0 est titulaire de \u00a0" + $P{nPermis}+"u00a0."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="630" width="627" height="20" uuid="c0b596c5-11cb-4f12-a1f3-ca5aed50fc1d"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["permis de coupe  N°\u00a0" + $P{nCoupe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="650" width="630" height="20" uuid="913b7cba-e4df-43f6-9ba0-da04dd4ae629"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["du procès-verbal de \u00a0" +DATEFORMAT($P{datePv}, "dd/MM/yyyy")+" N°\u00a0" + $P{nPv}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="680" width="617" height="40" uuid="4bb66b15-1078-4ff4-acca-717161988ef8"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Les produits seront transportés de \u00a0" + $P{lieuDepartProduit}+".à \u00a0" + $P{destinationProduit} + "\u00a0 suivant l'itinéraire suivant : \u00a0" + $P{itineraire}+"\u00a0 et entreposés au lieu dit \u00a0" + $P{lieuEntrepot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="720" width="585" height="20" uuid="7d558e70-6da0-4357-b16f-3b0c9ed8ddc5"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Mode de transport : \u00a0" + $P{modeTransport}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="740" width="582" height="20" uuid="5c1d5f9b-7367-408b-abc2-d7e7c180ec79"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Délai de route : \u00a0" + $P{delaiRoute}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

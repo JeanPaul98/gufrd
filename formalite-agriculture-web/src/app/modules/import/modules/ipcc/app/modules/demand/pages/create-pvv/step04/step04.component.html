@@ -1,0 +1,186 @@
+<div class="tw-relative">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">
+          Recapitulatif formulaire
+        </p>
+        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">
+          Résumés des champs renseignés pour confirmation
+        </p>
+      </div>
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      <div class="content tw-flex-grow">
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Nom navire</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.nomNavire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Provenance</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.provenance }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Via</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.via }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.consignataire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date arrivée</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.datearrivee }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Agent PV</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.agentPV }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date inspection</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.dateInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Lieu inspection</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.lieuInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Commandant</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.commandant }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Officier navire</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.officierNavire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date de départ prévue</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.dateDepartPrevue }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Partie navire vistée</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.partieNavireVisitee }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les produits
+        </p>
+      </div>
+      <div class="accordion-body">
+        <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+          <thead>
+          <tr>
+            <th class="tw-text-sm !tw-text-secondary">#</th>
+            <th class="tw-text-sm !tw-text-secondary">Libellé</th>
+            <th class="tw-text-sm !tw-text-secondary">Quantité</th>
+            <th class="tw-text-sm !tw-text-secondary">Origine</th>
+            <th class="tw-text-sm !tw-text-secondary">Emplacement</th>
+            <th class="tw-text-sm !tw-text-secondary">Mesure</th>
+
+            <!--                <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th>-->
+            <!--                <th class="tw-text-sm !tw-text-secondary">Origine</th>-->
+            <!--                <th class="tw-text-sm !tw-text-secondary">Date de production</th>-->
+          </tr>
+          </thead>
+          <tbody >
+
+
+            @for(produit of step2LocalData.detPvProduitDtoList; track produit; let index = $index){
+              @if(index + 1 < step2LocalData.detPvProduitDtoList.length){
+                <tr>
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ produit.descriptionEnvoie }}</td>
+                  <td>{{ produit.quantite }}</td>
+                  <td>{{ produit.origine }}</td>
+                  <td>{{ produit.emplacement }}</td>
+                  <td>{{ produit.mesure }}</td>
+
+                </tr>
+              }
+            } @empty {
+              <tr>
+                <td colspan="7">Aucun produit</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Document nécéssaires
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations documents fournis
+        </p>
+      </div>
+      <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+        <thead>
+        <tr>
+          <th class="tw-text-sm !tw-text-secondary">#</th>
+          <th class="tw-text-sm !tw-text-secondary">Inspecteur</th>
+          <th class="tw-text-sm !tw-text-secondary">Fonction</th>
+
+          <!--                <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th>-->
+          <!--                <th class="tw-text-sm !tw-text-secondary">Origine</th>-->
+          <!--                <th class="tw-text-sm !tw-text-secondary">Date de production</th>-->
+        </tr>
+        </thead>
+        <tbody >
+
+
+          @for(inspecteur of step3LocalData.detPVInspecteurDtos; track inspecteur; let index = $index){
+            @if(index + 1 < step3LocalData.detPVInspecteurDtos.length){
+              <tr>
+                <td>{{ index + 1 }}</td>
+                <td>{{ inspecteur.nomInspecteur }}</td>
+                <td>{{ inspecteur.fonction }}</td>
+              </tr>
+            }
+          } @empty {
+            <tr>
+              <td colspan="7">Aucun produit</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end">
+    <div
+      class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+    >
+      <button
+        (click)="onClickPrevious()"
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        cButton
+        color="light"
+      >
+        <span>Précédent</span>
+      </button>
+      <button
+        (click)="onClickNext()"
+        class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+        cButton
+        color="primary"
+      >
+        <span>Créer le PV</span>
+      </button>
+    </div>
+  </div>
+</div>

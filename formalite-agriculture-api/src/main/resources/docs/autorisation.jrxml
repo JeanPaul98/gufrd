@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AUTORISATION-ALL" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="838a7820-710a-4c6b-9db8-593e989035f0">
+	<parameter name="typeAutorisation" class="java.lang.String"/>
+	<parameter name="arreteMinistere" class="java.lang.String"/>
+	<parameter name="nomImportateur" class="java.lang.String"/>
+	<parameter name="numeroDemande" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="libelleProduit" class="java.lang.String"/>
+	<field name="quantite" class="java.lang.String"/>
+	<field name="unite" class="java.lang.String"/>
+	<field name="poids" class="java.lang.String"/>
+	<field name="origine" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<staticText>
+				<reportElement x="421" y="1" width="130" height="20" uuid="b052e2b9-06de-438f-9108-bb91338dd28b"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="61" width="95" height="1" uuid="497951be-352c-47a4-9673-bb9b52af03ec">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<line>
+				<reportElement x="70" y="80" width="95" height="1" uuid="30c8f76a-1ffa-4c17-ab46-fe8519460783">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="43" y="43" width="145" height="15" uuid="36145e62-d613-47f5-96fe-8159828781b5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[CABINET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="81" width="224" height="14" uuid="c9ea13ad-1ec6-45b1-b1af-02fc04760b3f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[DIRECTION DE L'ELEVAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="21" width="112" height="23" uuid="8c226850-6611-4bd3-bc12-5f8faf4f512a"/>
+				<textElement>
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[Travail - Liberté - Patrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="1" width="236" height="39" uuid="85e7b0ac-f849-40bb-81ad-d2f0d42f50e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[MINISTERE DES RESSOURCES HALIEUTIQUES, ANIMALES ET DE LA REGLEMENTATION TRANSHUMANCE]]></text>
+			</staticText>
+			<line>
+				<reportElement x="70" y="41" width="95" height="1" uuid="ab96bc88-d374-4ff8-ac0c-0aa2f1cf28d3"/>
+			</line>
+			<staticText>
+				<reportElement x="51" y="64" width="145" height="13" uuid="df066f3c-3f2b-4604-8d04-dfdf7c98bcfc">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<text><![CDATA[SECRETARIAT GENERAL]]></text>
+			</staticText>
+			<image>
+				<reportElement x="279" y="2" width="70" height="82" uuid="ba84b066-6fa3-49ef-940e-5cc9dbfe6af2"/>
+				<imageExpression><![CDATA["https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Armoiries_du_Togo.svg/1200px-Armoiries_du_Togo.svg.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="30" y="110" width="20" height="17" uuid="7d713063-10ca-42cc-9fbb-afb87fb5b610"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="163" width="551" height="19" uuid="44988dc0-e711-45d6-88be-58c63ff4cd1c"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTERE DES RESSOURCES HALIEUTIQUES, ANIMALES ET DE LA REGLEMENTATION TRANSHUMANCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="368" y="109" width="182" height="17" uuid="9638e8dd-b653-4bdf-9440-3cb27590cb95"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lomé le,]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="60" y="135" width="450" height="30" uuid="f94f372d-7792-4afc-bb55-1a3abcc06f87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{typeAutorisation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="195" width="551" height="110" uuid="3f645fcc-9670-49c0-84d5-0b890cc1e817">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{arreteMinistere}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="307" width="188" height="30" uuid="1f90dcaa-798c-434b-88a2-c1c7e25a09a2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORISE:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="2" y="342" width="551" height="35" uuid="b295b229-798b-4bce-a1dd-0b3adc4428d5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nomImportateur}  +  "\u00a0"  +  "à procéder au dépotage  et à la mise sur le marché des aliments d'annimaux ci-après"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="379" width="226" height="30" backcolor="#8CA6C2" uuid="036e1637-ca58-4e74-bfa5-a34dd28db048"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Désignation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="229" y="379" width="70" height="30" backcolor="#8CA6C2" uuid="e8ed70de-3efb-4e35-83ba-ca2ffa013d57"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="299" y="379" width="80" height="30" backcolor="#8CA6C2" uuid="24c1d4ed-4207-4bdb-82d1-ceb0ddf49e68"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="379" y="379" width="70" height="30" backcolor="#8CA6C2" uuid="3f129fed-0f56-4cee-b427-ca0ec239f190"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Poids Net]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="449" y="379" width="103" height="30" backcolor="#8CA6C2" uuid="995f0977-2418-4ca7-af30-43dcec40af05">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Provenance]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="409" width="226" height="30" uuid="ea593c63-edd8-47a2-b410-0b05a4ae305f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{libelleProduit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="409" width="70" height="30" uuid="8a025bad-3912-423f-8d11-b4f0f8cd4b18">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="299" y="409" width="80" height="30" uuid="19d09109-fbc4-4d71-a056-c2c31848eab1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="409" width="70" height="30" uuid="2f53875a-a7bd-476c-990a-15069850d1e8">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{poids}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="409" width="103" height="30" uuid="eb606fef-6864-4812-a689-bffea8de451d"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origine}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="167" y="596" width="221" height="30" uuid="351a9cca-727e-4015-b294-586ccea5fac3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTEUR DE L'ELEVAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="169" y="661" width="221" height="30" uuid="7a69a5e4-6674-4e69-b94b-1aed1bbe3947"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BELEYI Magnimniwe]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="780" width="553" height="1" uuid="a8b47b8b-9cc4-4146-b474-02ed33d31a4e"/>
+			</line>
+			<staticText>
+				<reportElement x="95" y="782" width="365" height="14" uuid="62fb9f14-7fd7-4023-bdd0-80e2a2a86311"/>
+				<text><![CDATA[BP: 385 Lomé-Togo tel : (228) 22500711  secretariat.ministre@agriculture.gouv.tg]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="51" y="110" width="153" height="17" uuid="b9a488e1-0d10-4e6f-9970-3234179a90ca"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{numeroDemande}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

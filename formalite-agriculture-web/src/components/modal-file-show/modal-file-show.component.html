@@ -1,0 +1,79 @@
+<table class="tw-mt-4" cTable>
+  <thead>
+  <tr>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">FORMAT</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">TAILLE</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">ACTION</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (onceFile of this.filesUploaded.file; track $index) {
+      @for (onceFileType of this.filesUploaded.fileNameTypePieceJointe; track onceFileType.idTypePieceJointe) {
+        @if (onceFile.name === onceFileType.fileName) {
+          <tr>
+            <th scope="row" class="!tw-text-gray-600">{{ $index + 1 }}</th>
+            <td>{{ onceFileType?.typePieceJointe?.libelle }}</td>
+            <td>{{ demandUploadFilesService.getJustFileName(onceFile) }}</td>
+            <td>{{ demandUploadFilesService.getJustFileExtension(onceFile) }}</td>
+            <td>{{ demandUploadFilesService.getJustFileSizeInMB(onceFile) }}</td>
+            <td>
+              <button appTippyDirective
+                      (click)="getPDF(onceFile,onceFileType, this.filesUploaded.filesBase64![$index])"
+                      tooltip="Voir le contenu du fichier"
+                      [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}" target="_blank"
+                      class="!tw-text-blue-600 !tw-bg-blue-100 hover:!tw-text-blue-700 !tw-mr-3" cButton color="light">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+                  <path fill="currentColor"
+                        d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3"/>
+                </svg>
+
+              </button>
+            </td>
+          </tr>
+        }
+      }
+    }@empty {
+      <tr>
+        <td colspan="5">Aucun document</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+
+<app-general-modal
+  (onCancel)="onCloseModal()"
+  [cancelButton]="'Fermer'"
+  [isConfirm]="false"
+  [size]="'lg'"
+  [titleMdl]="titleModal"
+  [visible]="openModal"
+>
+  @if (!isLoaded) {
+    <app-loading-bar></app-loading-bar>
+  }
+  <div *ngIf="isLoaded" class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-mt-1">
+    <button
+      (click)="prevPage()"
+      [disabled]="page === 1" [size]="'sm'" cButton
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light">Prec.
+    </button>
+    <span>{{ page }} / {{ totalPages }}</span>
+    <button (click)="nextPage()"
+            [disabled]="page === totalPages"
+            [size]="'sm'" cButton
+            class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+            color="light">Suiv.
+    </button>
+  </div>
+  <pdf-viewer (after-load-complete)="afterLoadComplete($event)" [original-size]="false"
+              [page]="page"
+              [show-all]="false"
+              [src]="pdfSrc"
+              class="!tw-w-full !tw-h-[60vh]"
+  ></pdf-viewer>
+</app-general-modal>

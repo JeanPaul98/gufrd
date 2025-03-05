@@ -1,0 +1,28 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: GUFORD-VBS-ADMIN-AUTH
+            client-secret: EkR3dU4wKN37rAEFkFC4Qfi7PFZdWQs8
+            authorization-grant-type: client_credentials
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://102.164.230.196:9002/realms/GUFORD
+            token-uri: http://102.164.230.196:9002/realms/GUFORD/protocol/openid-connect/token
+
+keycloak:
+  admin:
+    realm: GUFORD
+    host: http://102.164.230.196:9002
+    client:
+      ids:
+        - GUFORD-FRET-ANGULAR-DEV
+        - GUFORD-FRET-TEST
+        - GUFORD-FRET-CLIENT-ADMIN
+    issuer: http://102.164.230.196:9002/realms/GUFORD
+
+msw:
+  host: http://102.164.230.196:9001/api/

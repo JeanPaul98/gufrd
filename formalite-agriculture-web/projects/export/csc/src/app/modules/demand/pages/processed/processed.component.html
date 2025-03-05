@@ -1,0 +1,52 @@
+<table bordered  cTable>
+    <thead>
+      <tr>
+        <th class="tw-text-sm tw-text-secondary">N° ORDRE</th>
+        <th class="tw-text-sm tw-text-secondary">LIEU DE CHARGEMENT</th>
+        <th class="tw-text-sm tw-text-secondary">EXPEDITEUR</th>
+        <th class="tw-text-sm tw-text-secondary">DESTINATAIRE</th>
+        <th class="tw-text-sm tw-text-secondary">MOYEN DE TRANSPORT</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">DATE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(demand of demands(); track demand; ) {
+        <tr>
+<!--          <td>{{ $index + 1 }}</td>-->
+<!--          <td>{{ demand.lieuDeChargement }}</td>-->
+<!--          <td>{{ demand.expediteur }}</td>-->
+<!--          <td>{{ demand.destinataire }}</td>-->
+<!--          <td>{{ demand.moyenTransport }}</td>-->
+        </tr>
+    } @empty {
+        <tr>
+          <td colspan="5" class="tw-text-center">Aucun résultat</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+    <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+      <div>{{demands().length}} resultats</div>
+    </div>
+    <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+        cButton
+        color="light"
+      >
+        <span>Préçédent</span>
+      </button>
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+        cButton
+        color="light"
+      >
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>

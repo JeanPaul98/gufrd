@@ -1,0 +1,465 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="Blank_A4_2" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<background splitType="Stretch"/>
+	<title height="114" splitType="Stretch">
+		<element kind="staticText" uuid="40cd74f7-92cd-4cb9-96db-c019d940d7b0" x="4" y="20" width="246" height="30" hTextAlign="Center">
+			<text><![CDATA[MINISTERE DE L'AGRICULTURE, 
+DE L'ELEVAGE ET DU DEVELOPPEMENT RURAL]]></text>
+		</element>
+		<element kind="staticText" uuid="8b338da4-aee3-4108-afbd-c8995b21d212" x="420" y="20" width="130" height="20">
+			<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+		</element>
+		<element kind="staticText" uuid="133f9d6a-fdc0-49f2-8139-c8f9b682a3f0" x="429" y="40" width="112" height="23">
+			<text><![CDATA[Travail - Liberté - Patrie]]></text>
+		</element>
+		<element kind="line" uuid="2b6be210-ad1c-45c4-92ad-7d8d4554a5ef" x="74" y="53" width="80" height="1">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="staticText" uuid="fe64234b-b060-4244-bc2c-fe63c464c8c6" x="63" y="60" width="145" height="30">
+			<text><![CDATA[SECRETARIAT GENERAL]]></text>
+		</element>
+		<element kind="line" uuid="6c38a3ce-ca45-4160-b731-ef92f94e4aeb" x="76" y="81" width="80" height="1">
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+		<element kind="staticText" uuid="2cb0e63a-b503-458f-a813-1222a57331c2" x="16" y="85" width="224" height="25">
+			<text><![CDATA[DIRECTION DE PROTECTION DES VEGETAUX]]></text>
+		</element>
+		<element kind="image" uuid="11e948ce-9441-4979-b1b9-13bf652377ba" x="273" y="20" width="60" height="80">
+			<expression><![CDATA["logo.png"]]></expression>
+		</element>
+	</title>
+	<detail>
+		<band height="621" splitType="Stretch">
+			<element kind="staticText" uuid="250d76bf-ea22-4668-a2c3-ba2949eb7ddc" x="112" y="14" width="330" height="39" fontSize="14.0" bold="true" hTextAlign="Center">
+				<text><![CDATA[PROCES-VERBAL D'INSPECTION PHYTOSANITAIRE A L'IMPORTATION]]></text>
+			</element>
+			<element kind="staticText" uuid="43e80a55-f609-4def-bb5e-c6a7c03906e6" x="6" y="62" width="65" height="24" fontName="Urbanist" fontSize="12.0">
+				<text><![CDATA[Référence:]]></text>
+			</element>
+			<element kind="staticText" uuid="3f366879-cf8d-4dd0-beeb-e3e06ed41664" x="473" y="65" width="45" height="19" fontName="Urbanist" fontSize="12.0">
+				<text><![CDATA[Version:]]></text>
+			</element>
+			<element kind="staticText" uuid="f3179e6c-1584-4880-8a72-3146b04bbf07" x="7" y="87" width="100" height="24" fontName="Urbanist" fontSize="12.0">
+				<text><![CDATA[Date d'application:]]></text>
+			</element>
+			<element kind="staticText" uuid="f73d68f3-98ff-49ef-9979-6173e727534f" x="8" y="111" width="26" height="19" fontName="Urbanist" fontSize="12.0">
+				<text><![CDATA[N°: ]]></text>
+			</element>
+			<element kind="component" uuid="683996ec-507d-405c-820f-d169955f5da3" x="4" y="135" width="557" height="65">
+				<component kind="table" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun uuid="0bab6b6d-c177-4a67-99f7-e62a4d41dc00" subDataset="Empty Dataset1"/>
+					<column kind="single" uuid="0b86c3ac-7a7e-4ddb-ae3c-52bb523b1f80" width="86">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="78ef4b86-6c0a-43d1-848c-0cab976442a9" x="0" y="0" width="86" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Point d'entrée]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="671f1933-b9a4-4ed6-a287-555321d46a6e" x="0" y="0" width="86" height="30">
+								<expression><![CDATA[$F{pointEntre}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+					</column>
+					<column kind="single" uuid="da881478-ee00-4ff4-97aa-c4cab2419c94" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="7a8d327d-12a2-4780-a510-6a1f4fc176ed" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Lieu de l'inspection]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="e56896d7-18ca-4def-8523-3541519b76ba" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{lieuInspec}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+					</column>
+					<column kind="single" uuid="dceedfc1-b128-481e-9080-5e335878d69f" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="f95f3f0d-acc9-4bda-a79e-57ebf2cc3dd3" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Date de l'inspection]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="07154104-eb2f-4fa1-b5f3-b6d1d5cfb95d" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{dateInspec}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+					</column>
+					<column kind="single" uuid="e35a9d97-acec-4b0f-8f68-23923c37a636" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="f3d5ab0a-6a46-41b4-91cf-3ae67e35299c" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Heure d'inspection]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="d8e63fef-f950-4909-895a-09366ea418ce" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{heureInspec}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+					</column>
+					<column kind="single" uuid="efc6d13f-f18a-4c12-bb50-2fc3d002c090" width="93">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="e25c3f43-a0a1-45cc-86cb-92eb283b067d" x="0" y="0" width="93" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Expediteur]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="0ca74863-1191-4ffb-b4d8-4cd7e9cf3dca" x="0" y="0" width="93" height="30">
+								<expression><![CDATA[$F{expediteur}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+					</column>
+					<column kind="single" uuid="af8d5ce6-fc05-4dd7-97db-277a7792b72e" width="106">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="c1c12018-9f88-454f-b4ae-9f81b7fd0173" x="0" y="0" width="106" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Destinatiare]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="6a625690-78e3-4e7e-9f69-3483d76fe8fb" x="0" y="0" width="106" height="30">
+								<expression><![CDATA[$F{destinataire}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+					</column>
+				</component>
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+				<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+				<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+			</element>
+			<element kind="component" uuid="95895a73-7521-4bdf-805e-086a3e7d64a3" x="4" y="223" width="546" height="65">
+				<component kind="table" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun uuid="57cbe38e-f800-47ed-9beb-9edd3c7347fa" subDataset="Empty Dataset1"/>
+					<column kind="single" uuid="ad22ad82-ec5a-47cb-88d3-e8d7f2ce7cfc" width="100">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="538bccd3-b7d9-4169-b6a0-225eae4fc746" x="0" y="0" width="100" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[N° Enregistrement]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="7ec1a2da-d1fc-4c31-978e-4710c62cb284" x="0" y="0" width="100" height="30">
+								<expression><![CDATA[$F{numEnregistrement}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+					</column>
+					<column kind="single" uuid="a13e6b7b-a3dc-409d-8cd3-dc9e00ce0aea" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="dd87d897-a7c8-4846-a1e3-9023f5c4c30f" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Date d'arrivée]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="01234916-adb5-48f2-b62b-5a5165b7b0a8" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{dateArrivee}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+					</column>
+					<column kind="single" uuid="4395e8b7-c282-459f-b0fc-68288932c5c5" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="6db6a180-0620-4d40-838f-f6d9f244994e" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Poids Brut]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="9c4f83e7-1ea8-40c2-bee9-5722f87c9bb4" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{poidsBrut}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+					</column>
+					<column kind="single" uuid="27730f63-5c39-4b11-b999-662fee2a22b0" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="38f373f4-6e2c-4356-93f4-03ad8ab6cce5" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Poids Net]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="49c92ec3-0bd5-4566-8cf4-c7d0b10c2cf4" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{poidsNet}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+					</column>
+					<column kind="single" uuid="e4750e46-25b6-49ad-a922-baabec57a90e" width="185">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="862e8d65-d314-49e7-baf0-cff874a15d71" x="0" y="0" width="185" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Traitement du produit]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="28c6d94f-e82f-4a7f-878a-9494e0e5281c" x="0" y="0" width="185" height="30">
+								<expression><![CDATA[$F{traitement}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+					</column>
+				</component>
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+				<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+				<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+			</element>
+			<element kind="staticText" uuid="419b8be9-af78-48f5-bf05-17ca2c67b27b" x="172" y="200" width="211" height="21" fontSize="14.0" bold="true" hTextAlign="Center">
+				<text><![CDATA[INFORMATION DU PRODUIT]]></text>
+			</element>
+			<element kind="staticText" uuid="2928098a-fe1d-4fa7-abf3-3840561fee9e" x="177" y="288" width="211" height="21" fontSize="14.0" bold="true" hTextAlign="Center">
+				<text><![CDATA[CONTROLE DOCUMENTAIRE]]></text>
+			</element>
+			<element kind="component" uuid="b0a4992d-7eb8-425e-b14f-c8c7012c57ad" x="2" y="311" width="546" height="65">
+				<component kind="table" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun uuid="86805556-66ce-4777-8fb5-059a33f06ada" subDataset="Empty Dataset1"/>
+					<column kind="single" uuid="8f6b10b4-7da1-4481-8b2f-e605f407740e" width="187">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="904f7069-f90c-45aa-b7c1-ac2275d82454" x="0" y="0" width="187" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Document]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="a379fbe9-bfe0-437f-a916-205fe37401fd" x="0" y="0" width="187" height="30">
+								<expression><![CDATA[$F{document}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+					</column>
+					<column kind="single" uuid="86b2f9bb-0bfd-43c1-87f9-11f510aa8813" width="113">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="aa4b6431-5507-43b6-9a18-e60c75691d56" x="0" y="0" width="113" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Date]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="dcc9c85e-99b8-4f61-bcda-3728931f3aee" x="0" y="0" width="113" height="30">
+								<expression><![CDATA[$F{dateDoc}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+					</column>
+					<column kind="single" uuid="696198d2-ee21-478f-b5bc-4fac6955138e" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="386d3113-cc7c-4292-a1de-14c5e07c92a5" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Conforme]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="9c8960ed-54fe-40a5-ac21-3e2e5dc7e389" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{status}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+					</column>
+					<column kind="single" uuid="54c5818c-6996-410e-8b65-af8555a6b19a" width="159">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="42882973-3322-4b32-b715-ee981095fa7e" x="0" y="0" width="159" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Autres]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="ad6398c8-7936-4459-a84f-53b563f676b8" x="0" y="0" width="159" height="30">
+								<expression><![CDATA[$F{other}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+					</column>
+				</component>
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+				<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+				<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+			</element>
+			<element kind="component" uuid="2b6f50a8-e18c-48c5-95fd-868eb98ce53c" x="2" y="374" width="546" height="65">
+				<component kind="table" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun uuid="c5fa5264-36a5-4265-9b6d-b54e067a2436" subDataset="Empty Dataset1"/>
+					<column kind="single" uuid="75f57a7a-b7b2-495a-9cc7-235fa3aded68" width="220">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="d64f05ef-0a83-4724-9c6c-ddd75de63551" x="0" y="0" width="220" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Description et contenu de l'envoi]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="69188a42-b841-4027-9bf0-66981ad27710" x="0" y="0" width="220" height="30">
+								<expression><![CDATA[$F{descriptionEnvoi}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+					</column>
+					<column kind="single" uuid="01d7fee9-af05-47a0-9858-73a6b667ab01" width="100">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="0822d434-7666-4e87-8666-0914da36bbab" x="0" y="0" width="100" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Variété]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="2b86e1c0-737d-46a3-9d0e-a6c416cade78" x="0" y="0" width="100" height="30">
+								<expression><![CDATA[$F{varietes}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+					</column>
+					<column kind="single" uuid="1aeab16d-6863-494d-a8ca-e266ad61725a" width="87">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="eb612857-8c42-45af-9825-05b52ec3b260" x="0" y="0" width="87" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Nombre/Poids]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="6ae5232c-7b4c-4694-9a36-619d0f370133" x="0" y="0" width="87" height="30">
+								<expression><![CDATA[$F{nombre}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+					</column>
+					<column kind="single" uuid="c5eeaa99-331b-48cb-bc81-b2131129bd89" width="63">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="7d5f8379-d05d-40e9-a1c8-be0cd1ca1c04" x="0" y="0" width="63" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Pays Origine]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="ffe9c199-cb9b-46f5-9ff6-20a88796b674" x="0" y="0" width="63" height="30">
+								<expression><![CDATA[$F{paysOrigine}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+					</column>
+					<column kind="single" uuid="c8d25d6f-3f23-4612-825c-dea4a2c6554f" width="76">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="51e2b690-44a4-41ae-a29c-6c338d848e5a" x="0" y="0" width="76" height="30" fontSize="11.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Contrôle Technique]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="8c07f2f8-0af7-4d0c-b222-865946054997" x="0" y="0" width="76" height="30">
+								<expression><![CDATA[$F{controleTechnique}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+					</column>
+				</component>
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+				<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+				<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+			</element>
+			<element kind="staticText" uuid="40cc1da7-cc81-4644-bd6a-73b1cfef4f69" x="0" y="437" width="154" height="20" fontName="Urbanist" fontSize="14.0" bold="true">
+				<text><![CDATA[Résultat de l'inspection:]]></text>
+			</element>
+			<element kind="staticText" uuid="ff31869c-ec56-428f-8c7c-b4ac1c6c2ee2" x="2" y="453" width="541" height="71" fontName="Urbanist" fontSize="12.0">
+				<text><![CDATA[Le ou les inspecteurs phytosanitaires soussignés, après avoir inspecté le produit susmentionné conformément aux procédures appropriées, concluent par la présente qu'à leur connaissance et pour autant qu'il(s) puisse(nt) être constatés, les marchandises sont jugées : Conforme, Non Conforme à la Législation phytosanitaire en vigueur au Togo et en particulier, elles sont jugées exemptes, non conforme de tout organisme nussible et agent pathogène]]></text>
+			</element>
+			<element kind="staticText" uuid="3f09cb3c-7530-41a1-bec5-2706fe1723d9" x="34" y="527" width="484" height="21" fontSize="14.0" bold="true" hTextAlign="Center">
+				<text><![CDATA[Nom(s) et signature de ou des inspecteurs phytosanitaires]]></text>
+			</element>
+			<element kind="component" uuid="4c24fa3a-049c-49cc-9cfd-7fff33d152f0" x="2" y="551" width="546" height="65">
+				<component kind="table" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun uuid="08d35a66-901c-4167-a4b4-a127da4f120c" subDataset="Empty Dataset1"/>
+					<column kind="single" uuid="6c6befda-7fd6-45aa-8e05-3fe4bbd4a0b9" width="40">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="aa0ed3d1-a98e-474e-be25-64f35676353c" x="0" y="0" width="40" height="30" fontName="Urbanist" fontSize="14.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[N°]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="540e1654-14fd-4092-9339-713d12e24c29" x="0" y="0" width="40" height="30">
+								<expression><![CDATA[$F{idInspecteur}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+					</column>
+					<column kind="single" uuid="3553a9b3-3621-47e1-91ee-75e97202b1b1" width="360">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="7ea6d93d-2872-4024-b115-adb49db83aaa" x="0" y="0" width="360" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Nom et Prenoms]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="0b9c42df-47a6-43b6-ab4f-5bfa0985cd96" x="0" y="0" width="360" height="30">
+								<expression><![CDATA[$F{nomPrenom}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+					</column>
+					<column kind="single" uuid="ca8e0a25-6953-4dec-b349-21dd84b649cd" width="146">
+						<columnHeader height="30" rowSpan="1" style="Table 1_CH">
+							<element kind="staticText" uuid="8a228dd7-3825-4685-beff-2e7c252dbf74" x="0" y="0" width="146" height="30" fontName="Urbanist" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+								<text><![CDATA[Signature]]></text>
+							</element>
+						</columnHeader>
+						<detailCell height="30" style="Table 1_TD">
+							<element kind="textField" uuid="f27e2f60-84a4-4e4f-9223-dfbb747e6ca0" x="0" y="0" width="146" height="30">
+								<expression><![CDATA[$F{singature}]]></expression>
+							</element>
+						</detailCell>
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+					</column>
+				</component>
+				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				<property name="com.jaspersoft.studio.table.style.table_header" value="Table 1_TH"/>
+				<property name="com.jaspersoft.studio.table.style.column_header" value="Table 1_CH"/>
+				<property name="com.jaspersoft.studio.table.style.detail" value="Table 1_TD"/>
+			</element>
+			<property name="com.jaspersoft.studio.layout"/>
+		</band>
+	</detail>
+</jasperReport>

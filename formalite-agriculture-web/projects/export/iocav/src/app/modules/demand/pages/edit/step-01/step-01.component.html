@@ -1,0 +1,155 @@
+<div class="tw-relative">
+  <form [formGroup]="step1InfoNavireFrom" (submit)="onSubmit()">
+
+
+    <div class="accordion-body">
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-expediteur" class=" "
+            >Nom de l'expedition<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'expediteur'"
+            cFormControl
+            type="text"
+            id="input-expediteur"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-adresseExpediteur" class=" "
+            >Adresse expediteur<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'adresseExpediteur'"
+            cFormControl
+            type="text"
+            id="input-adresseExpediteur"
+            class=""
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-destinataire" class=" "
+            >Nom du destinataire<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'destinataire'"
+            cFormControl
+            type="text"
+            id="input-destinataire"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-adresseDestinataire" class=" "
+            >Adresse destinataire<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'adresseDestinataire'"
+            cFormControl
+            type="text"
+            id="input-adresseDestinataire"
+            class=""
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-moyenTransport" class=" "
+            >Moyen transport<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'moyenTransport'"
+            cFormControl
+            type="text"
+            id="input-moyenTransport"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-lieuDeChargement" class=" "
+            >lieu de chargement<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'lieuDeChargement'"
+            cFormControl
+            type="text"
+            id="input-lieuDeChargement"
+            class=""
+          />
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-lieuExpedition" class=" "
+            >lieu d'expedition<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'lieuExpedition'"
+            cFormControl
+            type="text"
+            id="input-lieuExpedition"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-lieuDestination" class=" "
+            >lieu de destination<span class="!tw-font-bold tw-text-red-600"
+              >*</span
+            ></label
+          >
+          <input
+            [formControlName]="'lieuDestination'"
+            cFormControl
+            type="text"
+            id="input-lieuDestination"
+            class=""
+          />
+        </div>
+      </div>
+
+  </div>
+
+
+
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+        type="submit"
+          [disabled]="
+            checkIfFormIsValid()
+          "
+          (click)="onClickNext()"
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          cButton
+          color="primary"
+        >
+          <span>Suivant</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

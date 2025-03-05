@@ -1,0 +1,133 @@
+<div class="tw-relative">
+  <form [formGroup]="step1InfoShipFrom" (submit)="onClickNext()">
+    <div class="accordion-body">
+      <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations sur le navire
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant le navire
+        </p>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <div class="tw-flex tw-items-center tw-justify-between">
+            <label for="num-atp" class=" ">Numéro ATP<span class="!tw-font-bold tw-text-red-600">*</span></label>
+            @if (isLoading$ | async) {
+              <div role="status">
+                <svg aria-hidden="true" class="tw-w-5 tw-h-5 tw-text-gray-200 tw-animate-spin tw-fill-primary"
+                     viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                    fill="currentColor"/>
+                  <path
+                    d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                    fill="currentFill"/>
+                </svg>
+                <span class="tw-sr-only">Loading...</span>
+              </div>
+            }
+          </div>
+          <input formControlName="atp" cFormControl type="text" id="num-atp" class=""/>
+          <!-- Error message -->
+          @if ((isFindShipInfo$ | async) == "false") {
+            <div class="tw-flex tw-items-center tw-mt-1 tw-text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="tw-w-4 tw-h-4 tw-me-2 tw-text-red-500 tw-flex-shrink-0"
+                   viewBox="0 0 24 24">
+                <path fill="currentColor"
+                      d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10s10-4.47 10-10S17.53 2 12 2m4.3 14.3a.996.996 0 0 1-1.41 0L12 13.41L9.11 16.3a.996.996 0 1 1-1.41-1.41L10.59 12L7.7 9.11A.996.996 0 1 1 9.11 7.7L12 10.59l2.89-2.89a.996.996 0 1 1 1.41 1.41L13.41 12l2.89 2.89c.38.38.38 1.02 0 1.41"/>
+              </svg>
+              Navire introuvable!
+            </div>
+          }
+          <!-- Success message -->
+          @if ((isFindShipInfo$ | async) == "true") {
+            <div class="tw-flex tw-items-center tw-mt-1 tw-text-gray-500">
+              <svg class="tw-w-4 tw-h-4 tw-me-2 tw-text-green-500 tw-flex-shrink-0" aria-hidden="true"
+                   xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
+              </svg>
+              Information navire trouvé!
+            </div>
+          }
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="nomNavire">Navire <span class="!tw-font-normal">(auto-rempli)</span></label>
+          <input cFormControl [disabled]="true" type="text" id="nomNavire" formControlName="nomNavire"/>
+        </div>
+      </div>
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-imo">Imo <span class="!tw-font-normal">(auto-rempli)</span></label>
+          <input formControlName="imo" cFormControl type="text" id="input-imo"/>
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-affreteur">Affreteur<span class="!tw-font-bold tw-text-red-600">*</span></label>
+          <input formControlName="affreteur" cFormControl type="text" id="input-affreteur"/>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-nomDemandeur">
+            Nom du Demandeur<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="nomDemandeur" cFormControl type="text" id="input-nomDemandeur"/>
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-professionDemandeur" class=" ">
+            Profession du Demandeur<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="professionDemandeur" cFormControl type="text" id="input-professionDemandeur"/>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-adresseDemandeur" class=" ">
+            Adresse du Demandeur<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="adresseDemandeur" cFormControl type="text" id="input-adresseDemandeur" class=""/>
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-lieuInspection" class=" ">
+            Lieu d'Inspection<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="lieuInspection" cFormControl type="text" id="input-lieuInspection" class=""/>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-bl" class="">
+            BL<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="bl" cFormControl type="text" id="input-bl"/>
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-nomImportateur" class="">
+            Nom importateur<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="nomImportateur" cFormControl type="text" id="input-nomImportateur"/>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-datePrevueInspection" class="">
+            Date Prevue d'Inspection<span class="!tw-font-bold tw-text-red-600">*</span>
+          </label>
+          <input formControlName="datePrevueInspection" cFormControl type="date" id="input-datePrevueInspection"/>
+        </div>
+
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3">
+        <button type="submit" [disabled]="step1InfoShipFrom.invalid" cButton color="primary"
+                class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary">
+          <span>Suivant</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

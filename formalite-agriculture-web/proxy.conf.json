@@ -1,0 +1,28 @@
+{
+  "/api/*": {
+    "target": "http://192.168.28.108:9093",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  },
+  "/api": {
+    "target": "http://102.164.230.196:4300",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  },
+  "/atd": {
+    "target": "https://xpal.sandbox.gouv.tg",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/atd": ""
+    }
+  }
+
+
+}

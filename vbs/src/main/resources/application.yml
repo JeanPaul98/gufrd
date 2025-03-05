@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: vbs
+  datasource:
+    hikari:
+      data-source-properties:
+        oracle:
+          jdbc:
+            timezoneAsRegion: false
+    #    url=jdbc:oracle:thin:@srv-applimet1:1521:sipedb
+    #    url: jdbc:oracle:thin:@172.16.9.2:1521:sipedb
+    url: jdbc:oracle:thin:@196.168.28.108:1521:sipedb
+    username: sipeadmin
+    password: AdminPalSip2O17
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: GUFORD-VBS-ADMIN-AUTH
+            client-secret: EkR3dU4wKN37rAEFkFC4Qfi7PFZdWQs8
+            authorization-grant-type: client_credentials
+            scope: openid
+        provider:
+          keycloak:
+            issuer-uri: http://102.164.230.196:9002/realms/GUFORD
+            token-uri: http://102.164.230.196:9002/realms/GUFORD/protocol/openid-connect/token
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+#        format_sql: true
+#        show_sql: true
+
+osipaye:
+  url: http://196.168.28.108:8080/sipepaye/splapi/formaliteministere/postfacture
+
+server:
+  port: 4210
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+
+keycloak:
+  admin:
+    realm: GUFORD
+    host: http://102.164.230.196:9002
+    client:
+      ids:
+        - GUFORD-VBS-HOST-CLIENT-WEB
+        - GUFORD-VBS-HOST-CLIENT-REST
+        - GUFORD-MSW-CLIENT-ADMIN
+        - GUFORD-VBS-MOBILE-CLIENT
+    issuer: http://102.164.230.196:9002/realms/GUFORD
+
+logging:
+  level:
+    org.apache.http: TRACE
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.boot.context.config: TRACE
+    org.springframework.security.oauth2.client: TRACE
+    org.springframework.security.oauth2.client.registration: TRACE
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

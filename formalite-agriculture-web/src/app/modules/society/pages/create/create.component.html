@@ -1,0 +1,169 @@
+<div class="tw-bg-white tw-flex tw-flex-col tw-min-h-screen md:tw-mx-[150px] tw-mb-4">
+  <div class="title tw-mb-10  tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <button
+
+        class="tw-w-10 tw-h-10 tw-rounded-full"
+        cButton
+        color="light"
+        variant="ghost"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.47811 7.00001H15.0613C15.6136 7.00001 16.0613 7.44773 16.0613 8.00001C16.0613 8.5523 15.6136 9.00001 15.0613 9.00001H3.47811L8.06942 13.5913C8.46031 13.9822 8.46031 14.616 8.06942 15.0068C7.67854 15.3977 7.04479 15.3977 6.6539 15.0068L0.354173 8.70712C-0.0363518 8.31659 -0.0363518 7.68343 0.354173 7.29291L6.6539 0.993177C7.04479 0.602291 7.67854 0.602291 8.06942 0.993177C8.46031 1.38406 8.46031 2.01781 8.06942 2.4087L3.47811 7.00001Z"
+            fill="#30313D"
+          />
+        </svg>
+      </button>
+      <div
+        class=" tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold"
+      >
+        <span>Création Société</span> <br>
+        <span class="tw-font-normal tw-text-gray-500">Créer une société ou un opérateur économique</span>
+      </div>
+    </div>
+  </div>
+  <div class="tw-flex tw-flex-col w-full">
+    <form [formGroup]="societeForm" (ngSubmit)="onSubmit()">
+      <div class="row col-12 tw-mb-3">
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-societe" class=" "
+          >Type de société<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <ng-select
+            id="input-societe"
+            [formControlName]="'typeSocieteFm'"
+            [bindLabel]="'libelle'"
+            [items]="typeSocietyList()"
+            (change)="onSocieteSelectChange($event)"
+            [appendTo]="'body'">
+            <!--            @for (agreement of agreementList(); track agreement.numero) {-->
+            <!--              <ng-option  [value]="agreement"></ng-option>-->
+            <!--            }-->
+
+            <ng-template ng-label-tmp let-item="item">
+              <span class="tw-text-sm text">{{ item.libelle }}</span>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <span class=" !tw-font-mono !tw-font-medium">{{ item.ref }}</span>
+              <div class="!tw-font-medium">{{ item.libelle }}</div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-raisonSocial" class=" "
+          >Raison sociale<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            cFormControl
+            formControlName="raisonSociale"
+            type="text"
+            id="input-raisonSocial"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-num-enregistrement" class=" "
+          >Numero renregistrement<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            cFormControl
+            formControlName="numeroEnreg"
+            type="text"
+            id="input-num-enregistrement"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-nif" class=" "
+          >Nif<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'nif'"
+            cFormControl
+            type="text"
+            id="input-nif"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-contact" class=" "
+          >Contact<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            cFormControl
+            formControlName="contact"
+            type="text"
+            id="input-contact"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-email" class=" "
+          >Email<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            cFormControl
+            type="text"
+            formControlName="email"
+            id="input-email"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-adresse" class=" "
+          >Adresse<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <textarea
+            formControlName="adresse"
+            rows="3"
+            id="input-adresse"
+            tabindex="0"
+            cFormControl
+          >
+        </textarea>
+        </div>
+      </div>
+      <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+      <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+        <div
+          class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3 tw-mr-4"
+        >
+          <button
+            type="submit"
+            [disabled]="
+            checkIfFormIsValid()
+          "
+            class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+            cButton
+            color="primary"
+          >
+            <span>Créer la société</span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

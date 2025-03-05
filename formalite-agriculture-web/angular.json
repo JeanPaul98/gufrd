@@ -1,0 +1,2235 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "agriculture": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/agriculture",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/scss/styles.scss"
+            ],
+            "scripts": [
+              "node_modules/smooth-scroll/dist/smooth-scroll.polyfills.min.js"
+            ],
+            "allowedCommonJsDependencies": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "agriculture:build:production"
+            },
+            "development": {
+              "buildTarget": "agriculture:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "agriculture:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing",
+              "@angular/localize/init"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "aeaa": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/aeaa",
+      "sourceRoot": "projects/import/aeaa/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/aeaa",
+            "index": "projects/import/aeaa/src/index.html",
+            "browser": "projects/import/aeaa/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/aeaa/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/aeaa/public"
+              },
+              "projects/import/aeaa/src/assets"
+            ],
+            "styles": [
+              "projects/import/aeaa/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "aeaa:build:production"
+            },
+            "development": {
+              "buildTarget": "aeaa:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "aeaa:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/aeaa/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/import/aeaa/public"
+              }
+            ],
+            "styles": [
+              "projects/import/aeaa/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "adt": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/adt",
+      "sourceRoot": "projects/import/adt/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/adt",
+            "index": "projects/import/adt/src/index.html",
+            "browser": "projects/import/adt/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/adt/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/adt/public"
+              },
+              "projects/import/adt/src/assets"
+            ],
+            "styles": [
+              "projects/import/adt/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6mb",
+                  "maximumError": "7mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "adt:build:production"
+            },
+            "development": {
+              "buildTarget": "adt:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "adt:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/adt/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/adt/public"
+              },
+              "projects/import/adt/src/assets"
+            ],
+            "styles": [
+              "projects/import/adt/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ipn": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/ipn",
+      "sourceRoot": "projects/import/ipn/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ipn",
+            "index": "projects/import/ipn/src/index.html",
+            "browser": "projects/import/ipn/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/ipn/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/ipn/public"
+              },
+              "projects/import/ipn/src/assets"
+            ],
+            "styles": [
+              "projects/import/ipn/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ipn:build:production"
+            },
+            "development": {
+              "buildTarget": "ipn:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/ipn/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/ipn/public"
+              },
+              "projects/import/ipn/src/assets"
+            ],
+            "styles": [
+              "projects/import/ipn/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "aiav": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/aiav",
+      "sourceRoot": "projects/import/aiav/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/aiav",
+            "index": "projects/import/aiav/src/index.html",
+            "browser": "projects/import/aiav/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/aiav/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/aiav/public"
+              },
+              "projects/import/aiav/src/assets"
+            ],
+            "styles": [
+              "projects/import/aiav/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "aiav:build:production"
+            },
+            "development": {
+              "buildTarget": "aiav:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "aiav:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/aiav/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/import/aiav/public"
+              }
+            ],
+            "styles": [
+              "projects/import/aiav/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "aiemv": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/aiemv",
+      "sourceRoot": "projects/import/aiemv/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/aiemv",
+            "index": "projects/import/aiemv/src/index.html",
+            "browser": "projects/import/aiemv/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/aiemv/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/aiemv/public"
+              },
+              "projects/import/aiemv/src/assets"
+            ],
+            "styles": [
+              "projects/import/aiemv/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": [],
+            "allowedCommonJsDependencies": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "aiemv:build:production"
+            },
+            "development": {
+              "buildTarget": "aiemv:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "aiemv:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/aiemv/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/import/aiemv/public"
+              }
+            ],
+            "styles": [
+              "projects/import/aiemv/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "aipcl": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/aipcl",
+      "sourceRoot": "projects/import/aipcl/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/aipcl",
+            "index": "projects/import/aipcl/src/index.html",
+            "browser": "projects/import/aipcl/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/aipcl/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/aipcl/public"
+              },
+              "projects/import/aipcl/src/assets"
+            ],
+            "styles": [
+              "projects/import/aipcl/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "aipcl:build:production"
+            },
+            "development": {
+              "buildTarget": "aipcl:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/aipcl/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/import/aipcl/public"
+              }
+            ],
+            "styles": [
+              "projects/import/aipcl/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ipcc": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/ipcc",
+      "sourceRoot": "projects/import/ipcc/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ipcc",
+            "index": "projects/import/ipcc/src/index.html",
+            "browser": "projects/import/ipcc/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/ipcc/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/ipcc/public"
+              },
+              "projects/import/ipcc/src/assets"
+            ],
+            "styles": [
+              "projects/import/ipcc/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ipcc:build:production"
+            },
+            "development": {
+              "buildTarget": "ipcc:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/ipcc/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/import/ipcc/public"
+              }
+            ],
+            "styles": [
+              "projects/import/ipcc/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ipppp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/import/ipppp",
+      "sourceRoot": "projects/import/ipppp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ipppp",
+            "index": "projects/import/ipppp/src/index.html",
+            "browser": "projects/import/ipppp/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/import/ipppp/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/import/ipppp/public"
+              },
+              "projects/import/ipppp/src/assets"
+            ],
+            "styles": [
+              "projects/import/ipppp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ipppp:build:production"
+            },
+            "development": {
+              "buildTarget": "ipppp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/import/ipppp/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/import/ipppp/public"
+              }
+            ],
+            "styles": [
+              "projects/import/ipppp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "crbn": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/crbn",
+      "sourceRoot": "projects/export/crbn/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/crbn",
+            "index": "projects/export/crbn/src/index.html",
+            "browser": "projects/export/crbn/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/crbn/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/crbn/public"
+              },
+              "projects/export/crbn/src/assets"
+            ],
+            "styles": [
+              "projects/export/crbn/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "crbn:build:production"
+            },
+            "development": {
+              "buildTarget": "crbn:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/crbn/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/crbn/public"
+              }
+            ],
+            "styles": [
+              "projects/export/crbn/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "csc": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/csc",
+      "sourceRoot": "projects/export/csc/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/csc",
+            "index": "projects/export/csc/src/index.html",
+            "browser": "projects/export/csc/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/csc/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/csc/public"
+              },
+              "projects/export/csc/src/assets"
+            ],
+            "styles": [
+              "projects/export/csc/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "csc:build:production"
+            },
+            "development": {
+              "buildTarget": "csc:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/csc/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/csc/public"
+              }
+            ],
+            "styles": [
+              "projects/export/csc/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "cscp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/cscp",
+      "sourceRoot": "projects/export/cscp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/cscp",
+            "index": "projects/export/cscp/src/index.html",
+            "browser": "projects/export/cscp/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/cscp/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/cscp/public"
+              },
+              "projects/export/cscp/src/assets"
+            ],
+            "styles": [
+              "projects/export/cscp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "cscp:build:production"
+            },
+            "development": {
+              "buildTarget": "cscp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/cscp/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/cscp/public"
+              }
+            ],
+            "styles": [
+              "projects/export/cscp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/ecp",
+      "sourceRoot": "projects/export/ecp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ecp",
+            "index": "projects/export/ecp/src/index.html",
+            "browser": "projects/export/ecp/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/ecp/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/ecp/public"
+              },
+              "projects/export/ecp/src/assets"
+            ],
+            "styles": [
+              "projects/export/ecp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ecp:build:production"
+            },
+            "development": {
+              "buildTarget": "ecp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/ecp/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/ecp/public"
+              }
+            ],
+            "styles": [
+              "projects/export/ecp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ecpfl": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/ecpfl",
+      "sourceRoot": "projects/export/ecpfl/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ecpfl",
+            "index": "projects/export/ecpfl/src/index.html",
+            "browser": "projects/export/ecpfl/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/ecpfl/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/ecpfl/public"
+              },
+              "projects/export/ecpfl/src/assets"
+            ],
+            "styles": [
+              "projects/export/ecpfl/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ecpfl:build:production"
+            },
+            "development": {
+              "buildTarget": "ecpfl:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/ecpfl/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/ecpfl/public"
+              }
+            ],
+            "styles": [
+              "projects/export/ecpfl/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "iocav": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/iocav",
+      "sourceRoot": "projects/export/iocav/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/iocav",
+            "index": "projects/export/iocav/src/index.html",
+            "browser": "projects/export/iocav/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/iocav/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/iocav/public"
+              },
+              "projects/export/iocav/src/assets"
+            ],
+            "styles": [
+              "projects/export/iocav/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "iocav:build:production"
+            },
+            "development": {
+              "buildTarget": "iocav:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/iocav/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/iocav/public"
+              }
+            ],
+            "styles": [
+              "projects/export/iocav/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "ipocp": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss",
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        }
+      },
+      "root": "projects/export/ipocp",
+      "sourceRoot": "projects/export/ipocp/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/ipocp",
+            "index": "projects/export/ipocp/src/index.html",
+            "browser": "projects/export/ipocp/src/main.ts",
+            "polyfills": [
+              "@angular/localize/init",
+              "zone.js"
+            ],
+            "tsConfig": "projects/export/ipocp/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/export/ipocp/public"
+              },
+              "projects/export/ipocp/src/assets"
+            ],
+            "styles": [
+              "projects/export/ipocp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "6MB",
+                  "maximumError": "7MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "ipocp:build:production"
+            },
+            "development": {
+              "buildTarget": "ipocp:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "ipn:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/export/ipocp/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "preserveSymlinks": true,
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "projects/export/ipocp/public"
+              }
+            ],
+            "styles": [
+              "projects/export/ipocp/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    },
+    "agrement": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/other/agrement",
+      "sourceRoot": "projects/other/agrement/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/agrement",
+            "index": "projects/other/agrement/src/index.html",
+            "browser": "projects/other/agrement/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/other/agrement/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/other/agrement/public"
+              },
+              "projects/other/agrement/src/assets"
+            ],
+            "styles": [
+              "projects/other/agrement/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "agrement:build:production"
+            },
+            "development": {
+              "buildTarget": "agrement:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/other/agrement/tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              { "glob": "**/*", "input": "src/assets/", "output": "/assets/" },
+              {
+                "glob": "**/*",
+                "input": "projects/other/agrement/public"
+              },
+              "projects/other/agrement/src/assets"
+            ],
+            "styles": [
+              "projects/other/agrement/src/styles.scss",
+              "src/scss/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

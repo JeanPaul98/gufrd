@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="maritimeHealthDeclaration" pageWidth="800" pageHeight="1200" columnWidth="760" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ed45e52d-cb84-44b4-ab71-90359ba6adac">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="actionDate" class="java.util.Date"/>
+	<parameter name="datedAt" class="java.util.Date"/>
+	<parameter name="dateIssued" class="java.util.Date"/>
+	<parameter name="portOf" class="java.lang.String"/>
+	<parameter name="vesselName" class="java.lang.String"/>
+	<parameter name="portFrom" class="java.lang.String"/>
+	<parameter name="portTo" class="java.lang.String"/>
+	<parameter name="nationality" class="java.lang.String"/>
+	<parameter name="masterName" class="java.lang.String"/>
+	<parameter name="netRegisterTonnage" class="java.lang.String"/>
+	<parameter name="certificate" class="java.lang.String"/>
+	<parameter name="cabin" class="java.lang.String"/>
+	<parameter name="deck" class="java.lang.String"/>
+	<parameter name="crewNo" class="java.lang.String"/>
+	<parameter name="passNo" class="java.lang.String"/>
+	<parameter name="certified" class="java.lang.String"/>
+	<parameter name="answer1" class="java.lang.String"/>
+	<parameter name="answer2" class="java.lang.String"/>
+	<parameter name="answer3" class="java.lang.String"/>
+	<parameter name="answer4" class="java.lang.String"/>
+	<parameter name="answer5" class="java.lang.String"/>
+	<parameter name="answer6" class="java.lang.String"/>
+	<parameter name="answer7" class="java.lang.String"/>
+	<parameter name="answer8" class="java.lang.String"/>
+	<parameter name="yOrNo1" class="java.lang.String"/>
+	<parameter name="yOrNo2" class="java.lang.String"/>
+	<parameter name="yOrNo3" class="java.lang.String"/>
+	<parameter name="yOrNo4" class="java.lang.String"/>
+	<parameter name="yOrNo5" class="java.lang.String"/>
+	<parameter name="yOrNo6" class="java.lang.String"/>
+	<parameter name="yOrNo7" class="java.lang.String"/>
+	<parameter name="yOrNo8" class="java.lang.String"/>
+	<parameter name="yOrNo9" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="240" y="-10" width="240" height="20" uuid="f2e2e75e-a679-457d-8e6b-25e5b700f58d"/>
+				<text><![CDATA[MARITIME DECLARATION OF HEALTH ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="290" y="10" width="100" height="15" uuid="71951773-f72b-4e18-87db-7ffc58fa6781"/>
+				<text><![CDATA[(International Form)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="25" width="460" height="15" uuid="5ca1725a-65ff-45a6-a6e2-4a7def3265a7"/>
+				<text><![CDATA[To be rendered by the masters of ships arriving from ports outside the Territory]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="70" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="180" height="20" uuid="2cf04036-f43f-4392-9b66-c3fbfbb20b50"/>
+				<textFieldExpression><![CDATA["Port of : \u00a0 "  + $P{portOf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="570" y="10" width="170" height="22" uuid="cbd774f8-7d7f-44eb-8b84-2740bd8b2ddf"/>
+				<textFieldExpression><![CDATA[" "+DATEFORMAT($P{actionDate}, "dd/MM/yyyy HH:MM:ss")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="38" width="180" height="32" uuid="d520f397-2244-43b6-b2f5-d395376ac025"/>
+				<textFieldExpression><![CDATA["Name of Vessel : \u00a0 "+ $P{vesselName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="43" width="258" height="20" uuid="fc21f0f8-10e0-4589-858f-c89664bd52bd"/>
+				<textFieldExpression><![CDATA["From  \u00a0 "+ $P{portFrom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="43" width="150" height="20" uuid="3a7a11fa-6686-46a7-ba08-3820e5711b56"/>
+				<textFieldExpression><![CDATA["to  \u00a0 " +$P{portTo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="180" height="20" uuid="7c4d47ab-9f64-415b-ba79-5dfb83f96f63"/>
+				<textFieldExpression><![CDATA["Nationality  \u00a0 " +$P{nationality}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="258" height="20" uuid="d0748929-7af5-4f5b-983f-ae2eccb12148"/>
+				<textFieldExpression><![CDATA["Master's name \u00a0 " +$P{masterName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="190" height="33" uuid="55870511-be41-44d5-88b4-bdf5e6ee805b"/>
+				<textFieldExpression><![CDATA["Net Register Tonnage \u00a0 "+$P{netRegisterTonnage}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="27" width="40" height="13" uuid="9fb938d7-86f4-4d6e-b2ac-6b1e3399f3d0"/>
+				<text><![CDATA[SSC or ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="27" width="258" height="13" uuid="c2de6e4f-c8c9-44dd-b98f-0c71f649c5aa"/>
+				<textFieldExpression><![CDATA["Certificate \u00a0  "+$P{certificate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="40" width="230" height="13" uuid="45e76db9-936c-4adb-9b50-e96b4be1e0bb"/>
+				<textFieldExpression><![CDATA["Dated at \u00a0 "+DATEFORMAT($P{datedAt}, "dd/MM/yyyy HH:MM:ss")]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="27" width="90" height="13" uuid="aea28015-649b-4630-a420-79a01432378b"/>
+				<text><![CDATA[No of Passagers]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="20" width="140" height="13" uuid="63ff3676-c3d0-46c0-af93-5c603c2ac837"/>
+				<textFieldExpression><![CDATA["Cabin \u00a0 "+$P{cabin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="40" width="140" height="13" uuid="b2a563a4-7e0c-4752-b5f1-6b9454c4f702"/>
+				<textFieldExpression><![CDATA["Deck  \u00a0 "+$P{deck}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="20" width="160" height="13" uuid="6c173493-4b4c-4fab-9ba0-088f3c4f167e"/>
+				<textFieldExpression><![CDATA["No of Crew \u00a0 "+$P{crewNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="520" y="40" width="160" height="13" uuid="2a2f04ba-f47d-4be4-9598-04ee3528422a"/>
+				<textFieldExpression><![CDATA["No of Pass \u00a0 "+$P{passNo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="80" width="530" height="13" uuid="656846d5-d7c8-4da0-859b-c0b2483fb8ca"/>
+				<text><![CDATA[List of ports of call from commencement of voyage with the dates of departure(AS PER ATTACHED LIST)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="-6" width="40" height="13" uuid="32249b91-7e8b-4129-8d52-0f11256ab355"/>
+				<text><![CDATA[SSCEC]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="-3" width="258" height="13" uuid="7f83d3f2-745b-473f-a1e7-91cc8a4fa1d2"/>
+				<textFieldExpression><![CDATA["Issued at \u00a0 "+DATEFORMAT($P{dateIssued}, "dd/MM/yyyy HH:MM:ss")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="510" splitType="Stretch">
+			<staticText>
+				<reportElement x="70" y="20" width="90" height="20" uuid="a49dff4e-f085-4553-abf4-227c89196fc8"/>
+				<text><![CDATA[Health Questions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="580" y="20" width="100" height="20" uuid="15172457-ec3a-413e-83a1-4204d7fecd1a"/>
+				<text><![CDATA[Answer Yes or No]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="56" width="490" height="30" uuid="ad71c287-159c-4f0a-9382-3d9ce7a33b61"/>
+				<textFieldExpression><![CDATA["1) Has any person died on board during the voyage otherwise than as a result of accident ? If yes,states particulars in attached schedule Total no of deaths \u00a0 "+$P{answer1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="97" width="490" height="30" uuid="f01b25ac-18d7-41d6-9f0d-d9a862c625eb"/>
+				<textFieldExpression><![CDATA["2) Is there on board or has there been furing the international voyage  any case of desease which you suspect to be of an intectius nature ? If yes,state particulars in attached schedule. \u00a0 " +$P{answer2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="140" width="490" height="30" uuid="6f33780f-ccb4-43e5-ad7e-63b4bc011447"/>
+				<textFieldExpression><![CDATA["3) Has the total number of ill passagers during the voyage been greater than normal/expected ? How many ill passagers ? \u00a0 "+$P{answer3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="220" width="490" height="30" uuid="1e98cc44-f622-4861-aa79-e4251c273414"/>
+				<textFieldExpression><![CDATA["5) Was a medical particulars consulted ? If yes, state particulars of medical treatment or advice provided in attached schedule. \u00a0 "+$P{answer5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="180" width="490" height="30" uuid="28386854-e045-4942-bbcd-8eaeb09116ce"/>
+				<textFieldExpression><![CDATA["4) Is there any ill person on board now ? If yes,state particulars on board schedule.\u00a0 "+$P{answer4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="300" width="490" height="30" uuid="46788d2d-a682-4d8f-b74a-e325403bef20"/>
+				<textFieldExpression><![CDATA["7) Has any sanitary measure(eg. Quarantine, isolation, disinfection or decontamination) has been applied on board ? If yes, specify type,place and date \u00a0 "+$P{answer7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="260" width="490" height="30" uuid="1e568703-de62-40ee-90cb-43914a6f3bbe"/>
+				<textFieldExpression><![CDATA["6) Are you aware of any condition on board which may lead to infection or spread of disease ? If yes, state particulars in attached schedule. \u00a0 "+$P{answer6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="340" width="490" height="30" uuid="9ed8912f-1f6f-41e8-bf07-057441b9381f"/>
+				<textFieldExpression><![CDATA["8) Have any stowaways been found on board ? If yes, where did they join the ship(if known). \u00a0 " +$P{answer8}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="476" width="610" height="34" uuid="a8595754-c37a-4e9d-8165-0fb8a69014c3"/>
+				<text><![CDATA[I hereby declare that the particulars and answers to the questions given in this Declaration of Health(including the schedule) are true and correct to the bes of my knowledge and belief.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="380" width="490" height="30" uuid="54294725-bd21-482c-b703-2ceb305b0dfb"/>
+				<text><![CDATA[9) Is there a sick animal or pet on board ? ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="580" y="56" width="100" height="30" uuid="47a700a1-c937-4379-bc81-0227b21476aa"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="97" width="100" height="30" uuid="679ba711-331f-4b5c-91e4-ed149253607b"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="140" width="100" height="30" uuid="da89a0d9-6a68-4fd8-84e3-2b3bcca3e35b"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="180" width="100" height="30" uuid="8dbd0609-4b13-4392-a0ed-f72963d78884"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="220" width="100" height="30" uuid="95eecfed-4594-4ccc-bd85-84292f68034a"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo5}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="260" width="100" height="30" uuid="5aa924a3-42c5-42cf-9eac-51a0e5b0e87c"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo6}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="300" width="100" height="30" uuid="cbe7f189-14d8-40c0-901d-fa61462e4a58"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo7}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="380" width="100" height="30" uuid="63ff83e5-7889-4650-a846-62f747bbdd6b"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo9}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="580" y="340" width="100" height="30" uuid="0c6a8cb6-aedf-44e0-af54-ea6baaef20f8"/>
+				<textFieldExpression><![CDATA[" "+$P{yOrNo8}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="236" splitType="Stretch">
+			<textField>
+				<reportElement x="70" y="0" width="388" height="30" uuid="d2ed453c-0bae-4e30-b6f7-c2e1e706fc37"/>
+				<textFieldExpression><![CDATA[" "  + $P{certified}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="240" y="40" width="440" height="30" uuid="3ee9bbd0-71da-4522-be76-ceeec924feb4"/>
+				<text><![CDATA[Signed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="70" width="440" height="30" uuid="3dc97d51-bd7c-49a8-9178-67606c850c17"/>
+				<text><![CDATA[Countersigned]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="160" width="610" height="40" uuid="e8cc97f7-ba5e-4d69-9c74-8a6949fb832d"/>
+				<text><![CDATA[Note: In the absence of a surgeon, the Master should regard the following symptoms,as grounds for suspecting the existence of a disease or an infectious nature.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="200" width="610" height="36" uuid="8bf45850-d023-46e0-8805-15ac0e6bd29a"/>
+				<text><![CDATA[a) lever, persisting for several days accompagned by (i) prostration; (ii) decreased consciousness;(iii) glandular swelling; (iv) jaundice;(v) cough or shortness of health; -vi) unusual bleeding; or (vii) paralysis.]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM, yyyy">
+				<reportElement x="70" y="120" width="320" height="30" uuid="3f65120a-685b-4353-b12d-91525f6fb8f6"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="215" splitType="Stretch"/>
+	</summary>
+</jasperReport>

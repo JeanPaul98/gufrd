@@ -1,0 +1,63 @@
+import {AgreementModel} from "./agrement.model";
+
+export interface NavireInfoModel {
+    atp: string;
+    nomNavire: string;
+    numeroAgrement: string;
+    raisonSocial: string;
+    activite: string;
+    agrement: AgreementModel;
+    dateEmbarquement: string;
+    provenance: string;
+    portDestination: string;
+    imo: string;
+    code: string;
+    conteneur: string;
+    affreteur: string;
+    datearrivee: string;
+    numeroAutorisation: string;
+    numeroBL: string;
+    dateProduction: string;
+    dateembarquement: string;
+    compteClient: string;
+    nomDemandeur: string;
+    lieuExpedition: string;
+    moyenTransport: string;
+    nomImportateur:string,
+    destinataire: string;
+    traitement: string;
+    professionDemandeur: string;
+    expediteur: string;
+    identification: string;
+    adresseDemandeur: string;
+    lieuInspection: string;
+    datePrevueInspection: string;
+    fournisseur: string;
+    descriptionEnvoi: string;
+    nombreColis: number;
+    adresseExpediteur: string,
+    adresseDestinataire: string,
+    lieuDestination: string,
+    lieuDeChargement: string,
+    paysExpediteur: string,
+    paysOrigine: string,
+    lieuOrigine: string,
+    paysDestination: string,
+    nomDestinataire: string,
+    lieuChargement: string,
+    dateDepart: string,
+    posteFrontalier: string,
+    urlPaiement: string,
+    chaine: string,
+    dateDemande: string,
+    dateSoumission: string,
+    dateTraitement: string,
+    dateRejet: string,
+    dateAccepte: string,
+    etat: string,
+    motif: string,
+    idAutorisation: number,
+    typeAutorisation: string,
+    refTypeAutorisation: string,
+    montantRedevance: number,
+  }

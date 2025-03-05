@@ -1,0 +1,166 @@
+<table bordered  cTable>
+  <thead>
+  <tr>
+    <th class="tw-text-sm tw-text-secondary" scope="col">NUMERO</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">MOTIF</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">NAVIRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">DATE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>Mark</td>
+    <td>Otto</td>
+    <td>
+        <span class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-gray-200 tw-text-gray-500 tw-rounded-full">
+          Non soumise
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M140 32v32a12 12 0 0 1-24 0V32a12 12 0 0 1 24 0m33.25 62.75a12 12 0 0 0 8.49-3.52l22.63-22.63a12 12 0 0 0-17-17l-22.6 22.66a12 12 0 0 0 8.48 20.49M224 116h-32a12 12 0 0 0 0 24h32a12 12 0 0 0 0-24m-42.26 48.77a12 12 0 1 0-17 17l22.63 22.63a12 12 0 0 0 17-17ZM128 180a12 12 0 0 0-12 12v32a12 12 0 0 0 24 0v-32a12 12 0 0 0-12-12m-53.74-15.23L51.63 187.4a12 12 0 0 0 17 17l22.63-22.63a12 12 0 1 0-17-17M76 128a12 12 0 0 0-12-12H32a12 12 0 0 0 0 24h32a12 12 0 0 0 12-12m-7.4-76.37a12 12 0 1 0-17 17l22.66 22.6a12 12 0 0 0 17-17Z"/></svg>
+        </span>
+    </td>
+    <td>Otto</td>
+    <td>
+      <c-dropdown>
+        <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+          >
+            <path
+              d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+              fill="#4F566B"
+            />
+            <path
+              d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+              fill="#4F566B"
+            />
+            <path
+              d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+              fill="#4F566B"
+            />
+          </svg>
+        </button>
+        <ul cDropdownMenu>
+          <li><a [routerLink]="[]" cDropdownItem>Details</a></li>
+          <li><a [routerLink]="[]" cDropdownItem>Soumettre</a></li>
+          <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+        </ul>
+      </c-dropdown>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">2</th>
+    <td>Jacob</td>
+    <td>Thornton</td>
+    <td>
+        <span class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-gray-200 tw-text-gray-500 tw-rounded-full">
+          Non soumise
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M140 32v32a12 12 0 0 1-24 0V32a12 12 0 0 1 24 0m33.25 62.75a12 12 0 0 0 8.49-3.52l22.63-22.63a12 12 0 0 0-17-17l-22.6 22.66a12 12 0 0 0 8.48 20.49M224 116h-32a12 12 0 0 0 0 24h32a12 12 0 0 0 0-24m-42.26 48.77a12 12 0 1 0-17 17l22.63 22.63a12 12 0 0 0 17-17ZM128 180a12 12 0 0 0-12 12v32a12 12 0 0 0 24 0v-32a12 12 0 0 0-12-12m-53.74-15.23L51.63 187.4a12 12 0 0 0 17 17l22.63-22.63a12 12 0 1 0-17-17M76 128a12 12 0 0 0-12-12H32a12 12 0 0 0 0 24h32a12 12 0 0 0 12-12m-7.4-76.37a12 12 0 1 0-17 17l22.66 22.6a12 12 0 0 0 17-17Z"/></svg>
+        </span>
+    </td>
+    <td>Otto</td>
+    <td>
+      <c-dropdown>
+        <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+          >
+            <path
+              d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+              fill="#4F566B"
+            />
+            <path
+              d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+              fill="#4F566B"
+            />
+            <path
+              d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+              fill="#4F566B"
+            />
+          </svg>
+        </button>
+        <ul cDropdownMenu>
+          <li><a [routerLink]="[]" cDropdownItem>Details</a></li>
+          <li><a [routerLink]="[]" cDropdownItem>Soumettre</a></li>
+          <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+        </ul>
+      </c-dropdown>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row">3</th>
+    <td>Larry the Bird</td>
+    <td>Larry the Bird</td>
+    <td>
+      <span class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-gray-200 tw-text-gray-500 tw-rounded-full">
+          Non soumise
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M140 32v32a12 12 0 0 1-24 0V32a12 12 0 0 1 24 0m33.25 62.75a12 12 0 0 0 8.49-3.52l22.63-22.63a12 12 0 0 0-17-17l-22.6 22.66a12 12 0 0 0 8.48 20.49M224 116h-32a12 12 0 0 0 0 24h32a12 12 0 0 0 0-24m-42.26 48.77a12 12 0 1 0-17 17l22.63 22.63a12 12 0 0 0 17-17ZM128 180a12 12 0 0 0-12 12v32a12 12 0 0 0 24 0v-32a12 12 0 0 0-12-12m-53.74-15.23L51.63 187.4a12 12 0 0 0 17 17l22.63-22.63a12 12 0 1 0-17-17M76 128a12 12 0 0 0-12-12H32a12 12 0 0 0 0 24h32a12 12 0 0 0 12-12m-7.4-76.37a12 12 0 1 0-17 17l22.66 22.6a12 12 0 0 0 17-17Z"/></svg>
+        </span>
+    </td>
+    <td>Otto</td>
+    <td>
+      <c-dropdown>
+        <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+          >
+            <path
+              d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+              fill="#4F566B"
+            />
+            <path
+              d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+              fill="#4F566B"
+            />
+            <path
+              d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+              fill="#4F566B"
+            />
+          </svg>
+        </button>
+        <ul cDropdownMenu>
+          <li><a [routerLink]="[]" cDropdownItem>Details</a></li>
+          <li><a [routerLink]="[]" cDropdownItem>Soumettre</a></li>
+          <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+        </ul>
+      </c-dropdown>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+  <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+    <div>919 resultats</div>
+  </div>
+  <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+    <button
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+      cButton
+      color="light"
+    >
+      <span>Préçédent</span>
+    </button>
+    <button
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+      cButton
+      color="light"
+    >
+      <span>Suivant</span>
+    </button>
+  </div>
+</div>

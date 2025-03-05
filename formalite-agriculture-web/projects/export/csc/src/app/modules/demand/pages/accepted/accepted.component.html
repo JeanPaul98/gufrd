@@ -1,0 +1,123 @@
+<table [responsive]="true" bordered cTable>
+  <thead>
+    <tr>
+      <th class="tw-text-sm tw-text-secondary" scope="col">N° ORDRE</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">N° DEMANDE</th>
+      <th class="tw-text-sm tw-text-secondary">LIEU DE CHARGEMENT</th>
+      <th class="tw-text-sm tw-text-secondary">EXPEDITEUR</th>
+      <th class="tw-text-sm tw-text-secondary">DESTINATAIRE</th>
+      <th class="tw-text-sm tw-text-secondary">MOYEN DE TRANSPORT</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">REDEVANCE</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+      <!-- <th class="tw-text-sm tw-text-secondary" scope="col">DATE SOUMISSION</th> -->
+      <th class="tw-text-sm tw-text-secondary" scope="col">DATE ACCEPTE</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+    </tr>
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="10" class="tw-text-center !tw-my-0 !tw-p-0">
+          <app-loading-bar></app-loading-bar>
+        </td>
+      </tr>
+    }
+  </thead>
+
+  <tbody>
+
+    @for (demand of demands(); track demand; ) {
+      @if (loadingDemands === false) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td scope="row">
+            <a [routerLink]="['/demand/details', demand.numGenerer]" (click)="xendDetailsInfo(demand)"
+               class="tw-inline-flex tw-items-center tw-font-medium tw-text-blue-600 hover:tw-cursor-pointer hover:tw-underline">
+              {{ demand.numGenerer }}
+              <svg class="tw-w-5 tw-h-5 tw-ms-2 rtl:tw-rotate-180" xmlns="http://www.w3.org/2000/svg" width="18"
+                   height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/>
+              </svg>
+            </a>
+          </td>
+          <td>{{ demand.lieuDeChargement }}</td>
+          <td>{{ demand.expediteur }}</td>
+          <!-- <td>{{ demand.adresseExpediteur }}</td> -->
+          <td>{{ demand.destinataire }}</td>
+          <!-- <td>{{ demand.adresseDestinataire }}</td> -->
+          <td>{{ demand.moyenTransport }}</td>
+          <td>{{ demand.montantRedevance }}</td>
+          <td>
+            <span
+              class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-purple-100 tw-text-purple-500 tw-rounded-full"
+            >
+              {{demand.etat === 'ACCEPTER' && 'Accepté'}}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="13"
+                viewBox="0 0 13 13"
+                fill="none"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4.60614 10.4098L0.852727 6.69095C0.559833 6.39561 0.559833 5.91677 0.852727 5.62143C1.14562 5.32608 1.62049 5.32608 1.91339 5.62143L5.13356 8.7901L11.3497 2.59651C11.6426 2.30116 12.1175 2.30116 12.4104 2.59651C12.7033 2.89185 12.7033 3.37069 12.4104 3.66603L5.65761 10.4063C5.36674 10.6965 4.89889 10.6981 4.60614 10.4098Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+          </td>
+          <!-- <td>{{demand.dateDemande | date: 'dd/MM/yyyy: HH:mm'}}</td> -->
+          <!-- <td>{{ demand.dateDemande | date:'dd MMMM yyyy' }} à {{ demand.dateDemande | date:'HH:mm' }} -->
+          <td>{{ demand.dateAccepte | date:'dd MMMM yyyy' }} à {{ demand.dateAccepte | date:'HH:mm' }}
+
+          <td>
+            <a target="_blank" href="{{demand.urlPaiement}}" cTooltip="Payer la demande"
+                    class="!tw-text-primary !tw-bg-green-100 hover:!tw-text-green-700 !tw-mr-3" cButton color="light">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256"><path fill="currentColor" d="M244.24 60a8 8 0 0 0-7.75-.4c-42.93 21-73.59 11.16-106 .78c-34.09-10.85-69.29-22.1-118 1.68A8 8 0 0 0 8 69.24v119.93a8 8 0 0 0 11.51 7.19c42.93-21 73.59-11.16 106.05-.78c19.24 6.15 38.84 12.42 61 12.42c17.09 0 35.73-3.72 56.91-14.06a8 8 0 0 0 4.49-7.18V66.83a8 8 0 0 0-3.72-6.83M48 152a8 8 0 0 1-16 0V88a8 8 0 0 1 16 0Zm80 8a32 32 0 1 1 32-32a32 32 0 0 1-32 32m96 8a8 8 0 0 1-16 0v-64a8 8 0 0 1 16 0Z"/></svg>
+            </a>
+          </td>
+        </tr>
+      }
+    }
+    @if (demands().length === 0 && loadingDemands === false) {
+      <tr>
+        <td colspan="10" class="tw-text-center">Aucun résultat</td>
+      </tr>
+    }
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="10" class="tw-text-center !tw-text-gray-400">En cours de chargement...</td>
+      </tr>
+    }
+  </tbody>
+</table>
+<div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+  <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+    <div>{{ demands().length }} resultats</div>
+  </div>
+  <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+    <button
+      cButton
+
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light"
+    >
+      <span>Préçédent</span>
+    </button>
+    <button
+      cButton
+
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light"
+    >
+      <span>Suivant</span>
+    </button>
+  </div>
+</div>
+
+
+
+
+

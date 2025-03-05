@@ -1,0 +1,142 @@
+<div class="tw-relative">
+  <div class="accordion-body">
+      <div class="sub-title tw-flex-grow  ">
+          <p
+            class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base"
+          >
+            Document nécéssaires
+          </p>
+          <p class="tw-text-gray-500 tw-mb-8 tw-font-normal tw-text-base">
+              Liste de fichiers (Certificat Phytosanitaire, Certificat de
+              Fumigation,Certificat d’origine, Certificat de qualité et
+              poids,Certificat sanitaire, Connaissement, Déclaration, Permis
+              d’Importation)
+            </p>
+        </div>
+      
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="num-atp" class=" "
+            >Choisir type fichier ou piece</label
+          >
+          <ng-select [(ngModel)]="selectedCar">
+            @for (car of cars; track car.id) {
+                <ng-option [value]="car.id">{{car.name}}</ng-option>
+            }
+        </ng-select>
+        </div>
+      </div>
+      <div
+        class="tw-w-full tw-py-9 tw-bg-gray-50 tw-rounded-2xl tw-border tw-border-gray-300 tw-gap-3 tw-grid tw-border-dashed"
+      >
+        <div class="tw-grid tw-gap-1">
+          <div class="tw-mb-3 tw-flex tw-items-center tw-justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="33"
+              height="32"
+              viewBox="0 0 33 32"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_27_4143)">
+                <path
+                  d="M23.634 27.0667L20.1673 23.6C19.9229 23.3556 19.8006 23.0444 19.8006 22.6667C19.8006 22.2889 19.9229 21.9778 20.1673 21.7333C20.4117 21.4889 20.7229 21.3667 21.1006 21.3667C21.4784 21.3667 21.7895 21.4889 22.034 21.7333L23.234 22.9333V18.7C23.234 18.3222 23.362 18.0058 23.618 17.7507C23.874 17.4956 24.1904 17.3676 24.5673 17.3667C24.9442 17.3658 25.2611 17.4938 25.518 17.7507C25.7749 18.0076 25.9024 18.324 25.9006 18.7V22.9333L27.1006 21.7333C27.3451 21.4889 27.6562 21.3667 28.034 21.3667C28.4117 21.3667 28.7229 21.4889 28.9673 21.7333C29.2117 21.9778 29.334 22.2889 29.334 22.6667C29.334 23.0444 29.2117 23.3556 28.9673 23.6L25.5006 27.0667C25.234 27.3333 24.9229 27.4667 24.5673 27.4667C24.2117 27.4667 23.9006 27.3333 23.634 27.0667ZM20.5673 32C20.1895 32 19.8731 31.872 19.618 31.616C19.3629 31.36 19.2349 31.0436 19.234 30.6667C19.2331 30.2898 19.3611 29.9733 19.618 29.7173C19.8749 29.4613 20.1913 29.3333 20.5673 29.3333H28.5673C28.9451 29.3333 29.262 29.4613 29.518 29.7173C29.774 29.9733 29.9015 30.2898 29.9006 30.6667C29.8997 31.0436 29.7717 31.3604 29.5166 31.6173C29.2615 31.8742 28.9451 32.0018 28.5673 32H20.5673ZM8.5673 26.6667C7.83397 26.6667 7.20641 26.4058 6.68463 25.884C6.16286 25.3622 5.90152 24.7342 5.90063 24V5.33333C5.90063 4.6 6.16197 3.97245 6.68463 3.45067C7.2073 2.92889 7.83486 2.66756 8.5673 2.66667H16.8006C17.1562 2.66667 17.4953 2.73333 17.818 2.86667C18.1406 3 18.4237 3.18889 18.6673 3.43333L25.134 9.9C25.3784 10.1444 25.5673 10.428 25.7006 10.7507C25.834 11.0733 25.9006 11.412 25.9006 11.7667V13.3667C25.9006 13.7444 25.7726 14.0609 25.5166 14.316C25.2606 14.5711 24.9442 14.6991 24.5673 14.7H19.234C18.5006 14.7 17.8731 14.9613 17.3513 15.484C16.8295 16.0067 16.5682 16.6342 16.5673 17.3667V25.3333C16.5673 25.7111 16.4393 26.028 16.1833 26.284C15.9273 26.54 15.6109 26.6676 15.234 26.6667H8.5673ZM18.5673 12H23.234L16.5673 5.33333V10C16.5673 10.5556 16.762 11.028 17.1513 11.4173C17.5406 11.8067 18.0126 12.0009 18.5673 12Z"
+                  fill="#ACAAB8"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_27_4143">
+                  <rect
+                    width="32"
+                    height="32"
+                    fill="white"
+                    transform="translate(0.567383)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+          </div>
+          <h2
+            class="tw-text-center tw-text-gray-400 tw-text-xs tw-leading-4"
+          >
+            PDF, PNG, JPEG < 3 MB
+          </h2>
+        </div>
+        <div class="tw-grid tw-gap-2">
+          <h4
+            class="tw-text-center tw-text-gray-900 tw-text-sm tw-font-medium tw-leading-snug"
+          >
+            Glissez & déposez le fichier ou
+          </h4>
+          <div class="tw-flex tw-items-center tw-justify-center">
+            <label>
+              <input (change)="onFileSelected($event)" type="file" #fileUpload hidden  />
+              <button
+               (click)="fileUpload.click()"
+                class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+                cButton
+                color="light"
+              >
+                <span>Choisir le fichier</span>
+              </button>
+            </label>
+          </div>
+        </div>
+      </div>
+      <table class="tw-mt-4" cTable>
+        <thead>
+          <tr>
+            <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+            <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+            <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+            <th class="tw-text-sm !tw-text-gray-600" scope="col">FORMAT</th>
+            <th class="tw-text-sm !tw-text-gray-600" scope="col">TAILLE</th>
+            <th class="tw-text-sm !tw-text-gray-600" scope="col">ACTION</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="!tw-text-gray-600">1</th>
+            <td>Certificat Phytosanitaire</td>
+            <td>CERT_00012_PREUVE</td>
+            <td>PDF</td>
+            <td>2 MB</td>
+            <td>    <button
+              class="!tw-inline-flex !tw-min-h-8 hover:!tw-bg-white !tw-max-h-8 !tw-flex-row tw-items-center tw-gap-3"
+              size="sm"
+              cButton
+              color="light"
+              variant="ghost"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+              <path d="M5.2732 16.6733C4.8607 16.6733 4.5077 16.5266 4.2142 16.2331C3.9207 15.9396 3.7737 15.5863 3.7732 15.1733V5.42334C3.5607 5.42334 3.3827 5.35134 3.2392 5.20734C3.0957 5.06334 3.0237 4.88534 3.0232 4.67334C3.0227 4.46134 3.0947 4.28334 3.2392 4.13934C3.3837 3.99534 3.5617 3.92334 3.7732 3.92334H6.7732C6.7732 3.71084 6.8452 3.53284 6.9892 3.38934C7.1332 3.24584 7.3112 3.17384 7.5232 3.17334H10.5232C10.7357 3.17334 10.9139 3.24534 11.0579 3.38934C11.2019 3.53334 11.2737 3.71134 11.2732 3.92334H14.2732C14.4857 3.92334 14.6639 3.99534 14.8079 4.13934C14.9519 4.28334 15.0237 4.46134 15.0232 4.67334C15.0227 4.88534 14.9507 5.06359 14.8072 5.20809C14.6637 5.35259 14.4857 5.42434 14.2732 5.42334V15.1733C14.2732 15.5858 14.1264 15.9391 13.8329 16.2331C13.5394 16.5271 13.1862 16.6738 12.7732 16.6733H5.2732ZM7.5232 13.6733C7.7357 13.6733 7.91395 13.6013 8.05795 13.4573C8.20195 13.3133 8.2737 13.1353 8.2732 12.9233V7.67334C8.2732 7.46084 8.2012 7.28284 8.0572 7.13934C7.9132 6.99584 7.7352 6.92384 7.5232 6.92334C7.3112 6.92284 7.1332 6.99484 6.9892 7.13934C6.8452 7.28384 6.7732 7.46184 6.7732 7.67334V12.9233C6.7732 13.1358 6.8452 13.3141 6.9892 13.4581C7.1332 13.6021 7.3112 13.6738 7.5232 13.6733ZM10.5232 13.6733C10.7357 13.6733 10.9139 13.6013 11.0579 13.4573C11.2019 13.3133 11.2737 13.1353 11.2732 12.9233V7.67334C11.2732 7.46084 11.2012 7.28284 11.0572 7.13934C10.9132 6.99584 10.7352 6.92384 10.5232 6.92334C10.3112 6.92284 10.1332 6.99484 9.9892 7.13934C9.8452 7.28384 9.7732 7.46184 9.7732 7.67334V12.9233C9.7732 13.1358 9.8452 13.3141 9.9892 13.4581C10.1332 13.6021 10.3112 13.6738 10.5232 13.6733Z" fill="#ABABAB"/>
+              </svg>
+            </button>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end">
+   
+    <div class="action-button tw-mt-2 tw-mb-8  tw-bg-white tw-flex tw-flex-row !tw-gap-3">
+      <button
+      (click)="onClickPrevious()"
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        cButton
+        color="light"
+      >
+        <span>Précédent</span>
+      </button>
+      <button
+        (click)="onClickNext()"
+        class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+        cButton
+        color="primary"
+      >
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>
+</div>

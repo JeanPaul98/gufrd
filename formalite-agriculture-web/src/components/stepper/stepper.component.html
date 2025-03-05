@@ -1,0 +1,55 @@
+<ol class="tw-overflow-hidden tw-space-y-8">
+  @for (step of steps; track step; let idx = $index; ) {
+    @if (currentStep > idx + 1) {
+      <li
+        class="tw-relative tw-flex-1 tw-z-10 after:tw-content-[''] after:tw-w-0.5 after:tw-h-full after:tw-bg-primary after:tw-inline-block after:tw-absolute after:tw--bottom-11 after:tw-left-4 lg:after:tw-left-5">
+        <a class="tw-flex tw-items-center tw-font-medium tw-w-full tw-no-underline">
+            <span
+              class="tw-w-8 tw-h-8 tw-flex-shrink-0 tw-max-w-8 tw-max-h-8 lg:tw-max-h-10 lg:tw-max-w-10 tw-z-10 lg:tw-w-10 lg:tw-h-10 tw-bg-primary tw-border-2 tw-border-transparent tw-rounded-full tw-flex tw-justify-center tw-items-center tw-mr-3 tw-text-sm tw-text-white">
+                <svg class="tw-w-5 tw-h-5 tw-stroke-white" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M5 12L9.28722 16.2923C9.62045 16.6259 9.78706 16.7927 9.99421 16.7928C10.2014 16.7929 10.3681 16.6262 10.7016 16.2929L20 7"
+                      stroke="stroke-current" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                      class="my-path"></path>
+                </svg>
+            </span>
+          <div class="tw-block">
+            <h4 class="tw-text-lg tw-text-primary tw-mb-0">{{ step.title }}</h4>
+            <span class="tw-text-sm">{{ step.description }}</span>
+          </div>
+        </a>
+      </li>
+    }
+    @if (currentStep === idx + 1) {
+
+      <li
+        [ngClass]="{'tw-flex-1 after:tw-content-[\'\'] after:tw-w-0.5 after:tw-h-full after:tw-bg-gray-200 after:tw-inline-block after:tw-absolute after:tw--bottom-12 after:tw-left-4 lg:after:tw-left-5': currentStep <  steps.length}"
+        class="tw-relative  tw-flex-1 after:tw-content-[''] after:tw-w-0.5 after:tw-h-full after:tw-bg-gray-200 after:tw-inline-block after:tw-absolute after:tw--bottom-12 after:tw-left-4 lg:after:tw-left-5">
+        <a class="tw-flex tw-items-center tw-font-medium tw-w-full tw-no-underline">
+          <span
+            class="tw-w-8 tw-h-8 tw-flex-shrink-0 lg:tw-min-w-8 lg:tw-min-h-8 tw-min-w-8 tw-min-h-8 tw-max-w-8 tw-max-h-8 lg:tw-max-h-10 lg:tw-max-w-10 tw-z-10 lg:tw-w-10 lg:tw-h-10 tw-bg-indigo-50 tw-border-2 tw-border-primary tw-rounded-full  tw-bg-white tw-flex tw-justify-center tw-items-center tw-mr-3 tw-text-sm tw-text-primary ">{{ idx + 1 }}</span>
+          <div class="tw-block tw-text-secondary">
+            <h4 class="tw-text-lg tw-mb-0 tw-text-primary">{{ step.title }}</h4>
+            <span class="tw-text-sm ">{{ step.description }}</span>
+          </div>
+        </a>
+      </li>
+    }
+
+    @if (currentStep < idx + 1) {
+      <li
+        [ngClass]="{'after:tw-content-[\'\'] after:tw-w-0.5 after:tw-h-full after:tw-bg-gray-200 after:tw-inline-block after:tw-absolute after:tw--bottom-12 after:tw-left-4 lg:after:tw-left-5': true}"
+        class="tw-relative tw-flex-1">
+        <a class="tw-flex tw-items-center tw-font-medium tw-w-full tw-no-underline">
+          <span
+            class="tw-w-8 tw-flex-shrink-0 tw-h-8 tw-max-w-8 tw-max-h-8 lg:tw-max-h-10 lg:tw-max-w-10 tw-z-10 lg:tw-w-10 lg:tw-h-10 tw-bg-gray-50  tw-border-2 tw-border-gray-200 tw-rounded-full tw-flex tw-justify-center tw-items-center tw-mr-3 tw-text-sm ">{{ idx + 1 }}</span>
+          <div class="tw-block tw-text-secondary">
+            <h4 class="tw-text-lg tw-mb-0">{{ step.title }}</h4>
+            <span class="tw-text-sm">{{ step.description }}</span>
+          </div>
+        </a>
+      </li>
+    }
+  }
+</ol>

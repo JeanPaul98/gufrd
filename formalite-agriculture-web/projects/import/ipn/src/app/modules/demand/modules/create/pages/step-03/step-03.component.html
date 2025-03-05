@@ -1,0 +1,86 @@
+<div class="tw-relative">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">
+          Recapitulatif formulaire
+        </p>
+        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">
+          Résumés des champs renseignés pour confirmation
+        </p>
+      </div>
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      <div class="content tw-flex-grow">
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Numero navire</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.atp }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Noms navire</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.nomNavire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Imo navire</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.imo }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.affreteur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Nom et prénoms demandeur</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.nomDemandeur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Profession demandeur</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.professionDemandeur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Adresse demandeur</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.adresseDemandeur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Lieu inspection</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.lieuInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date inspection</div>
+          <div class="tw-text-gray-900">{{ step1LocalData.datePrevueInspection | date: 'dd/MM/yyyy à HH:mm' }}</div>
+        </div>
+      </div>
+      <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+      <div class="tw-flex tw-flex-col">
+        <div class="sub-title">
+          <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+            Document nécéssaires
+          </p>
+          <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+            Informations documents fournis
+          </p>
+        </div>
+        <app-modal-file-show [filesUploaded]="step2LocalData"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end">
+    <div class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3">
+      <button (click)="onClickPrevious()" cButton color="light"
+              class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary">
+        <span>Précédent</span>
+      </button>
+      <button (click)="onClickNext()" cButton color="primary"
+              class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary">
+        <span>Créer la demande</span>
+      </button>
+    </div>
+  </div>
+</div>

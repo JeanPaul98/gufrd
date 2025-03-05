@@ -1,0 +1,161 @@
+<div class="tw-relative col-md-10 offset-md-1">
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <button
+        (click)="onClickBack()"
+        class="tw-w-10 tw-h-10 tw-rounded-full"
+        cButton
+        color="light"
+        variant="ghost"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.47811 7.00001H15.0613C15.6136 7.00001 16.0613 7.44773 16.0613 8.00001C16.0613 8.5523 15.6136 9.00001 15.0613 9.00001H3.47811L8.06942 13.5913C8.46031 13.9822 8.46031 14.616 8.06942 15.0068C7.67854 15.3977 7.04479 15.3977 6.6539 15.0068L0.354173 8.70712C-0.0363518 8.31659 -0.0363518 7.68343 0.354173 7.29291L6.6539 0.993177C7.04479 0.602291 7.67854 0.602291 8.06942 0.993177C8.46031 1.38406 8.46031 2.01781 8.06942 2.4087L3.47811 7.00001Z"
+            fill="#30313D"
+          />
+        </svg>
+      </button>
+      <div
+        class=" tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold"
+      >
+        <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">IMPORTATION - {{demand.atp}}</span> <br>
+        <span>Validation de la demande d'inspection phytosanitaire de navire</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="!tw-border-b !tw-border-gray-200 tw-my-3 col-md-10 offset-md-1"></div>
+
+<div class="tw-relative col-md-10 offset-md-1">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+      <!--      <div class="sub-title ">-->
+      <!--        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">-->
+      <!--          Recapitulatif formulaire-->
+      <!--        </p>-->
+      <!--        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">-->
+      <!--          Résumés des champs renseignés pour confirmation-->
+      <!--        </p>-->
+      <!--      </div>-->
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      <div class="content tw-flex-grow">
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Numero navire</div>
+          <div class="tw-text-gray-900 tw-font">{{ demand.atp }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Noms navire</div>
+          <div class="tw-text-gray-900">{{ demand.nomNavire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Imo navire</div>
+          <div class="tw-text-gray-900">{{ demand.imo }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+          <div class="tw-text-gray-900">{{ demand.affreteur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Nom et prénoms demandeur</div>
+          <div class="tw-text-gray-900">{{ demand.nomDemandeur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Profession demandeur</div>
+          <div class="tw-text-gray-900">{{ demand.professionDemandeur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Adresse demandeur</div>
+          <div class="tw-text-gray-900">{{ demand.adresseDemandeur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Lieu inspection</div>
+          <div class="tw-text-gray-900">{{ demand.lieuInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date inspection</div>
+          <div class="tw-text-gray-900">{{ demand.datePrevueInspection | date: 'dd/MM/yyyy à HH:mm' }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Document nécéssaires
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations documents fournis
+        </p>
+      </div>
+      <app-list-show-files
+        [idFormalite]="demand.idFormalite"
+      />
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+    <div
+      class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+    >
+      <button
+        (click)="openModalReject()"
+        class="!tw-gap-2 !tw-text-red-700 !tw-flex !tw-items-center  hover:!tw-bg-red-200 !tw-border !tw-bg-red-100 !tw-border-border-secondary" cButton color="light"
+      >
+        <span>Rejeter la demande</span>
+      </button>
+      <button
+        (click)="openModal()"
+        class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+        cButton
+        color="primary"
+      >
+        <span>Valider la demande</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-confirm-modal
+  (onCancel)="onCancel()"
+  (onConfirm)="onSubmit()"
+  [isLoading]="loadingSubmit"
+  [visible]="modalVisible"
+/>
+
+<app-general-modal
+  [visible]="modalRejectVisible"
+  [isLoading]="loadingSubmit"
+  [disabled]="rejectDemandForm.invalid"
+  (onCancel)="onCancelReject()"
+  confirmButton="Confirmer le rejet"
+  (onConfirm)="rejectDemand()"
+  [danger]="true"
+  titleMdl="Rejeter la demande"
+>
+  <form
+    class="row"
+    [formGroup]="rejectDemandForm"
+    cForm>
+
+    <div class="mb-3 col-md-12">
+      <label  cLabel for="motif">Motif de rejet</label>
+      <textarea formControlName="motif" cFormControl id="motif" rows="3"></textarea>
+    </div>
+  </form>
+</app-general-modal>

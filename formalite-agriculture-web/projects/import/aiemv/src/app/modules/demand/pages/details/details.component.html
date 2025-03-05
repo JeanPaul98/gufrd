@@ -1,0 +1,154 @@
+<div class="tw-relative col-md-8 offset-md-2">
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <button
+        (click)="onClickBack()"
+        class="tw-w-10 tw-h-10 tw-rounded-full"
+        cButton
+        color="light"
+        variant="ghost"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.47811 7.00001H15.0613C15.6136 7.00001 16.0613 7.44773 16.0613 8.00001C16.0613 8.5523 15.6136 9.00001 15.0613 9.00001H3.47811L8.06942 13.5913C8.46031 13.9822 8.46031 14.616 8.06942 15.0068C7.67854 15.3977 7.04479 15.3977 6.6539 15.0068L0.354173 8.70712C-0.0363518 8.31659 -0.0363518 7.68343 0.354173 7.29291L6.6539 0.993177C7.04479 0.602291 7.67854 0.602291 8.06942 0.993177C8.46031 1.38406 8.46031 2.01781 8.06942 2.4087L3.47811 7.00001Z"
+            fill="#30313D"
+          />
+        </svg>
+      </button>
+      <div
+        class="tw-max-w-lg tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold"
+      >
+        <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">IMPORTATION - {{demand.atp}}</span> <br>
+        <span>Détails de la demande d'autorisation d'enlèvement d'aliment pour animaux vivants</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="!tw-border-b !tw-border-gray-200 tw-my-3 col-md-8 offset-md-2"></div>
+
+<div class="tw-relative col-md-8 offset-md-2">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+<!--      <div class="sub-title ">-->
+<!--        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">-->
+<!--          Recapitulatif formulaire-->
+<!--        </p>-->
+<!--        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">-->
+<!--          Résumés des champs renseignés pour confirmation-->
+<!--        </p>-->
+<!--      </div>-->
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      <div class="content tw-flex-grow">
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Numéro ATP</div>
+          <div class="tw-text-gray-900 tw-font">{{ demand.atp }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Noms navire</div>
+          <div class="tw-text-gray-900">{{ demand.nomNavire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Imo navire</div>
+          <div class="tw-text-gray-900">{{ demand.imo }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+          <div class="tw-text-gray-900">{{ demand.affreteur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date arrivée</div>
+          <div class="tw-text-gray-900">{{ demand.datearrivee  | date: 'dd/MM/yyyy HH:mm' }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les produits
+        </p>
+      </div>
+      <div class="accordion-body">
+        <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+          <thead>
+          <tr>
+            <th class="tw-text-sm !tw-text-secondary">#</th>
+            <th class="tw-text-sm !tw-text-secondary">Libellé</th>
+            <th class="tw-text-sm !tw-text-secondary">Unité</th>
+            <th class="tw-text-sm !tw-text-secondary">Quantité</th>
+            <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th>
+            <th class="tw-text-sm !tw-text-secondary">Origine</th>
+            <th class="tw-text-sm !tw-text-secondary">Date de production</th>
+          </tr>
+          </thead>
+          <tbody >
+
+
+            @for(dmd of demand.detAutorisationProduitDtos; track dmd; let index = $index){
+                <tr>
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ dmd.produit.code }}</td>
+                  <td>{{ dmd.unite }}</td>
+                  <td>{{ dmd.quantite }}</td>
+                  <td>{{ dmd.nombreCarton }}</td>
+                  <td>{{ dmd.origine }}</td>
+                  <td>{{ dmd.dateProduction }}</td>
+                </tr>
+
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Document nécéssaires
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations documents fournis
+        </p>
+      </div>
+      <table class="tw-mt-4" cTable>
+        <thead>
+        <tr>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">FORMAT</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">TAILLE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row" class="!tw-text-gray-600">1</th>
+          <td>Certificat Phytosanitaire</td>
+          <td>CERT_00012_PREUVE</td>
+          <td>PDF</td>
+          <td>2 MB</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+</div>

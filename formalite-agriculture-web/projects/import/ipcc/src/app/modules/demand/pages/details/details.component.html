@@ -1,0 +1,155 @@
+<div class="tw-relative col-md-8 offset-md-2">
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <button
+        (click)="onClickBack()"
+        class="tw-w-10 tw-h-10 tw-rounded-full"
+        cButton color="light" variant="ghost">
+        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd" fill="#30313D"
+                d="M3.47811 7.00001H15.0613C15.6136 7.00001 16.0613 7.44773 16.0613 8.00001C16.0613 8.5523 15.6136 9.00001 15.0613 9.00001H3.47811L8.06942 13.5913C8.46031 13.9822 8.46031 14.616 8.06942 15.0068C7.67854 15.3977 7.04479 15.3977 6.6539 15.0068L0.354173 8.70712C-0.0363518 8.31659 -0.0363518 7.68343 0.354173 7.29291L6.6539 0.993177C7.04479 0.602291 7.67854 0.602291 8.06942 0.993177C8.46031 1.38406 8.46031 2.01781 8.06942 2.4087L3.47811 7.00001Z"/>
+        </svg>
+      </button>
+      <div class="tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold">
+        @if (shipInfo) {
+          <span
+            class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">IMPORTATION - {{ shipInfo.atp }}</span>
+        }
+        <br>
+        <span>Détails de la demande d'inspection phytosanitaire (Cargaison & conteneur)</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="!tw-border-b !tw-border-gray-200 tw-my-3 col-md-8 offset-md-2"></div>
+
+<div class="tw-relative col-md-8 offset-md-2">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+      <!--      <div class="sub-title ">-->
+      <!--        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">-->
+      <!--          Recapitulatif formulaire-->
+      <!--        </p>-->
+      <!--        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">-->
+      <!--          Résumés des champs renseignés pour confirmation-->
+      <!--        </p>-->
+      <!--      </div>-->
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      @if (shipInfo) {
+        <div class="content tw-flex-grow">
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Numéro ATP</div>
+            <div class="tw-text-gray-900 tw-font">{{ shipInfo.atp }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Montant de la redevance</div>
+            <div class="tw-text-gray-900 tw-font">{{ shipInfo.montantRedevance | price}}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Noms navire</div>
+            <div class="tw-text-gray-900">{{ shipInfo.nomNavire }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Imo navire</div>
+            <div class="tw-text-gray-900">{{ shipInfo.imo }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+            <div class="tw-text-gray-900">{{ shipInfo.affreteur }}</div>
+          </div>
+          @if (shipInfo.dateSoumission) {
+            <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+              <div class="tw-font-medium tw-text-gray-600">Date de soumission</div>
+              <div class="tw-text-gray-900">{{ shipInfo.dateSoumission  | date: 'dd/MM/yyyy à HH:mm' }}</div>
+            </div>
+          }
+          @if (shipInfo.dateAccepte) {
+            <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+              <div class="tw-font-medium tw-text-gray-600">Date d'acceptation</div>
+              <div class="tw-text-gray-900">{{ shipInfo.dateAccepte  | date: 'dd/MM/yyyy à HH:mm' }}</div>
+            </div>
+          }
+          @if (shipInfo.dateTraitement) {
+            <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+              <div class="tw-font-medium tw-text-gray-600">Date de traitement</div>
+              <div class="tw-text-gray-900">{{ shipInfo.dateTraitement  | date: 'dd/MM/yyyy à HH:mm' }}</div>
+            </div>
+          }
+          @if (shipInfo.dateRejet) {
+            <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+              <div class="tw-font-medium tw-text-gray-600">Date de rejet</div>
+              <div class="tw-text-gray-900">{{ shipInfo.dateRejet  | date: 'dd/MM/yyyy à HH:mm' }}</div>
+            </div>
+          }
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Date création</div>
+            <div class="tw-text-gray-900">{{ shipInfo.dateDemande  | date: 'dd/MM/yyyy à HH:mm' }}</div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les produits
+        </p>
+      </div>
+      <div class="accordion-body">
+        <table [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+          <thead>
+          <tr>
+            <th class="tw-text-sm !tw-text-secondary">#</th>
+            <th class="tw-text-sm !tw-text-secondary">Description de l'envoi</th>
+            <!-- <th class="tw-text-sm !tw-text-secondary">Conteneur</th> -->
+            <th class="tw-text-sm !tw-text-secondary">Quantité</th>
+            <th class="tw-text-sm !tw-text-secondary">Fournisseur</th>
+            <!-- <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th> -->
+            <th class="tw-text-sm !tw-text-secondary">Origine</th>
+            <!-- <th class="tw-text-sm !tw-text-secondary">Description de l'envoi</th> -->
+          </tr>
+          </thead>
+          <tbody>
+            @for (product of products; track product) {
+              <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ product.produit.libelle }}</td>
+                <!-- <td>{{ product.conteneur }}</td> -->
+                <td>{{ product.quantite }}</td>
+                <td>{{ product.fournisseur }}</td>
+                <!-- <td>{{ product.nombreColis }}</td> -->
+                <td>{{ product.origine }}</td>
+                <!-- <td>{{ product.descriptionEnvoi }}</td> -->
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Document nécéssaires
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations documents fournis
+        </p>
+      </div>
+      <app-list-show-files
+        [idFormalite]="shipInfo.idFormalite"
+      />
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+</div>

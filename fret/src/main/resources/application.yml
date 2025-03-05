@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: fret
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: USERSIFDC
+    password: S1FDCu$3r
+    url: jdbc:oracle:thin:@172.16.10.96:1521:SIFDCDB
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+#oracle.jdbc.timezoneAsRegion=false
+server:
+  port: 4212
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+
+osipaye:
+  url: http://196.168.28.108:8080/sipepaye/splapi/formaliteministere/postfacture
+
+logging:
+  level:
+    org.apache.http: TRACE
+    org.springframework.security: TRACE
+    org.springframework.security.oauth2: TRACE
+    org.springframework.boot.context.config: TRACE
+    org.springframework.security.oauth2.client: TRACE
+    org.springframework.security.oauth2.client.registration: TRACE
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

@@ -1,0 +1,184 @@
+<div class="tw-relative col-md-8 offset-md-2">
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <button
+        (click)="onClickBack()"
+        class="tw-w-10 tw-h-10 tw-rounded-full"
+        cButton
+        color="light"
+        variant="ghost"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="16"
+          viewBox="0 0 17 16"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.47811 7.00001H15.0613C15.6136 7.00001 16.0613 7.44773 16.0613 8.00001C16.0613 8.5523 15.6136 9.00001 15.0613 9.00001H3.47811L8.06942 13.5913C8.46031 13.9822 8.46031 14.616 8.06942 15.0068C7.67854 15.3977 7.04479 15.3977 6.6539 15.0068L0.354173 8.70712C-0.0363518 8.31659 -0.0363518 7.68343 0.354173 7.29291L6.6539 0.993177C7.04479 0.602291 7.67854 0.602291 8.06942 0.993177C8.46031 1.38406 8.46031 2.01781 8.06942 2.4087L3.47811 7.00001Z"
+            fill="#30313D"
+          />
+        </svg>
+      </button>
+      <div
+        class=" tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold"
+      >
+        <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">EXPORTATION - {{demand.numGenerer}}</span> <br>
+        <span>Validation de la demande de certificat sanitaire pour cuirs et peaux</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="!tw-border-b !tw-border-gray-200 tw-my-3 col-md-8 offset-md-2"></div>
+
+<div class="tw-relative col-md-8 offset-md-2">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+           <div class="sub-title ">
+             <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">
+               Recapitulatif formulaire
+             </p>
+             <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">
+               Résumés des champs renseignés pour confirmation
+             </p>
+           </div>
+      <!-- <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div> -->
+      <div class="content tw-flex-grow">
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Moyen Transport</div>
+          <div class="tw-text-gray-900">{{ demand.moyenTransport }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Expéditeur</div>
+          <div class="tw-text-gray-900">{{ demand.expediteur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">lieu Expedition</div>
+          <div class="tw-text-gray-900">{{ demand.lieuExpedition }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Traitement</div>
+          <div class="tw-text-gray-900">{{ demand.traitement }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Destinataire</div>
+          <div class="tw-text-gray-900">{{ demand.destinataire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Identification</div>
+          <div class="tw-text-gray-900">{{ demand.identification }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les produits
+        </p>
+      </div>
+      <div class="accordion-body">
+        <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+          <thead>
+            <tr>
+              <th class="tw-text-sm !tw-text-secondary">#</th>
+              <th class="tw-text-sm tw-text-secondary">Nature du produit</th>
+              <th class="tw-text-sm tw-text-secondary">Nombre</th>
+              <th class="tw-text-sm tw-text-secondary">Origine</th>
+              <th class="tw-text-sm tw-text-secondary">Conditionnement</th>
+              <th class="tw-text-sm tw-text-secondary">Poids total</th>
+              <th class="tw-text-sm tw-text-secondary">Nature d'emballage</th>
+              <th class="tw-text-sm tw-text-secondary">Espece</th>
+              <th class="tw-text-sm tw-text-secondary">Race</th>
+            </tr>
+          </thead>
+          <tbody >
+
+
+            @for(dmd of demand.detCertificatProduitDtos; track dmd; let index = $index){
+              <tr>
+                <td>{{ index + 1 }}</td>
+                <td>{{ dmd.produit.libelle }}</td>
+                <td>{{ dmd.nombre }}</td>
+                <td>{{ dmd.origine }}</td>
+                <td>{{ dmd.conditionnement }}</td>
+                <td>{{ dmd.poidsTotal }}</td>
+                <td>{{ dmd.natureProduit }}</td>
+                <td>{{ dmd.espece }}</td>
+                <td>{{ dmd.race }}</td>
+              </tr>
+
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Document nécéssaires
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations documents fournis
+        </p>
+      </div>
+      <table class="tw-mt-4" cTable>
+        <thead>
+        <tr>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">FORMAT</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">TAILLE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row" class="!tw-text-gray-600">1</th>
+          <td>Certificat Phytosanitaire</td>
+          <td>CERT_00012_PREUVE</td>
+          <td>PDF</td>
+          <td>2 MB</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+    <div
+      class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+    >
+      <button
+        (click)="openModal()"
+        class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+        cButton
+        color="primary"
+      >
+        <span>Valider la demande</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-confirm-modal
+  (onCancel)="onCancel()"
+  (onConfirm)="onSubmit()"
+  [isLoading]="loadingSubmit"
+  [visible]="modalVisible"
+/>

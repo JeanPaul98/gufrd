@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="autorEnlevmnt" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="507be054-1144-4d74-a36c-d92db9d8f401">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="dateDepart" class="java.util.Date" evaluationTime="Early"/>
+	<parameter name="dateArrivee" class="java.util.Date"/>
+	<parameter name="dateSignature" class="java.util.Date"/>
+	<parameter name="dateInspection" class="java.util.Date"/>
+	<parameter name="commandant" class="java.lang.String"/>
+	<parameter name="remarques" class="java.lang.String"/>
+	<parameter name="officier" class="java.lang.String"/>
+	<parameter name="partieVisite" class="java.lang.String"/>
+	<parameter name="provenance" class="java.lang.String"/>
+	<parameter name="affreteur" class="java.lang.String"/>
+	<parameter name="nomNavire" class="java.lang.String"/>
+	<parameter name="via" class="java.lang.String"/>
+	<parameter name="ref" class="java.lang.String"/>
+	<parameter name="provisions" class="java.lang.String"/>
+	<parameter name="chefCook" class="java.lang.String"/>
+	<parameter name="codeQr" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="emplacement" class="java.lang.String">
+		<fieldDescription><![CDATA[emplacement]]></fieldDescription>
+	</field>
+	<field name="libelle" class="java.lang.String">
+		<fieldDescription><![CDATA[libelle]]></fieldDescription>
+	</field>
+	<field name="origine" class="java.lang.String">
+		<fieldDescription><![CDATA[origine]]></fieldDescription>
+	</field>
+	<field name="quantite" class="java.lang.Integer">
+		<fieldDescription><![CDATA[quantite]]></fieldDescription>
+	</field>
+	<field name="mesure" class="java.lang.String">
+		<fieldDescription><![CDATA[mesure]]></fieldDescription>
+	</field>
+	<field name="matiereActive" class="java.lang.String"/>
+	<field name="descriptionEnvoie" class="java.lang.String"/>
+	<sortField name="libelle" order="Descending"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="446" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="251" height="30" uuid="9a5745ce-73c6-46fc-9c90-6c30c3f907b9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTERE DE L'AGRICULTURE,DE L'ELEVAGE ET DE LA PECHE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="50" width="170" height="20" uuid="54d2c705-083b-4d72-bc47-312c4ee44ab2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARIAT GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="10" width="140" height="20" uuid="ab181d84-e2b4-49ac-adc8-a52a2fe867e8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Travail-Liberté-Patrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="0" width="140" height="30" uuid="df02d152-dfb9-4559-9079-26913c5a0afe"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="450" y="20" width="80" height="20" uuid="0c337dc3-f276-4550-8c48-fc160141d907"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="30" width="130" height="20" uuid="7cbff33d-6bc0-4801-b569-d98725d56a66"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="70" width="256" height="20" uuid="d0da7d12-8683-48bb-a1e5-9594adb766ee"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTION DE PROTECTION DES VEGETAUX]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="130" width="410" height="20" uuid="689edca4-9374-4a1d-b904-ecc18503069b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PROCES-VERBAL DE VISITE PHYTOSANITAIRE DE NAVIRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="60" width="130" height="20" uuid="759c6b9a-0ba9-4a8f-9ca5-16abd61f2070"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="150" width="300" height="20" uuid="0ee67eef-f65c-4f7d-af18-3f907fd14f9b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[(SHIP PHYTOSANITARY INSPECTION)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="410" width="556" height="20" uuid="4c1fb2e0-a03a-4f81-979b-f9b52a25a1a2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MARCHANDISES REPEREES ET MESURES PRESCRITES]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="180" width="440" height="30" uuid="0aabcca6-803d-46fa-bd00-e0ebf535d515"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nom du Navire (Name of Vessel) : \u00a0" + $P{nomNavire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="210" width="571" height="20" uuid="258e848e-d715-483c-aeae-37c4b5fc7f88"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Affrêteur(Ship's Agent) : \u00a0" + $P{affreteur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="230" width="569" height="20" uuid="023e9009-06d2-4af4-b159-33178d3ba476"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Provenance (Front) : \u00a0" + $P{provenance}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="250" width="569" height="20" uuid="0cd2ba92-1fd1-41a6-8a2e-a099446e49c8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Via : \u00a0" + $P{via}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1" y="270" width="569" height="20" uuid="c6ee4b7a-fe07-4f63-926d-8e3a448027f9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date d'arrivée (Arrival Date) : \u00a0"+ DATEFORMAT($P{dateArrivee}, "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="290" width="568" height="20" uuid="b7ae8686-b851-4012-beb1-e037cd374657"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date d'Inspection (Date of Inspection) :  \u00a0"+ DATEFORMAT($P{dateInspection}, "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="310" width="572" height="20" uuid="3c6c838c-0d80-434c-a4df-c01d09f3ca14"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date de Départ Preuve (Purpose sailing Date) : \u00a0 After operation"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="330" width="569" height="30" uuid="858e41f5-b247-432a-b416-a686dadd0c91"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Partie de Navire visitée (Ship Propocted Parts) : \u00a0" + $P{partieVisite}+"...provisions-room \u00a0"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="360" width="569" height="30" uuid="e4521118-9507-4b55-a494-afcc51b5d59b"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Officier de Navire présent à la visite (Office of Vessel) : \u00a0 ...chief-cook \u00a0"]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="280" y="0" width="145" height="109" uuid="94af287c-d93a-4d47-b148-5b2de3caeafa"/>
+				<imageExpression><![CDATA[$P{codeQr}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="65" y="86" width="100" height="23" uuid="1ccc40de-a4da-410e-916d-ed13a2a7054c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[N° 0465P/2024]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="41">
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="0" width="178" height="41" forecolor="#030303" backcolor="#37AFDB" uuid="05049fa8-a087-4780-9670-64b8de9a7dfb"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nature/Produce]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="0" width="100" height="41" forecolor="#030303" backcolor="#37AFDB" uuid="30ba405b-1514-4da6-8349-5f70e7c6945f"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantité/quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="280" y="0" width="100" height="41" forecolor="#030303" backcolor="#37AFDB" uuid="824191b8-baad-4d4b-b793-809fbaad0640"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Origine]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="380" y="0" width="100" height="41" forecolor="#030303" backcolor="#37AFDB" uuid="304ea9d8-a1cd-45ab-bb17-fa310062fc8d"/>
+				<box padding="3">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Emplacement/Location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="480" y="0" width="75" height="41" forecolor="#030303" backcolor="#37AFDB" uuid="4d487743-738b-4195-9df8-8f5da9fafd6b"/>
+				<box padding="2">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mesure]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="70">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="3" y="0" width="177" height="70" uuid="75f85bae-458d-44a0-9dc8-194c4154777e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4150002d-0464-4f0d-b6e4-a41882564cf4"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box padding="4">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descriptionEnvoie}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="180" y="0" width="100" height="70" uuid="340e61cb-d829-4a6c-839e-0bdffd972a75">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="af946fe5-6536-4fc5-a821-240258f84228"/>
+				</reportElement>
+				<box padding="4">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{quantite}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="280" y="0" width="100" height="70" uuid="3b34184e-01b3-4f87-b1d7-b248967bfe45">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f82abd7b-43ac-45e7-b2e9-0c84d8b7d821"/>
+				</reportElement>
+				<box padding="4">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{origine}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="380" y="0" width="100" height="70" uuid="bd1ffb50-33f0-4843-a257-4bbdc88f938f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7c91e215-6314-4c2e-803e-7855b610588a"/>
+				</reportElement>
+				<box padding="4">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{emplacement}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="480" y="0" width="75" height="70" uuid="986a451e-4230-4ac8-a089-67c503ae07fc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98268f1b-6d94-445c-8a88-178208f00a58"/>
+				</reportElement>
+				<box padding="4">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textFieldExpression><![CDATA[$F{mesure}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="210" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="190" width="569" height="1" backcolor="#0A0808" uuid="c378958c-4d48-4b7a-926c-4c5a22919c8e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Double"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="20" width="570" height="40" uuid="cad47415-cdf9-44f3-a88e-11b9627caf3d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Remarques Particulières : \u00a0" + $P{remarques}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="60" width="147" height="20" uuid="d21bbf91-9520-403b-8154-7552a3d703ab"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vu et accepté ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="410" y="60" width="145" height="40" uuid="2002a826-f6b8-415c-a3fa-555c1f80331d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Lomé, le \u00a0" +DATEFORMAT($P{dateSignature}, "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="80" width="147" height="20" uuid="5e7a6fab-0b20-498b-aa3c-ec6fdca2c5a8"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Le commandant de Navire]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="100" width="144" height="20" uuid="a3483329-9e02-4a43-b851-187e5f70e7d6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[(The Ship Master)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="130" width="260" height="40" uuid="157d36f1-dea7-4bbd-bc5c-3d9e1cfbb14f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nom(Name) : \u00a0"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="140" width="114" height="30" uuid="dabd28e6-6e58-4915-b9be-9e43089e3cbf"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SABLIKOU]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

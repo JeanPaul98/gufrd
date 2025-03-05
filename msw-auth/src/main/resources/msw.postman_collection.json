@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "c0ecf828-4211-489d-87e7-6dc430d85544",
+		"name": "msw",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4930030"
+	},
+	"item": [
+		{
+			"name": "authentification",
+			"item": [
+				{
+					"name": "token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\":\"C24569\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\":\"admin\",\n    \"password\":\"123456\",\n    \"fullname\":\"administrateur\",\n    \"email\":\"admin@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "administration",
+			"item": [
+				{
+					"name": "pays",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi4kMmEkMTAkc2Q3Nm5ISllVUmF6QnV1RW9NRWxtZWxHSFJGSkF0Vm9jOFhBVUtmbG1UZlBDMi9RSm5RUHUiLCJpYXQiOjE3MTMzNTc1MTgsImV4cCI6MTcxMzM1ODk1OH0.QI_zR4tTmhEMqrwI__n4ATmhBfmJ9tulInOrhEgF3mY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codePays\":\"TG\",\n    \"nom\": \"TOGO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/pays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"pays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pays",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi4kMmEkMTAkc2Q3Nm5ISllVUmF6QnV1RW9NRWxtZWxHSFJGSkF0Vm9jOFhBVUtmbG1UZlBDMi9RSm5RUHUiLCJpYXQiOjE3MTMzNjM2NzIsImV4cCI6MTcxMzM2NTExMn0.dSzHi8Sdd0iBwpJGGr2Bl-8va4kkzkJlndE88OpyeBU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/api/pays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"pays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clients",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/api/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/api/clients",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"clients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/api/pays",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"pays"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "groupes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi4kMmEkMTAkc2Q3Nm5ISllVUmF6QnV1RW9NRWxtZWxHSFJGSkF0Vm9jOFhBVUtmbG1UZlBDMi9RSm5RUHUiLCJpYXQiOjE3MTMzNzExNDUsImV4cCI6MTcxMzM3MjU4NX0.plMUoBsmdrLF36rEIA6hw-awftKuj1k6xgy3LN8jMD8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/api/groupes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"groupes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client groupe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi4kMmEkMTAkc2Q3Nm5ISllVUmF6QnV1RW9NRWxtZWxHSFJGSkF0Vm9jOFhBVUtmbG1UZlBDMi9RSm5RUHUiLCJpYXQiOjE3MTMzNzUwMzUsImV4cCI6MTcxMzM3NjQ3NX0.BwES4HgINUdaAnYgqs8qMZqIc4iKF2hXU38ssx72XTs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"compteClient\":\"C444800\",\n    \"groupeClient\":\"CONSIGNATAIRES\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/groupes/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"groupes",
+								"client"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "application",
+			"item": [
+				{
+					"name": "création d'applications",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/applications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"applications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste les applications",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Application Groupe port",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "détails de l'application",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ports",
+			"item": [
+				{
+					"name": "ports",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\":\"TGLFW\",\n    \"codePays\": \"TG\",\n    \"locode\":\"LFW\",\n    \"nom\":\"LOME\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/ports",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"ports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi4kMmEkMTAkc2Q3Nm5ISllVUmF6QnV1RW9NRWxtZWxHSFJGSkF0Vm9jOFhBVUtmbG1UZlBDMi9RSm5RUHUiLCJpYXQiOjE3MTM4MDI2OTQsImV4cCI6MTcxMzgwNDEzNH0.qvZCzIwcLp6xyPMiXgCcficNGjnN7_TVnGeCu4-6210",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3500/api/ports",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"ports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Port application",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "port clients",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbi4kMmEkMTAkc2Q3Nm5ISllVUmF6QnV1RW9NRWxtZWxHSFJGSkF0Vm9jOFhBVUtmbG1UZlBDMi9RSm5RUHUiLCJpYXQiOjE3MTM4MDc0NTgsImV4cCI6MTcxMzgwODg5OH0.faxRg7G_mNErqTDVtxzWbrmZJVf3t_rIaxwAkm8aXTc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codePort\": \"TGLFW\",\n    \"compteClient\": \"C444800\",\n    \"codePortClient\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3500/api/ports/client",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3500",
+							"path": [
+								"api",
+								"ports",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste les clients du ports",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

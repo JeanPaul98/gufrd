@@ -1,0 +1,8 @@
+services:
+  server-escale-navire:
+    build:
+      context: .
+      dockerfile: Dockerfileupdate
+    ports:
+      - "9003:9003"
+    restart: always

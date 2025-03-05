@@ -1,0 +1,145 @@
+<div class="tw-bg-white tw-sticky tw-top-16 tw-z-10 tw-mb-4">
+  <div class="title tw-mb-10  tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <div class="tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold">
+        <span >Sociétés</span> <br>
+        <span class="tw-font-medium tw-text-gray-500">Liste des opérateurs économiques</span>
+      </div>
+    </div>
+
+    <div class="action-button tw-flex tw-flex-row !tw-gap-3">
+      <button
+        class="!tw-flex !tw-text-white !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-bg-primary !tw-border-border-secondary"
+        [routerLink]="['/society/create']"
+        cButton
+        color="primary"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="13"
+          height="13"
+          viewBox="0 0 13 13"
+          fill="none"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M7.38306 5.75H11.8831C12.2973 5.75 12.6331 6.08579 12.6331 6.5C12.6331 6.91421 12.2973 7.25 11.8831 7.25H7.38306V11.75C7.38306 12.1642 7.04727 12.5 6.63306 12.5C6.21884 12.5 5.88306 12.1642 5.88306 11.75V7.25H1.38306C0.968843 7.25 0.633057 6.91421 0.633057 6.5C0.633057 6.08579 0.968843 5.75 1.38306 5.75H5.88306V1.25C5.88306 0.835786 6.21884 0.5 6.63306 0.5C7.04727 0.5 7.38306 0.835786 7.38306 1.25V5.75Z"
+            fill="white"
+          />
+        </svg>
+        <span>Créer société</span>
+      </button>
+    </div>
+  </div>
+
+  <table [responsive]="true" bordered cTable>
+    <thead>
+    <tr>
+      <th class="tw-text-sm tw-text-secondary" scope="col">N° ORDRE</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">NIF</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">RAISON SOCIALE</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">NUMERO ENREGISTREMENT</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">CONTACT</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">EMAIL</th>
+      <th class="tw-text-sm tw-text-secondary" scope="col">ADRESSE</th>
+    </tr>
+      @if (loading$ | async) {
+        <tr>
+          <td colspan="7" class="tw-text-center !tw-my-0 !tw-p-0">
+            <app-loading-bar></app-loading-bar>
+          </td>
+        </tr>
+      }
+    </thead>
+
+    <tbody>
+
+      @for (societe of (societes$ | async) ; track societe; ) {
+        @if ((loading$ | async) === false) {
+          <tr>
+            <td>{{ $index + 1 }}</td>
+            <td>
+              {{societe.nif}}
+            </td>
+            <td scope="row">
+              {{societe.raisonSociale}}
+            </td>
+            <td>{{societe.numeroEnreg ?? "-"}}</td>
+            <td>{{societe.contact ?? "-"}}</td>
+            <td>{{societe.email}}</td>
+            <td>
+              <!--<c-dropdown>
+                <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                      fill="#4F566B"
+                    />
+                    <path
+                      d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                      fill="#4F566B"
+                    />
+                    <path
+                      d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                      fill="#4F566B"
+                    />
+                  </svg>
+                </button>
+                <ul cDropdownMenu>
+                    <li><a [routerLink]="[]" cDropdownItem>Modifier</a></li>
+                    <li><a [routerLink]="[]" (click)="openModal(demand)" cDropdownItem>Soumettre</a></li>
+                    <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+
+                </ul>
+              </c-dropdown>-->
+             {{ societe.adresse }}
+            </td>
+
+          </tr>
+        }
+      }
+      @if ((societes$ | async).length === 0 && (loading$ | async) === false) {
+        <tr>
+          <td colspan="7" class="tw-text-center">Aucun résultat</td>
+        </tr>
+      }
+      @if (loading$ | async) {
+        <tr>
+          <td colspan="7" class="tw-text-center !tw-text-gray-400">En cours de chargement...</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+    <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+      <div>{{ (societes$ | async).length  }} resultats</div>
+    </div>
+    <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+      <button
+        cButton
+
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        color="light"
+      >
+        <span>Préçédent</span>
+      </button>
+      <button
+        cButton
+
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        color="light"
+      >
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+

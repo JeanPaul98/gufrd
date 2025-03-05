@@ -1,0 +1,217 @@
+
+<div class="tw-relative col-md-10 offset-md-1">
+  <form  [formGroup]="step1InfoPVFrom" (ngSubmit)="onClickNext()">
+    <div class="accordion-body">
+      <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations générales sur le PV
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant le PV.
+        </p>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="via"
+          >Via  <span class="!tw-font-semibold "><app-info-tooltip [message]="'Moyen de transport de la marchandise'"/></span></label
+          >
+          <input
+            [formControlName]="'via'"
+            cFormControl
+            class=""
+            id="via"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="dateArrivee"
+          >Date arrivée</label
+          >
+          <input
+            [formControlName]="'datearrivee'"
+            cFormControl
+            class=""
+            id="dateArrivee"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="dateInspection"
+          >Date inspection </label>
+          <input
+            [formControlName]="'dateInspection'"
+            cFormControl
+            class=""
+            id="dateInspection"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="dateDepartPrevue"
+          >Date de départ prevue</label>
+          <input
+            [formControlName]="'dateDepartPrevue'"
+            cFormControl
+            class=""
+            id="dateDepartPrevue"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="partieNavireVisitee"
+          >Partie du navire visitée </label>
+          <input
+            [formControlName]="'partieNavireVisitee'"
+            cFormControl
+            class=""
+            id="partieNavireVisitee"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="resultatInspection"
+          >Resultat inspection </label>
+          <input
+            [formControlName]="'resultatInspection'"
+            cFormControl
+            class=""
+            id="resultatInspection"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="officierNavire"
+          >Officier du navire présent à la visite </label>
+          <input
+            [formControlName]="'officierNavire'"
+            cFormControl
+            class=""
+            id="officierNavire"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="lieuInspection"
+          >Lieu d'inspection </label>
+          <input
+            [formControlName]="'lieuInspection'"
+            cFormControl
+            class=""
+            id="lieuInspection"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="commandant"
+          >Nom commandant </label>
+          <input
+            [formControlName]="'commandant'"
+            cFormControl
+            class=""
+            id="commandant"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="expediteur"
+          >Nom expediteur </label>
+          <input
+            [formControlName]="'expediteur'"
+            cFormControl
+            class=""
+            id="expediteur"
+            type="text"
+          />
+        </div>
+
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="destinataire"
+          >Nom destinataire </label>
+          <input
+            [formControlName]="'destinataire'"
+            cFormControl
+            class=""
+            id="destinataire"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="datePv"
+          >Date du PV </label>
+          <input
+            [formControlName]="'datePv'"
+            cFormControl
+            class=""
+            id="datePv"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="homologationProduit"
+          >Homologation produit </label>
+          <input
+            [formControlName]="'homologationProduit'"
+            cFormControl
+            class=""
+            id="homologationProduit"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="agrementSocieteImportatrice"
+          >Agrément société importatrice </label>
+          <input
+            [formControlName]="'agrementSocieteImportatrice'"
+            cFormControl
+            class=""
+            id="agrementSocieteImportatrice"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="remarque"
+          >Remarques Particulières </label>
+          <textarea
+            [formControlName]="'remarque'"
+            class="!tw-whitespace-normal"
+            id="remarque"
+            tabindex="0"
+            cFormControl
+          >
+        </textarea>
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="agentPV"
+          >Agent PV </label>
+          <input
+            [formControlName]="'agentPV'"
+            cFormControl
+            class=""
+            id="agentPV"
+            type="text"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+          [disabled]="
+            step1InfoPVFrom.invalid
+          "
+          (click)="onClickNext()"
+          cButton
+          type="submit"
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          color="primary"
+          type="submit"
+        >
+          <span>Suivant</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,27 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "strict": false,
+    "outDir": "./out-tsc/app",
+    "types": [
+      "@angular/localize",
+      "node"
+    ],
+    "paths": {
+      "@docs-components/*": [
+        "./src/components/*"
+      ]
+    }
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules/framer-motion"
+  ]
+}

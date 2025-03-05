@@ -1,0 +1,151 @@
+<div class="tw-relative">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">
+          Recapitulatif formulaire
+        </p>
+        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">
+          Résumés des champs renseignés pour confirmation
+        </p>
+      </div>
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      @if (shipInfo) {
+        <div class="content tw-flex-grow">
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Numero navire</div>
+            <div class="tw-text-gray-900 tw-font">{{ shipInfo.atp }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Noms navire</div>
+            <div class="tw-text-gray-900">{{ shipInfo.nomNavire }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Imo navire</div>
+            <div class="tw-text-gray-900">{{ shipInfo.imo }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+            <div class="tw-text-gray-900">{{ shipInfo.affreteur }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Nom du demandeur</div>
+            <div class="tw-text-gray-900">{{ shipInfo.nomDemandeur }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Profession du demandeur</div>
+            <div class="tw-text-gray-900">{{ shipInfo.professionDemandeur }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Lieu d'inspection</div>
+            <div class="tw-text-gray-900">{{ shipInfo.lieuInspection }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Adresse du demandeur</div>
+            <div class="tw-text-gray-900">{{ shipInfo.adresseDemandeur }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Date arrivee</div>
+            <div class="tw-text-gray-900">{{ shipInfo.datePrevueInspection }}</div>
+          </div>
+        </div>
+      }
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les produits
+        </p>
+      </div>
+      <div class="accordion-body">
+        @if (products) {
+          <table [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+            <thead>
+            <tr>
+              <th class="tw-text-sm !tw-text-secondary">#</th>
+              <th class="tw-text-sm !tw-text-secondary">Description de l'envoi</th>
+              <!-- <th class="tw-text-sm !tw-text-secondary">Conteneur</th> -->
+              <th class="tw-text-sm !tw-text-secondary">Quantité</th>
+              <th class="tw-text-sm !tw-text-secondary">Fournisseur</th>
+              <!-- <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th> -->
+              <th class="tw-text-sm !tw-text-secondary">Origine</th>
+              <!-- <th class="tw-text-sm !tw-text-secondary">Description de l'envoi</th> -->
+            </tr>
+            </thead>
+            <tbody>
+              @for (product of products.detPhytosanitaireProduitDtos; track product) {
+                @if ($index + 1 < products.detPhytosanitaireProduitDtos.length) {
+                  <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ product.libelle }}</td>
+                    <!-- <td>{{ product.conteneur }}</td> -->
+                    <td>{{ product.quantite }}</td>
+                    <td>{{ product.fournisseur }}</td>
+                    <!-- <td>{{ product.nombreColis }}</td> -->
+                    <td>{{ product.origine }}</td>
+                    <!-- <td>{{ product.descriptionEnvoi }}</td> -->
+                  </tr>
+                }
+              }
+            </tbody>
+          </table>
+        }
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Document nécéssaires
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations documents fournis
+        </p>
+      </div>
+      <table class="tw-mt-4" cTable>
+        <thead>
+        <tr>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">FORMAT</th>
+          <th class="tw-text-sm !tw-text-gray-600" scope="col">TAILLE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row" class="!tw-text-gray-600">1</th>
+          <td>Certificat Phytosanitaire</td>
+          <td>CERT_00012_PREUVE</td>
+          <td>PDF</td>
+          <td>2 MB</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end">
+    <div class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3">
+      <button (click)="onClickPrevious()" cButton color="light"
+              class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary">
+        <span>Précédent</span>
+      </button>
+      <button (click)="onClickNext()" cButton color="primary"
+              class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary">
+        <span>Modifier la demande</span>
+      </button>
+    </div>
+  </div>
+</div>

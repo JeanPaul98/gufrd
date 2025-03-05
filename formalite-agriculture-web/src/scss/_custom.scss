@@ -1,0 +1,119 @@
+// Here you can add other styles
+
+// custom .chartjs-tooltip-body-item padding
+@import "charts";
+
+// custom tweaks for scrollbar styling (wip)
+@import "scrollbar";
+
+ // custom calendar today cell color
+.calendar-cell.today {
+  --cui-calendar-cell-today-color: var(--cui-info) !important;
+}
+
+// custom select week cursor pointer
+.select-week .calendar-row.current {
+  cursor: pointer;
+}
+
+// custom accrodion icon
+.accordion-button::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M10.6331 3.5V16.5" stroke="%236B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4.13306 10H17.1331" stroke="%236B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="21" height="20" viewBox="0 0 21 20" fill="none"><path d="M4.13306 10H17.1331" stroke="%236B7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+}
+
+.accordion-button:focus {
+  // box-shadow: 0 0 0 0.025rem #e1e1e1;
+  // border-color: var(--faw-raw-primary);
+}
+
+label {
+  font-weight: 500 ;
+  color: $faw-fg-secondary ;
+  margin-top: 0.5rem ;
+  margin-bottom: 0.25rem ;
+}
+
+
+// custom ng select arrow
+.ng-select.custom {
+  border:0px;
+  min-height: 0px;
+  border-radius: 0;
+}
+
+.ng-select .ng-arrow-wrapper .ng-arrow {
+  border-color: none !important;
+  border-style: none !important;
+  border-width: 0 !important;
+}
+
+.ng-select .ng-arrow-wrapper {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.9999 1.81262L8.69339 4.50611C8.98655 4.79927 9.46187 4.79927 9.75503 4.50611C10.0482 4.21294 10.0482 3.73763 9.75503 3.44447L6.53023 0.21967C6.23734 -0.0732233 5.76247 -0.0732233 5.46957 0.21967L2.24478 3.44447C1.95161 3.73763 1.95161 4.21294 2.24478 4.50611C2.53794 4.79927 3.01325 4.79927 3.30642 4.50611L5.9999 1.81262Z" fill="%236A7383"/><path d="M9.75503 7.49389C9.46187 7.20073 8.98655 7.20073 8.69339 7.49389L5.9999 10.1874L3.30642 7.49389C3.01325 7.20073 2.53794 7.20073 2.24478 7.49389C1.95161 7.78706 1.95161 8.26237 2.24478 8.55553L5.46957 11.7803C5.76247 12.0732 6.23734 12.0732 6.53023 11.7803L9.75503 8.55553C10.0482 8.26237 10.0482 7.78706 9.75503 7.49389Z" fill="%236A7383"/></svg>');
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+.ng-select.custom .ng-select-container  {
+  min-height: 0px;
+  border-radius: 0;
+}
+
+
+.ng-dropdown-panel  {
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  padding: 6px;
+  border-color: #D5DBE1;
+}
+
+.ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    border-radius: 6px  ;
+
+    &:hover {
+      background-color: $faw-focus-light-input-color;
+      color: $faw-focus-input-border-color;
+    }
+
+    &.ng-option-selected, &.ng-option-selected.ng-option-marked {
+      background-color: $faw-focus-input-color;
+      color: $faw-focus-input-border-color;
+    }
+}
+
+.ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.ng-select:focus {
+  // @include hex-to-rgba($faw-focus-input-color, 0.3);w
+  outline-color: $faw-focus-input-border-color !important;
+  border-color: $faw-focus-input-border-color !important;
+  box-shadow: 0 0 0 0.25rem $faw-focus-input-color !important;
+}
+
+.ng-select.ng-select-focused:not(.ng-select-opened)>.ng-select-container {
+  border-color: $faw-focus-input-border-color;
+  box-shadow: 0 0 0 0.25rem $faw-focus-input-color;
+}
+
+.form-control:focus {
+  border-color: $faw-focus-input-border-color;
+  box-shadow: 0 0 0 0.25rem $faw-focus-input-color;
+}
+.dropdown-menu {
+  box-shadow: #0000001a 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+
+
+

@@ -1,0 +1,165 @@
+<div class="tw-relative">
+    <div class="accordion-body">
+      <div class="tw-flex tw-flex-col">
+        <div class="sub-title ">
+          <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">
+            Recapitulatif formulaire
+          </p>
+          <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">
+            Résumés des champs renseignés pour confirmation
+          </p>
+        </div>
+        <div class="sub-title">
+          <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+            Information navire
+          </p>
+          <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+            Informations Navires fournis
+          </p>
+        </div>
+        <div class="content tw-flex-grow">
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Numero navire</div>
+            <div class="tw-text-gray-900 tw-font">{{ step1LocalData.atp }}</div>
+          </div>
+
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Noms navire</div>
+            <div class="tw-text-gray-900">{{ step1LocalData.nomNavire }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Imo navire</div>
+            <div class="tw-text-gray-900">{{ step1LocalData.imo }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Pour le compte de</div>
+            <div class="tw-text-gray-900">{{ step1LocalData.nomImportateur }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Affreteur</div>
+            <div class="tw-text-gray-900">{{ step1LocalData.affreteur }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Numero d'Autorisation</div>
+            <div class="tw-text-gray-900">{{ step1LocalData.numeroAutorisation }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Numero de BL</div>
+            <div class="tw-text-gray-900">{{ step1LocalData.numeroBL }}</div>
+          </div>
+          <div class="tw-flex tw-flex-row tw-mb-3 tw-justify-between">
+            <div class="tw-font-medium tw-text-gray-600">Date arrivee</div>
+            {{ step1LocalData.datearrivee | date:'dd MMMM yyyy' }} à {{ step1LocalData.datearrivee | date:'HH:mm' }}
+          </div>
+        </div>
+      </div>
+      <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+      <div class="tw-flex tw-flex-col">
+        <div class="sub-title ">
+          <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+            Information produits
+          </p>
+          <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+            Informations sur les produits
+          </p>
+        </div>
+        <div class="accordion-body">
+          <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+            <thead>
+              <tr>
+                <th class="tw-text-sm tw-text-secondary">#</th>
+                <th class="tw-text-sm tw-text-secondary">Designation</th>
+                <th class="tw-text-sm tw-text-secondary">Quantité</th>
+                <th class="tw-text-sm tw-text-secondary">Poids Net</th>
+                <th class="tw-text-sm tw-text-secondary">Provenance</th>
+                <th class="tw-text-sm tw-text-secondary">Unité mesure</th>
+                <th class="tw-text-sm tw-text-secondary">Conteneur</th>
+              </tr>
+            </thead>
+            <tbody >
+
+
+              @for(produit of step2LocalData.detAutorisationProduitDtos; track produit; let index = $index){
+              @if(index + 1 < step2LocalData.detAutorisationProduitDtos.length){
+                <tr>
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ produit.nomProduit }}</td>
+                  <td>{{ produit.quantite }}</td>
+                  <td>{{ produit.poidNets }}</td>
+                  <td>{{ produit.unite }}</td>
+                  <td>{{ produit.provenance }}</td>
+                  <td>{{ produit.conteneur }}</td>
+              </tr>
+              }
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+      <div class="tw-flex tw-flex-col">
+        <div class="sub-title ">
+          <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+            Document nécéssaires
+          </p>
+          <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+            Informations documents fournis
+          </p>
+        </div>
+        <table class="tw-mt-4" cTable>
+          <thead>
+            <tr>
+              <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+              <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+              <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+              <th class="tw-text-sm !tw-text-gray-600" scope="col">FORMAT</th>
+              <th class="tw-text-sm !tw-text-gray-600" scope="col">TAILLE</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (onceFile of this.step3LocalData.file; track $index) {
+              @for (onceFileType of this.step3LocalData.fileNameTypePieceJointe; track onceFileType.idTypePieceJointe) {
+                @if (onceFile.name === onceFileType.fileName) {
+                  <tr>
+                    <th scope="row" class="!tw-text-gray-600">{{ $index + 1 }}</th>
+                    <td>{{ onceFileType?.typePieceJointe?.libelle }}</td>
+                    <td>{{ demandUploadFilesService.getJustFileName(onceFile) }}</td>
+                    <td>{{ demandUploadFilesService.getJustFileExtension(onceFile) }}</td>
+                    <td>{{ demandUploadFilesService.getJustFileSizeInMB(onceFile) }}</td>
+                  </tr>
+                }
+              }
+
+            }@empty {
+              <tr>
+                <td colspan="5">Aucun document</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+    <div class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+          (click)="onClickPrevious()"
+          class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+          cButton
+          color="light"
+        >
+          <span>Précédent</span>
+        </button>
+        <button
+          (click)="onClickNext()"
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          cButton
+          color="primary"
+        >
+          <span>Modifier la demande</span>
+        </button>
+      </div>
+    </div>
+  </div>

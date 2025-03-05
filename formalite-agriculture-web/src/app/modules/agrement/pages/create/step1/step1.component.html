@@ -1,0 +1,159 @@
+<div class="tw-relative">
+  <form [formGroup]="step1InfoAgrementFrom" (submit)="onSubmit()">
+    <div class="accordion-body">
+      <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations sur l'agrément
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant l'agrément
+        </p>
+      </div>
+      <div class="row ">
+        <div class="mb-3 col-12 tw-max-w-sm">
+          <label for="input-agrement" class=" "
+          >Agrément<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <ng-select
+            id="input-agrement"
+            [formControlName]="'agrement'"
+            [bindLabel]="'id'"
+            [items]="agrements()"
+            (change)="onAgrementSelectChange($event)"
+            [appendTo]="'body'"   >
+            <!--            @for (agreement of agreementList(); track agreement.numero) {-->
+            <!--              <ng-option  [value]="agreement"></ng-option>-->
+            <!--            }-->
+
+            <ng-template ng-label-tmp let-item="item">
+              <span  class="tw-text-sm text">{{item.libelle}}</span>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <span  class=" !tw-font-mono !tw-font-medium">{{item.etatTypeAgrement}}</span>
+              <div class="!tw-font-medium">{{item.libelle}}</div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-numero" class=" "
+          >Numéro<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'numero'"
+            cFormControl
+            type="text"
+            id="input-numero"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-activite" class=" "
+          >Activité<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'activite'"
+            cFormControl
+            type="text"
+            id="input-activite"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-date-agrement" class=" "
+          >Date d'Agrément<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'dateAgrement'"
+            cFormControl
+            type="datetime-local"
+            id="input-date-agrement"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-date-expiration" class=" "
+          >Date d'Expiration<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'dateExpiration'"
+            cFormControl
+            type="datetime-local"
+            id="input-date-expiration"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-societe" class=" "
+          >Societé<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <ng-select
+            id="input-societe"
+            [formControlName]="'societe'"
+            [bindLabel]="'nif'"
+            [items]="societes()"
+            (change)="onSocieteSelectChange($event)"
+            [appendTo]="'body'"   >
+            <!--            @for (agreement of agreementList(); track agreement.numero) {-->
+            <!--              <ng-option  [value]="agreement"></ng-option>-->
+            <!--            }-->
+
+            <ng-template ng-label-tmp let-item="item">
+              <span  class="tw-text-sm text">{{item.raisonSociale}}</span>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <span  class=" !tw-font-mono !tw-font-medium">{{item.nif}}</span>
+              <div class="!tw-font-medium">{{item.raisonSociale}}</div>
+            </ng-template>
+          </ng-select>
+        </div>
+        <div class="col-md-6 mb-3 col-12 tw-max-w-sm">
+          <label for="input-observation" class=" "
+          >Observation<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <textarea
+            [formControlName]="'observation'"
+            class="!tw-whitespace-normal"
+            rows="3"
+            id="input-observation"
+            tabindex="0"
+            cFormControl
+          >
+        </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+          type="submit"
+          [disabled]="
+            checkIfFormIsValid()
+          "
+          (click)="onClickNext()"
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          cButton
+          color="primary"
+        >
+          <span>Suivant</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

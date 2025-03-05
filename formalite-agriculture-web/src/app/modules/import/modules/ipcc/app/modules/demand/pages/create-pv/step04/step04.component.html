@@ -1,0 +1,199 @@
+<div class="tw-relative">
+  <form [formGroup]="step4InfoTraitementProduits">
+    <div class="accordion-body">
+      <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Produits
+        </p>
+        <p class="tw-text-gray-500 tw-mb-8 tw-font-normal tw-text-base">
+          Renseignez tout les produits que vous possedez pour l'exportation.
+        </p>
+      </div>
+
+      <div class="accordion-body">
+
+        <table [bordered]="true" [responsive]="true" cTable class="!tw-divide-gray-200 !tw-min-w-[100%] !tw-max-w-[100%] !tw-overflow-hidden">
+          <thead>
+          <tr>
+            <th class="tw-text-sm tw-text-secondary">Produit</th>
+            <th class="tw-text-sm tw-text-secondary">Substance active</th>
+            <th class="tw-text-sm tw-text-secondary">Température</th>
+            <th class="tw-text-sm tw-text-secondary">Nom société</th>
+            <th class="tw-text-sm tw-text-secondary">Nature traitement</th>
+            <th class="tw-text-sm tw-text-secondary">Heure début traitement</th>
+            <th class="tw-text-sm tw-text-secondary">Concentration</th>
+            <th class="tw-text-sm tw-text-secondary">Durée</th>
+
+            <th class="tw-text-sm tw-text-secondary">Action</th>
+          </tr>
+          </thead>
+          <tbody formArrayName="detTraitementProduitDtos">
+            @for (produit of getControls(); track produit; let index = $index) {
+              @if (getControls().length === index + 1) {
+                <tr [formGroupName]="index">
+
+                  <td class="!tw-min-w-[16rem] !tw-max-w-[16rem]">
+                    <ng-select
+                      (change)="onProductSelectChange($event)"
+                      [appendTo]="'body'" >
+                      @for (product of productsList(); track product.id) {
+                        <ng-option [value]="product"><span class="tw-text-sm">{{ product.libelle }}</span>
+                        </ng-option>
+                      }
+                    </ng-select>
+                  </td>
+                  <td>
+                    <input
+                      cFormControl
+                      min="1"
+                      formControlName="substanceActive"
+                      type="text"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      cFormControl
+                      formControlName="temperature"
+                      type="text"
+                    />
+                  </td>
+                  <td class="!tw-min-w-[8rem] !tw-max-w-[8rem]">
+                    <ng-select
+                      (change)="onSocieteSelectChange($event)"
+                      [appendTo]="'body'" >
+                      @for (societe of societesList(); track societe.id) {
+                        <ng-option [value]="societe"><span class="tw-text-sm">{{ societe.raisonSociale }}</span>
+                        </ng-option>
+                      }
+                    </ng-select>
+                  </td>
+                  <!--<td>
+                    <input
+                      cFormControl
+                      formControlName="nomSociete"
+                      type="text"
+                    />
+                  </td>-->
+                  <td>
+                    <input
+                      cFormControl
+                      formControlName="natureTraitement"
+                      type="text"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      cFormControl
+                      formControlName="heureDebTrait"
+                      type="datetime-local"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      cFormControl
+                      formControlName="concentration"
+                      type="text"
+                    />
+                  </td>
+                  <td class="!tw-min-w-[8rem] !tw-max-w-[8rem]">
+                    <input
+                      cFormControl
+                      formControlName="duree"
+                      type="number"
+                    />
+                  </td>
+                  <td>
+                    <button
+                      class="!tw-inline-flex !tw-flex-row tw-items-center tw-gap-3 !tw-text-green-700 !tw-bg-green-200 !tw-font-medium hover:!tw-bg-green-300 active:!tw-bg-green-200 disabled:!tw-text-gray-500 disabled:!tw-bg-gray-200"
+                      type="button"
+                      (click)="addProduct()"
+                      cButton
+                      color="light"
+                      [disabled]="
+                  getControls()[getControls().length - 1].invalid
+          "
+                    >
+                      <span>Ajouter</span>
+                    </button>
+                  </td>
+                </tr>
+              }
+            }
+
+            @for (produit of getControls(); track produit; let index = $index) {
+              @if (index + 1 < getControls().length) {
+                <tr>
+                  <td class="!tw-text-gray-600">{{ produit.get('nomProduit')!.value }}</td>
+
+
+                  <td class="!tw-text-gray-600">{{ produit.get('substanceActive')!.value }}</td>
+                  <td class="!tw-text-gray-600">{{ produit.get('temperature')!.value }}</td>
+                  <td class="!tw-text-gray-600">{{ produit.get('nomSociete')!.value }}</td>
+                  <td class="!tw-text-gray-600">{{ produit.get('natureTraitement')!.value }}</td>
+                  <td class="!tw-text-gray-600">{{ produit.get('heureDebTrait')!.value }}</td>
+                  <td class="!tw-text-gray-600">{{ produit.get('concentration')!.value }}</td>
+                  <td class="!tw-text-gray-600">{{ produit.get('duree')!.value }}</td>
+                  <!--              <td class="!tw-text-gray-600">{{ produit.get('nombreCarton')!.value }}</td>-->
+
+                  <!--              <td class="!tw-text-gray-600">{{ produit.get('dateProduction')!.value }}</td>-->
+                  <td>
+                    <button
+                      (click)="removeProduct(index)"
+                      class="!tw-inline-flex !tw-text-red-600 !tw-min-h-8 hover:!tw-text-red-700 !tw-bg-red-100 hover:!tw-bg-red-200 !tw-max-h-8 !tw-flex-row tw-items-center tw-gap-3 active:!tw-bg-red-100"
+                      size="sm"
+                      cButton
+                      color="light"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="19"
+                        height="19"
+                        viewBox="0 0 19 19"
+                        fill="none"
+                      >
+                        <path
+                          d="M5.2732 16.6733C4.8607 16.6733 4.5077 16.5266 4.2142 16.2331C3.9207 15.9396 3.7737 15.5863 3.7732 15.1733V5.42334C3.5607 5.42334 3.3827 5.35134 3.2392 5.20734C3.0957 5.06334 3.0237 4.88534 3.0232 4.67334C3.0227 4.46134 3.0947 4.28334 3.2392 4.13934C3.3837 3.99534 3.5617 3.92334 3.7732 3.92334H6.7732C6.7732 3.71084 6.8452 3.53284 6.9892 3.38934C7.1332 3.24584 7.3112 3.17384 7.5232 3.17334H10.5232C10.7357 3.17334 10.9139 3.24534 11.0579 3.38934C11.2019 3.53334 11.2737 3.71134 11.2732 3.92334H14.2732C14.4857 3.92334 14.6639 3.99534 14.8079 4.13934C14.9519 4.28334 15.0237 4.46134 15.0232 4.67334C15.0227 4.88534 14.9507 5.06359 14.8072 5.20809C14.6637 5.35259 14.4857 5.42434 14.2732 5.42334V15.1733C14.2732 15.5858 14.1264 15.9391 13.8329 16.2331C13.5394 16.5271 13.1862 16.6738 12.7732 16.6733H5.2732ZM7.5232 13.6733C7.7357 13.6733 7.91395 13.6013 8.05795 13.4573C8.20195 13.3133 8.2737 13.1353 8.2732 12.9233V7.67334C8.2732 7.46084 8.2012 7.28284 8.0572 7.13934C7.9132 6.99584 7.7352 6.92384 7.5232 6.92334C7.3112 6.92284 7.1332 6.99484 6.9892 7.13934C6.8452 7.28384 6.7732 7.46184 6.7732 7.67334V12.9233C6.7732 13.1358 6.8452 13.3141 6.9892 13.4581C7.1332 13.6021 7.3112 13.6738 7.5232 13.6733ZM10.5232 13.6733C10.7357 13.6733 10.9139 13.6013 11.0579 13.4573C11.2019 13.3133 11.2737 13.1353 11.2732 12.9233V7.67334C11.2732 7.46084 11.2012 7.28284 11.0572 7.13934C10.9132 6.99584 10.7352 6.92384 10.5232 6.92334C10.3112 6.92284 10.1332 6.99484 9.9892 7.13934C9.8452 7.28384 9.7732 7.46184 9.7732 7.67334V12.9233C9.7732 13.1358 9.8452 13.3141 9.9892 13.4581C10.1332 13.6021 10.3112 13.6738 10.5232 13.6733Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </button>
+                  </td>
+                </tr>
+              }
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div
+      class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end"
+    >
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+          (click)="onClickPrevious()"
+          cButton
+          class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+          color="light"
+          type="button"
+        >
+          Précédent
+        </button>
+        <button
+          (click)="onClickNext()"
+          [disabled]="checkIfFormStep2IsValid()"
+          cButton
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          color="primary"
+          type="button"
+        >
+          Suivant
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

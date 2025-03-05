@@ -1,0 +1,95 @@
+<table [responsive]="true" bordered cTable>
+  <thead>
+  <tr>
+    <th class="tw-text-sm tw-text-secondary" scope="col">N° ORDRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">N° DEMANDE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">ATP</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">NOM NAVIRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">AFRETTEUR</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">DATE CREATION</th>
+  </tr>
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="7" class="tw-text-center !tw-my-0 !tw-p-0">
+          <app-loading-bar></app-loading-bar>
+        </td>
+      </tr>
+    }
+  </thead>
+
+  <tbody>
+
+    @for (demand of demands(); track demand; ) {
+      @if (loadingDemands === false) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ demand.numGenerer }}</td>
+          <td scope="row">
+
+            <a [routerLink]="['/demand/details', demand.atp]"  (click)="xendDetailsInfo(demand)"
+               class="tw-inline-flex tw-items-center tw-font-medium tw-text-blue-600 hover:tw-cursor-pointer hover:tw-underline">
+              {{ demand.atp }}
+              <svg class="tw-w-5 tw-h-5 tw-ms-2 rtl:tw-rotate-180" xmlns="http://www.w3.org/2000/svg" width="18"
+                   height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/>
+              </svg>
+            </a>
+          </td>
+          <td>{{ demand.nomNavire }}</td>
+          <td>{{ demand.affreteur }}</td>
+          <td>
+          <span
+            class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-[#CFF5F6] tw-text-[#0055BC] tw-rounded-full"
+          >
+            {{ demand.etat === 'SOUMIS' && 'Soumise' }}
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <g fill="none" fill-rule="evenodd"><path
+                d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path
+                fill="currentColor"
+                d="M17.991 6.01L5.399 10.563l4.195 2.428l3.699-3.7a1 1 0 0 1 1.414 1.415l-3.7 3.7l2.43 4.194L17.99 6.01Zm.323-2.244c1.195-.433 2.353.725 1.92 1.92l-5.282 14.605c-.434 1.198-2.07 1.344-2.709.241l-3.217-5.558l-5.558-3.217c-1.103-.639-.957-2.275.241-2.709z"/></g>
+            </svg>
+
+          </span>
+          </td>
+          <td>{{ demand.dateSoumission | date: 'dd/MM/yyyy: HH:mm' }}</td>
+
+        </tr>
+      }
+    }
+    @if (demands().length === 0 && loadingDemands === false) {
+      <tr>
+        <td colspan="7" class="tw-text-center">Aucun résultat</td>
+      </tr>
+    }
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="7" class="tw-text-center !tw-text-gray-400">En cours de chargement...</td>
+      </tr>
+    }
+  </tbody>
+</table>
+<div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+  <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+    <div>{{ demands().length }} resultats</div>
+  </div>
+  <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+    <button
+      cButton
+
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light"
+    >
+      <span>Préçédent</span>
+    </button>
+    <button
+      cButton
+
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light"
+    >
+      <span>Suivant</span>
+    </button>
+  </div>
+</div>

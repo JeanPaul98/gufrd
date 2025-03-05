@@ -1,0 +1,24 @@
+services:
+  server-production:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "7008:4212"
+    volumes:
+      - C:/Users/fret-prod/files:/root/fret/files
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+    restart: always
+
+  server-development:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4212:4212"
+    volumes:
+      - C:/Users/fret-dev/files:/root/fret/files
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    restart: always

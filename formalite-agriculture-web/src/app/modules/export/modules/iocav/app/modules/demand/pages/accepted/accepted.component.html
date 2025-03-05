@@ -1,0 +1,278 @@
+<!--
+<table bordered  cTable>
+    <thead>
+      <tr>
+        <th class="tw-text-sm tw-text-secondary" scope="col">NUMERO</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">NAVIRE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">DATE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(demand of demands(); track demand; ) {
+        <tr>
+          <td scope="row">{{demand.atp}}</td>
+          <td>{{demand.nomNavire}}</td>
+          <td>
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-purple-100 tw-text-purple-500 tw-rounded-full"
+              >
+            {{demand.etat === 'ACCEPTE' && 'Acceptée'}}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.60614 10.4098L0.852727 6.69095C0.559833 6.39561 0.559833 5.91677 0.852727 5.62143C1.14562 5.32608 1.62049 5.32608 1.91339 5.62143L5.13356 8.7901L11.3497 2.59651C11.6426 2.30116 12.1175 2.30116 12.4104 2.59651C12.7033 2.89185 12.7033 3.37069 12.4104 3.66603L5.65761 10.4063C5.36674 10.6965 4.89889 10.6981 4.60614 10.4098Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </td>
+          <td>{{demand.dateAccepte | date: 'dd/MM/yyyy: HH:mm'}}</td>
+            <td>
+              <c-dropdown>
+                <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 13 13"
+                    fill="none"
+                  >
+                    <path
+                      d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                      fill="#4F566B"
+                    />
+                    <path
+                      d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                      fill="#4F566B"
+                    />
+                    <path
+                      d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                      fill="#4F566B"
+                    />
+                  </svg>
+                </button>
+                <ul cDropdownMenu>
+                  <li><a  cDropdownItem>Details</a></li>
+                </ul>
+              </c-dropdown>
+            </td>
+          </tr>
+    }@empty {
+        <tr>
+          <td colspan="5" class="tw-text-center">Aucun résultat</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+    <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+      <div>{{demands().length}} resultats</div>
+    </div>
+    <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+        cButton
+        color="light"
+      >
+        <span>Préçédent</span>
+      </button>
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+        cButton
+        color="light"
+      >
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>
+-->
+
+<table [responsive]="true" bordered cTable>
+  <thead >
+  <tr>
+    <th class="tw-text-sm tw-text-secondary" scope="col">N° ORDRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">N° DEMANDE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">ATP</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">NOM NAVIRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">IMO</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">REDEVANCE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">STATUS DEMANDE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">STATUS PAIEMENT</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">DATE SOUMISSION</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+  </tr>
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="10" class="tw-text-center !tw-my-0 !tw-p-0">
+          <app-loading-bar></app-loading-bar>
+        </td>
+      </tr>
+    }
+  </thead>
+
+  <tbody>
+
+    @for (demand of demands(); track demand; ) {
+      @if (loadingDemands === false) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ demand.numGenerer }}</td>
+          <td scope="row">
+
+            <a [routerLink]="['/demand/details', demand.atp]" target="_blank" (click)="xendDetailsInfo(demand)"
+               class="tw-inline-flex tw-items-center tw-font-medium tw-text-blue-600 hover:tw-cursor-pointer hover:tw-underline">
+              {{ demand.atp }}
+              <svg class="tw-w-5 tw-h-5 tw-ms-2 rtl:tw-rotate-180" xmlns="http://www.w3.org/2000/svg" width="18"
+                   height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/>
+              </svg>
+            </a>
+          </td>
+          <td>{{ demand.nomNavire }}</td>
+          <td>{{ demand.imo }}</td>
+          <td>{{ demand.montantRedevance | price}}</td>
+          <td>
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-purple-100 tw-text-purple-500 tw-rounded-full"
+              >
+            {{demand.etat === 'ACCEPTER' && 'Accepté'}}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.60614 10.4098L0.852727 6.69095C0.559833 6.39561 0.559833 5.91677 0.852727 5.62143C1.14562 5.32608 1.62049 5.32608 1.91339 5.62143L5.13356 8.7901L11.3497 2.59651C11.6426 2.30116 12.1175 2.30116 12.4104 2.59651C12.7033 2.89185 12.7033 3.37069 12.4104 3.66603L5.65761 10.4063C5.36674 10.6965 4.89889 10.6981 4.60614 10.4098Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+          </td>
+          <td>
+             <!-- <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-purple-100 tw-text-purple-500 tw-rounded-full"
+              >
+            {{demand.etat === 'ACCEPTER' && 'Accepté'}}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M4.60614 10.4098L0.852727 6.69095C0.559833 6.39561 0.559833 5.91677 0.852727 5.62143C1.14562 5.32608 1.62049 5.32608 1.91339 5.62143L5.13356 8.7901L11.3497 2.59651C11.6426 2.30116 12.1175 2.30116 12.4104 2.59651C12.7033 2.89185 12.7033 3.37069 12.4104 3.66603L5.65761 10.4063C5.36674 10.6965 4.89889 10.6981 4.60614 10.4098Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>-->
+            <span
+              class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-orange-100 tw-text-orange-500 tw-rounded-full"
+            >
+                Impayé
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 15 15"><path fill="currentColor" d="M3.64 2.27L7.5 6.13l3.84-3.84A.92.92 0 0 1 12 2a1 1 0 0 1 1 1a.9.9 0 0 1-.27.66L8.84 7.5l3.89 3.89A.9.9 0 0 1 13 12a1 1 0 0 1-1 1a.92.92 0 0 1-.69-.27L7.5 8.87l-3.85 3.85A.92.92 0 0 1 3 13a1 1 0 0 1-1-1a.9.9 0 0 1 .27-.66L6.16 7.5L2.27 3.61A.9.9 0 0 1 2 3a1 1 0 0 1 1-1c.24.003.47.1.64.27"/></svg>
+              </span>
+          </td>
+          <td>{{demand.dateAccepte | date: 'dd/MM/yyyy: HH:mm'}}</td>
+          <td>
+            <!--<c-dropdown>
+              <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="13"
+                  height="13"
+                  viewBox="0 0 13 13"
+                  fill="none"
+                >
+                  <path
+                    d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                    fill="#4F566B"
+                  />
+                  <path
+                    d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                    fill="#4F566B"
+                  />
+                  <path
+                    d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                    fill="#4F566B"
+                  />
+                </svg>
+              </button>
+              <ul cDropdownMenu>
+                  <li><a [routerLink]="[]" cDropdownItem>Modifier</a></li>
+                  <li><a [routerLink]="[]" (click)="openModal(demand)" cDropdownItem>Soumettre</a></li>
+                  <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+
+              </ul>
+            </c-dropdown>-->
+            <button (click)="generateAutorisationPdf(demand.idFormalite)" appTippyDirective
+                    [tooltip]="'Générer une autorisation'"
+                    [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}"
+                    class="!tw-text-primary !tw-bg-green-100 hover:!tw-text-green-700 !tw-mr-3" cButton color="light">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 23.5v-1h7v1zm3.5-3.212L14.712 17l.688-.688l2.1 2.1v-4.887h1v4.887l2.1-2.1l.688.688zM6.116 19.5q-.652 0-1.134-.482T4.5 17.884V4.116q0-.652.482-1.134T6.116 2.5H13L18.5 8v3.14h-6.384v8.36zm6.384-11h5l-5-5z"/></svg>
+
+
+
+            </button>
+          </td>
+        </tr>
+      }
+    }
+    @if (demands().length === 0 && loadingDemands === false) {
+      <tr>
+        <td colspan="10" class="tw-text-center">Aucun résultat</td>
+      </tr>
+    }
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="10" class="tw-text-center !tw-text-gray-400">En cours de chargement...</td>
+      </tr>
+    }
+  </tbody>
+</table>
+<div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+  <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+    <div>{{ demands().length }} resultats</div>
+  </div>
+  <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+    <button
+      cButton
+
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light"
+    >
+      <span>Préçédent</span>
+    </button>
+    <button
+      cButton
+
+      class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+      color="light"
+    >
+      <span>Suivant</span>
+    </button>
+  </div>
+</div>
+
+
+
+
+

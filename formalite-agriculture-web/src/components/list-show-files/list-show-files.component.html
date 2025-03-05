@@ -1,0 +1,116 @@
+<table cTable class="tw-mt-4">
+  <thead>
+  <tr>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">#</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">PIECE</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">TITRE</th>
+    <th class="tw-text-sm !tw-text-gray-600" scope="col">ACTION</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (file of listFiles; track file; ) {
+      <tr>
+        <td>{{ $index + 1 }}</td>
+        <td>{{ file.typePieceJointe }}</td>
+        <td>{{ file.nomOriginePieceJointe }}</td>
+        <td>
+<!--          <button appTippyDirective-->
+<!--                  (click)="onOpenModal(file)"-->
+<!--                  tooltip="Voir le contenu du fichier"-->
+<!--                  [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}" target="_blank"-->
+<!--                  class="!tw-text-blue-600 !tw-bg-blue-100 hover:!tw-text-blue-700 !tw-mr-3" cButton color="light">-->
+<!--            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">-->
+<!--              <path fill="currentColor"-->
+<!--                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3"/>-->
+<!--            </svg>-->
+
+<!--          </button>-->
+          <a  href="{{file.urlPj}}" target="_blank" appTippyDirective
+                  tooltip="Voir le contenu du fichier"
+                  [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}"
+                  class="!tw-text-blue-600 !tw-bg-blue-100 hover:!tw-text-blue-700 !tw-mr-3" cButton color="light">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+              <path fill="currentColor"
+                    d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3"/>
+            </svg>
+
+          </a>
+        </td>
+      </tr>
+    }
+    @if (listFiles.length === 0) {
+      <tr>
+        <td colspan="5" class="tw-text-center">Aucun résultat</td>
+      </tr>
+    }
+  </tbody>
+</table>
+
+<app-general-modal
+  (onCancel)="onCloseModal()"
+  [cancelButton]="'Fermer'"
+  [isConfirm]="false"
+  [size]="'lg'"
+  [titleMdl]="titleModal"
+  [visible]="openModal"
+>
+  @if (!isLoaded) {
+    <app-loading-bar></app-loading-bar>
+  }
+  <!--For PDF-->
+<!--  @if (fileType === 'pdf') {-->
+  <div>
+    <div *ngIf="isLoaded" class="tw-flex tw-justify-center tw-items-center tw-gap-2 tw-mt-1">
+      <button
+        (click)="prevPage()"
+        [disabled]="page === 1" [size]="'sm'" cButton
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        color="light">Prec.
+      </button>
+      <span>{{ page }} / {{ totalPages }}</span>
+      <button (click)="nextPage()"
+              [disabled]="page === totalPages"
+              [size]="'sm'" cButton
+              class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+              color="light">Suiv.
+      </button>
+    </div>
+    <pdf-viewer (after-load-complete)="afterLoadComplete($event)" [original-size]="false"
+                [page]="page"
+                [show-all]="false"
+                [src]="'http://102.164.230.196:4300/FORMALITE_201_AUTORISATION_ENLEVEMENT-4.pdf'"
+                class="!tw-w-full !tw-h-[60vh]"
+    ></pdf-viewer>
+  </div>
+<!--    }-->
+<!--  &lt;!&ndash; For image &ndash;&gt;-->
+<!--  @if (fileType === 'image') {-->
+<!--  <div >-->
+<!--    <div *ngIf="!isLoaded">-->
+<!--      <app-loading-bar></app-loading-bar>-->
+<!--      <img [src]="selectedFile?.urlPj" alt="API Image URL">-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  }-->
+<!--  @if (fileType === 'unknown') {-->
+<!--    <div class="tw-bg-yellow-50 tw-border tw-border-yellow-200 tw-text-sm tw-text-yellow-800 rounded-lg tw-p-4 tw-rounded-sm" role="alert" tabindex="-1" aria-labelledby="hs-with-description-label">-->
+<!--      <div class="tw-flex">-->
+<!--        <div class="tw-shrink-0">-->
+<!--          <svg class="tw-shrink-0 tw-size-4 tw-mt-0.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">-->
+<!--            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>-->
+<!--            <path d="M12 9v4"></path>-->
+<!--            <path d="M12 17h.01"></path>-->
+<!--          </svg>-->
+<!--        </div>-->
+<!--        <div class="tw-ms-4">-->
+<!--          <h3 id="tw-hs-with-description-label" class="tw-text-sm font-semibold">-->
+<!--            Impossible de charger le fichier-->
+<!--          </h3>-->
+<!--          <div class="tw-mt-1 tw-text-sm tw-text-yellow-700">-->
+<!--            Le fichier doit être un pdf ou une image.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  }-->
+</app-general-modal>

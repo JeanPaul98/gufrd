@@ -1,0 +1,28 @@
+.tippy-box[data-theme~='faw-light'] {
+  background-color: $faw-white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: $faw-fg-secondary;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dcdcdc;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+}
+
+
+
+// Tippy arrow
+.tippy-box[data-theme~='faw-light'][data-placement^='top'] > .tippy-arrow::before {
+  border-top-color: $faw-white;
+}
+.tippy-box[data-theme~='faw-light'][data-placement^='bottom'] > .tippy-arrow::before {
+  border-bottom-color: $faw-white;
+}
+.tippy-box[data-theme~='faw-light'][data-placement^='left'] > .tippy-arrow::before {
+  border-left-color: $faw-white;
+}
+.tippy-box[data-theme~='faw-light'][data-placement^='right'] > .tippy-arrow::before {
+  border-right-color: $faw-white;
+}

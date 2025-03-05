@@ -1,0 +1,149 @@
+version: '3.7'
+
+services:
+  admin-service:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile
+    image: admin-service
+    container_name: admin-service
+    restart: always
+    ports:
+      - "4208:80"
+#  import-aiav-service:
+#    build:
+#      context: .
+#      dockerfile: dockerfiles/imports/Dockerfile-aiav
+#    image: aiav-service
+#    container_name: aiav-service
+#    restart: always
+#    ports:
+#      - "4202:80"
+#  import-ipn-service:
+#    build:
+#      context: .
+#      dockerfile: dockerfiles/imports/Dockerfile-ipn
+#    image: ipn-service
+#    container_name: ipn-service
+#    restart: always
+#    ports:
+#      - "4203:80"
+#  import-ipppp-service:
+#    build:
+#      context: .
+#      dockerfile: dockerfiles/imports/Dockerfile-ipppp
+#    image: ipppp-service
+#    container_name: ipppp-service
+#    restart: always
+#    ports:
+#      - "4204:80"
+  import-adt-service:
+    build:
+      context: .
+      dockerfile: dockerfiles/imports/Dockerfile-adt
+    image: adt-service
+    container_name: adt-service
+    restart: always
+    ports:
+      - "4205:80"
+#  import-aeaa-service:
+#    build:
+#      context: .
+#      dockerfile: dockerfiles/imports/Dockerfile-aeaa
+#    image: aeaa-service
+#    container_name: aeaa-service
+#    restart: always
+#    ports:
+#      - "4206:80"
+#  import-aiemv-service:
+#    build:
+#      context: .
+#      dockerfile: dockerfiles/imports/Dockerfile-aiemv
+#    image: aiemv-service
+#    container_name: aiemv-service
+#    restart: always
+#    ports:
+#      - "4207:80"
+#  import-aipcl-service:
+#    build:
+#      context: .
+#      dockerfile: dockerfiles/imports/Dockerfile-aipcl
+#    image: aipcl-service
+#    container_name: aipcl-service
+#    restart: always
+#    ports:
+#      - "4208:80"
+  import-ipcc-service:
+    build:
+      context: .
+      dockerfile: dockerfiles/imports/Dockerfile-ipcc
+    image: ipcc-service
+    container_name: ipcc-service
+    restart: always
+    ports:
+      - "4203:80"
+
+
+  # export-crbn-service:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/exports/Dockerfile-crbn
+  #   image: crbn-service
+  #   container_name: crbn-service
+  #   restart: always
+  #   ports:
+  #     - "9009:80"
+#  export-csc-service:
+#     build:
+#       context: .
+#       dockerfile: dockerfiles/exports/Dockerfile-csc
+#     image: csc-service
+#     container_name: csc-service
+#     restart: always
+#     ports:
+#       - "4210:80"
+#  export-cscp-service:
+#     build:
+#       context: .
+#       dockerfile: dockerfiles/exports/Dockerfile-cscp
+#     image: cscp-service
+#     container_name: cscp-service
+#     restart: always
+#     ports:
+#       - "4211:80"
+#  export-ecp-service:
+#     build:
+#      context: .
+#      dockerfile: dockerfiles/exports/Dockerfile-ecp
+#     image: ecp-service
+#     container_name: ecp-service
+#     restart: always
+#     ports:
+#       - "4212:80"
+  # export-ecpfl-service:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/exports/Dockerfile-ecpfl
+  #   image: ecpfl-service
+  #   container_name: ecpfl-service
+  #   restart: always
+  #   ports:
+  #     - "9013:80"
+  # export-iocav-service:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/exports/Dockerfile-iocav
+  #   image: iocav-service
+  #   container_name: iocav-service
+  #   restart: always
+  #   ports:
+  #     - "9014:80"
+  # export-ipocp-service:
+  #   build:
+  #     context: .
+  #     dockerfile: dockerfiles/exports/Dockerfile-ipocp
+  #   image: ipocp-service
+  #   container_name: ipocp-service
+  #   restart: always
+  #   ports:
+  #     - "9015:80"

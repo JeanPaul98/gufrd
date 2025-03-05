@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MARPOL" pageWidth="1200" pageHeight="2000" columnWidth="1160" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="14b6681b-c785-40b4-9abb-d020528812ce">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="garbage" class="java.lang.String"/>
+	<parameter name="expirateCertificat" class="java.util.Date"/>
+	<parameter name="prochainPort" class="java.lang.String"/>
+	<parameter name="quai" class="java.lang.String"/>
+	<parameter name="dernierDechargement" class="java.util.Date"/>
+	<parameter name="numeroATP" class="java.lang.String"/>
+	<parameter name="dernierPort" class="java.lang.String"/>
+	<parameter name="departure" class="java.util.Date"/>
+	<parameter name="nomNavire" class="java.lang.String"/>
+	<parameter name="agentConsignataire" class="java.lang.String"/>
+	<parameter name="arrival" class="java.util.Date"/>
+	<parameter name="choice" class="java.lang.String"/>
+	<parameter name="answer" class="java.lang.String"/>
+	<parameter name="sludgeDischarge" class="java.lang.String"/>
+	<parameter name="storageCapacitysludge" class="java.lang.String"/>
+	<parameter name="sludgeExtimated" class="java.lang.String"/>
+	<parameter name="sludgeNext" class="java.lang.String"/>
+	<parameter name="waterWeightDischarge" class="java.lang.String"/>
+	<parameter name="waterCapacityStorage" class="java.lang.String"/>
+	<parameter name="waterEstimated" class="java.lang.String"/>
+	<parameter name="waterNext" class="java.lang.String"/>
+	<parameter name="sludgeQuantity" class="java.lang.String"/>
+	<parameter name="waterWeight" class="java.lang.String"/>
+	<parameter name="foodQuantity" class="java.lang.String"/>
+	<parameter name="foodDischarge" class="java.lang.String"/>
+	<parameter name="foodStorageCapacity" class="java.lang.String"/>
+	<parameter name="foodEstimated" class="java.lang.String"/>
+	<parameter name="foodNext" class="java.lang.String"/>
+	<parameter name="otherQuantity" class="java.lang.String"/>
+	<parameter name="plasticNext" class="java.lang.String"/>
+	<parameter name="ashesEstimated" class="java.lang.String"/>
+	<parameter name="homeWasteNext" class="java.lang.String"/>
+	<parameter name="plasticQuantity" class="java.lang.String"/>
+	<parameter name="homeWasteQuantity" class="java.lang.String"/>
+	<parameter name="ashesQuantity" class="java.lang.String"/>
+	<parameter name="totalQuantityOnBoard" class="java.lang.String"/>
+	<parameter name="plasticDischarge" class="java.lang.String"/>
+	<parameter name="homeWaterDischarge" class="java.lang.String"/>
+	<parameter name="ashesDischarge" class="java.lang.String"/>
+	<parameter name="otherDischarge" class="java.lang.String"/>
+	<parameter name="totalDischarge" class="java.lang.String"/>
+	<parameter name="plasticStorage" class="java.lang.String"/>
+	<parameter name="homeWasteStorage" class="java.lang.String"/>
+	<parameter name="ashesStorage" class="java.lang.String"/>
+	<parameter name="otherStorage" class="java.lang.String"/>
+	<parameter name="totalCapacityStorage" class="java.lang.String"/>
+	<parameter name="plasticEstimated" class="java.lang.String"/>
+	<parameter name="homeWasteEstimated" class="java.lang.String"/>
+	<parameter name="otherEstimated" class="java.lang.String"/>
+	<parameter name="totalEstimated" class="java.lang.String"/>
+	<parameter name="ashesNext" class="java.lang.String"/>
+	<parameter name="othersNext" class="java.lang.String"/>
+	<parameter name="totalNext" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band height="50" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="122" splitType="Stretch">
+			<staticText>
+				<reportElement x="430" y="-20" width="260" height="30" uuid="1bfdea1e-c4a2-45d0-947a-d04e867d83e7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[GARBAGE DECLARATION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="930" y="-12" width="100" height="22" uuid="966d0f5f-b2e0-4895-bf05-301cd6195485"/>
+				<textFieldExpression><![CDATA["Lomé, le \u00a0" +DATEFORMAT(new java.util.Date(), "dd/MM/yyyy")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="20" width="160" height="30" uuid="8e510595-f014-415d-ab57-400c91eafcd9"/>
+				<textFieldExpression><![CDATA["GARBAGE : \u00a0" +$P{garbage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="80" width="230" height="30" uuid="10fbb6e3-3710-4d15-83c7-13ea2122fb29"/>
+				<textFieldExpression ><![CDATA["EXPIRATION DU CERTIFICAT IOPP/EXPIRY OF IOPP CERTIFICATE : \u00a0" + DATEFORMAT($P{expirateCertificat}, "dd/MM/yyyy ")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="20" width="170" height="30" uuid="6e728ffa-27b4-4f44-a3e0-1eeb18d3fa5a"/>
+				<textFieldExpression><![CDATA["PROCHAIN PORT/NEXT PORT : \u00a0" +$P{prochainPort}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="46" width="170" height="30" uuid="decc99a1-e601-487d-af70-37f0ee9244ea"/>
+				<textFieldExpression><![CDATA["QUAI/BERTH : \u00a0" +$P{quai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="600" y="92" width="230" height="30" uuid="babc4e87-aa2f-4561-8890-0ad395d0fb52"/>
+				<textFieldExpression><![CDATA["DERNIER DECHARGEMENT/LAST DISCHARGING SLUDGE : \u00a0" + DATEFORMAT($P{dernierDechargement}, "dd/MM/yyyy ")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="20" width="145" height="30" uuid="49a31dec-8206-4113-88d5-33eb976cc6a7"/>
+				<textFieldExpression><![CDATA["N°ATP: \u00a0" +$P{numeroATP}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="51" width="130" height="20" uuid="e63ec65d-8e57-4d8d-9ca2-8b2f54f8b1d2"/>
+				<textFieldExpression><![CDATA["DERNIER PORT/LAST PORT : \u00a0" +$P{dernierPort}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="80" width="145" height="30" uuid="b27f4c22-21c7-4887-81b6-3940e39324f1"/>
+				<textFieldExpression><![CDATA["DEPART/DEPARTURE  :\u00a0" + DATEFORMAT($P{departure}, "dd/MM/yyyy à HH:mm:ss")]]> </textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="20" width="194" height="30" uuid="8d177993-4c55-4e15-a532-a6b563e462ff"/>
+				<textFieldExpression><![CDATA["SHIP'S NAME/NOM DU NAVIRE :\u00a0\u00a0" +$P{nomNavire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="194" height="30" uuid="1adfa22e-d7ae-4558-9d4d-68b487b29dfa"/>
+				<textFieldExpression><![CDATA["CONSIGNATAIRE/AGENT :\u00a0\u00a0" +$P{agentConsignataire}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="92" width="194" height="30" uuid="5d09c4de-c450-4843-907b-e292d9957c5f"/>
+				<textFieldExpression ><![CDATA["ARRIVEE/ARRIVAL :\u00a0" + DATEFORMAT($P{arrival}, "dd/MM/yyyy à HH:mm:ss")]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="118">
+			<staticText>
+				<reportElement x="-10" y="0" width="130" height="50" uuid="7b26de26-34e5-4b98-b58f-5f121e9efcbb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[WASTE GRADE/Catégories de Déchets]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="170" height="50" uuid="7b26de26-34e5-4b98-b58f-5f121e9efcbb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Quantity to be discharge/Quantité à décharger(mêtre cube)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="230" height="50" uuid="7b26de26-34e5-4b98-b58f-5f121e9efcbb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Storage Capacity/Capacité de stockage(mêtre cube)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="0" width="200" height="50" uuid="7b26de26-34e5-4b98-b58f-5f121e9efcbb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Extimeted remaining on boardafter discharge/Quantité estimée rester à board après déchargement(mêtre cube)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="870" y="0" width="260" height="50" uuid="7b26de26-34e5-4b98-b58f-5f121e9efcbb"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Next expected discharging Port/Prochain Port de déchargement]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="120" y="0" width="150" height="50" uuid="2224364b-38f9-495d-bfdc-e3a1cf4c4e5c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Quantity on Board/Quantité à Board(mêtre cube)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="50" width="130" height="20" uuid="93253016-badc-4f9b-8a3b-c01d5831bbc4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Sludge/Résidus]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="50" width="170" height="20" uuid="6b051bf5-1aa4-4030-93af-6b1a3bae96a9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{sludgeDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="50" width="230" height="20" uuid="c35801fb-c7f2-49f5-9382-1bfecc035a4e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{storageCapacitysludge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="50" width="200" height="20" uuid="7b753766-3d55-4928-a35b-ef2624464656"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{sludgeExtimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="50" width="260" height="20" uuid="ee1bb56b-1b41-4348-a69d-c4059becc512"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{sludgeNext}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="70" width="170" height="17" uuid="a9280bcf-9309-485a-be23-03f2a18bb3a5"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{waterWeightDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="70" width="230" height="17" uuid="30c2801f-cf48-40af-93bd-ee7333c894c3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{waterCapacityStorage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="70" width="200" height="17" uuid="68a84ad7-eaa1-4da9-8bf3-a1db3163ce8d"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{waterEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="70" width="260" height="17" uuid="85d3ec22-192f-4696-8c06-b0a475c6fa9f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{waterNext}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-10" y="70" width="130" height="17" uuid="abd57490-892c-4a75-a243-5f3ff61eb559"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Bildge water/Eaux usées]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="50" width="150" height="20" uuid="79920053-050d-4405-8957-448488c05e8a"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{sludgeQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="70" width="150" height="17" uuid="93227cf9-cae3-4390-be2d-106f3e20af24"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{waterWeight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="87" width="150" height="31" uuid="01049d7b-b70b-4a6f-b14d-c3e3b80a56c7"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{foodQuantity}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-10" y="87" width="130" height="31" uuid="735a8460-078e-4a01-8fc3-77678cf2c912"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Food waste/Déchets alimentaires]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="270" y="87" width="170" height="31" uuid="c5580c1e-b2b6-437e-9cf5-3eae05bd53cc"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{foodDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="87" width="230" height="31" uuid="970edbfc-a653-4c4b-b4c6-6f38d87b39f3"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{foodStorageCapacity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="87" width="200" height="31" uuid="32dd99df-11a4-4b7f-aa02-8b8a6a8f5dff"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{foodEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="87" width="260" height="31" uuid="8d00c4e1-5342-4a16-8b53-19563c3f70f0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{foodNext}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="170" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="0" width="130" height="30" uuid="d7b3831c-e7e7-4789-beb7-4e172f7a555b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Plastics waste/Déchets plastiques]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="30" width="130" height="30" uuid="fa88a45b-080c-4a31-8d70-33a9125c39d4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Domestics waste/Déchets domestiques]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="60" width="130" height="23" uuid="97e72e38-9ef9-4e7e-8f5f-00ef9996aa4c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Ashes/Cendres]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-10" y="83" width="130" height="20" uuid="1eea3800-a7e7-4d18-8e4c-3d22fee3eb91"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Others/Autres]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="83" width="150" height="20" uuid="31031fa9-632c-421a-ad0a-a804f007002c"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{otherQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="0" width="260" height="30" uuid="da4f0a2c-222c-459f-aacb-3dceca5c3b45"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{plasticNext}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-10" y="103" width="130" height="30" uuid="6868323d-5763-4dd5-933b-e946a3359666"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Total quantity]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="670" y="60" width="200" height="23" uuid="d01603aa-f135-4b99-93a3-9aeba9b85ced"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{ashesEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="30" width="260" height="30" uuid="468780d8-b32f-486d-bce4-8ac0059dfc91"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{homeWasteNext}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="0" width="150" height="30" uuid="7588fd2b-0007-4f43-9bea-e88100aaa684"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{plasticQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="30" width="150" height="30" uuid="64197bf9-3ca5-4582-8d45-5944778bfe6b"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{homeWasteQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="60" width="150" height="23" uuid="8678479d-f456-4a95-b469-96bbc154beea"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{ashesQuantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="103" width="150" height="30" uuid="5b929cec-6930-4bf1-8ea7-bedf581c6b7e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{totalQuantityOnBoard}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="0" width="170" height="30" uuid="11e9944e-c611-404a-8330-158a32217f47"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{plasticDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="30" width="170" height="30" uuid="03a32c4e-a9e7-4f29-b05b-a614275b55fd"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{homeWaterDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="60" width="170" height="23" uuid="2055a6ae-b2bd-4c19-8565-42fecdaeecd0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{ashesDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="83" width="170" height="20" uuid="1a722eb9-757c-4e84-8570-53f50ab741d4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{otherDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="103" width="170" height="30" uuid="a9b5fbd7-9f23-4266-abe4-70a2f38f899f"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{totalDischarge}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="0" width="230" height="30" uuid="dc9f5ae9-b493-4743-84fa-6bc2b7d0d7a1"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{plasticStorage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="30" width="230" height="30" uuid="4d65ca81-6ccc-4ddf-b1d4-84a0502d02c4"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{homeWasteStorage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="60" width="230" height="23" uuid="998c60ea-f158-4af8-92b7-eb0e5c5af850"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{ashesStorage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="83" width="230" height="20" uuid="54073c6e-5daa-4c47-be82-5dd8e700ebae"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{otherStorage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="103" width="230" height="30" uuid="c30ccea5-d0a2-4c0f-aca9-664eba256250"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{totalCapacityStorage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="0" width="200" height="30" uuid="b502423e-3419-49bd-a511-695e9fabe27e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{plasticEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="30" width="200" height="30" uuid="69b77699-9d42-409e-8678-09ec192c8d0e"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{homeWasteEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="83" width="200" height="20" uuid="28feb7be-99d4-4ca6-b38d-9a63663de2f0"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{otherEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="103" width="200" height="30" uuid="5187735a-579d-4565-9741-d5a221a29fa9"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{totalEstimated}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="60" width="260" height="23" uuid="8d764a52-ef77-464f-8f70-03c810b26046"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{ashesNext}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="83" width="260" height="20" uuid="bff9b784-5ede-40e5-bc95-7e57173152ca"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{othersNext}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="870" y="103" width="260" height="30" uuid="079f6d04-5524-4f6c-89a8-5731930c38ac"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "+$P{totalNext}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="150" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="50" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement x="530" y="60" width="417" height="30" uuid="ce39332e-55d8-4f26-966f-747b4e87a29c"/>
+				<textFieldExpression><![CDATA["IF YES NOTIFY THE SHIPCHANDLER IDENTITY/SI OUI PRECISEZ L'IDENTITE DE L'AVITAILLEUR."  +$P{choice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-10" y="50" width="420" height="30" uuid="52673328-12ea-4f57-b896-814e98761be8"/>
+				<textFieldExpression><![CDATA["IS THE VESSEL EXPECTING /ATTENDEZ-VOUS UNE LIVRAISON DE PROVISION ?" +$P{answer}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

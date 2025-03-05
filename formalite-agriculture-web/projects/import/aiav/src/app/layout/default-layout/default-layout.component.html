@@ -1,0 +1,59 @@
+<!--sidebar-->
+<!-- <c-sidebar
+  #sidebar1="cSidebar"
+  class="d-print-none sidebar sidebar-fixed border-end"
+  colorScheme="dark"
+  id="sidebar1"
+  visible
+>
+  <c-sidebar-header class="border-bottom">
+    <c-sidebar-brand [routerLink]="[]">
+      <svg [class]="{icon: false}" cIcon class="sidebar-brand-full" height="32" name="logo" title="CoreUI Logo"></svg>
+<svg cIcon class="sidebar-brand-narrow" height="32" name="signet" title="CoreUI Logo"></svg>
+    </c-sidebar-brand>
+  </c-sidebar-header>
+
+  <ng-scrollbar #scrollbar="ngScrollbar" (updated)="onScrollbarUpdate(scrollbar.state)" class="overflow" pointerEventsMethod="scrollbar" visibility="hover">
+    <c-sidebar-nav #overflow [navItems]="navItems" dropdownMode="close" compact />
+  </ng-scrollbar>
+  @if (!sidebar1.narrow) {
+    <c-sidebar-footer cSidebarToggle="sidebar1" class="border-top d-none d-lg-flex" toggle="unfoldable" style="cursor: pointer;">
+      <button cSidebarToggler aria-label="Toggle sidebar fold"></button>
+    </c-sidebar-footer>
+  }
+</c-sidebar> -->
+<!--<cmdk-command>
+  <input cmdkInput />
+  <div *cmdkEmpty>No results found.</div>
+  <cmdk-list>
+    <cmdk-group label="Letters">
+      <button cmdkItem>a</button>
+      <button cmdkItem>b</button>
+      <cmdk-separator></cmdk-separator>
+      <button cmdkItem>c</button>
+    </cmdk-group>
+  </cmdk-list>
+
+  <button cmdkItem>Apple</button>
+</cmdk-command>-->
+<!--main-->
+<div class="wrapper d-flex flex-column min-vh-100 !tw-bg-white">
+  <!--app-header-->
+  <app-custom-client-header/>
+
+  <!-- <app-default-header
+    [cShadowOnScroll]="'sm'"
+    class="mb-4 d-print-none header header-sticky p-0 shadow-sm"
+    position="sticky"
+    sidebarId="sidebar1"
+  /> -->
+  <!--app-body-->
+  <div class="col flex-grow-1 !tw-mt-8 !tw-px-1  !tw-bg-white">
+    <c-container breakpoint="lg" class=" h-auto " >
+      <router-outlet />
+    </c-container>
+  </div>
+  <!--app footer-->
+  <!-- <app-default-footer /> -->
+
+</div>

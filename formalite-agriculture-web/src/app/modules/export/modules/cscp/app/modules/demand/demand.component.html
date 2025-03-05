@@ -1,0 +1,113 @@
+@if((isHideDemandBar$ | async) === false) {
+  <div class="tw-bg-white tw-sticky tw-top-16 tw-z-10 tw-mb-4">
+    <div class="title  tw-flex tw-flex-row tw-items-center tw-justify-between">
+      <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+        <!-- <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 25 25"
+          fill="none"
+        >
+          <g clip-path="url(#clip0_13_1159)">
+            <path
+              d="M12.6878 0.5C11.715 0.5 10.2885 0.90575 10.2885 1.262V3.37925C11.0844 3.21405 11.8938 3.12241 12.7065 3.1055C13.5197 3.12462 14.3298 3.21218 15.1283 3.36725V1.27325C15.1283 0.9065 13.656 0.5 12.6878 0.5ZM12.7073 4.28525C10.6643 4.28525 7.64103 5.12525 7.64103 5.48V8.07425C9.18111 7.00409 10.8729 6.17083 12.66 5.60225C12.672 5.59025 15.4613 6.35225 17.871 8.09825L17.8748 8.102V5.48C17.8748 5.10875 14.7495 4.28525 12.7065 4.28525H12.7073ZM12.735 6.87125C11.9693 7.06625 11.2193 7.42625 10.5203 7.7585C8.99736 8.47396 7.58558 9.40529 6.32853 10.5238C7.68078 11.903 8.48853 13.634 8.98578 15.2428L9.02103 15.356L9.06003 15.3958L9.00903 15.356C8.99703 15.3448 7.38828 13.6963 5.03628 13.6963C3.79428 13.6963 2.35728 14.153 0.845276 15.5285C0.989276 16.0483 1.16553 16.5365 1.37253 17.0285V17.0443L1.39653 17.0915C3.40053 21.6658 8.09928 24.6463 13.0913 24.4978C17.9865 24.35 22.4393 21.1858 24.2205 16.6385C24.3188 16.3925 24.4043 16.1345 24.4935 15.8885C22.8068 14.6345 20.1615 13.0715 19.1423 13.2718V13.268C18.3645 13.4158 17.454 14.5333 16.2863 15.65C16.755 13.9903 17.595 12.1393 19.1183 10.5373C18.7223 10.1761 18.3077 9.83592 17.8763 9.518V9.506C16.353 8.37275 14.5793 7.4 12.7365 6.869L12.735 6.87125ZM12.723 7.766L13.3358 10.8163L13.188 13.4885L12.7463 17.4455V17.4658L12.6953 17.4575C12.6885 17.4575 12.6803 17.4493 12.672 17.4493V17.4223L12.18 13.4735L12.0593 10.8208L12.723 7.766ZM13.6208 17.594L13.6448 17.5978C13.5959 17.614 13.5476 17.632 13.5 17.6518C13.539 17.6285 13.5818 17.6165 13.6208 17.594Z"
+              fill="#2D7F4A"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0_13_1159">
+              <rect
+                width="24"
+                height="24"
+                fill="white"
+                transform="translate(0.632996 0.5)"
+              />
+            </clipPath>
+          </defs>
+        </svg> -->
+        <div class="tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold">
+          <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">EXPORTATION</span> <br>
+          <span>Demande  de certifcat sanitaire pour cuire et peaux</span>
+        </div>
+      </div>
+
+      <div class="action-button tw-flex tw-flex-row !tw-gap-3">
+        <button
+          (click)="exportToExcell()"
+          class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+          cButton
+          color="light"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M11.8831 8.00458C11.8831 8.41903 11.5472 8.755 11.1328 8.755C10.7184 8.755 10.3825 8.41903 10.3825 8.00458V3.80418L2.42891 11.7569C2.13819 12.0477 1.66684 12.0477 1.37612 11.7569C1.0854 11.4662 1.0854 10.9948 1.37612 10.704L9.32965 2.75124H5.12993C4.71554 2.75124 4.37961 2.41527 4.37961 2.00082C4.37961 1.58638 4.71554 1.25041 5.12993 1.25041H11.0857C11.1053 1.24984 11.1248 1.24987 11.144 1.25049C11.2182 1.25158 11.2897 1.26343 11.3572 1.28456C11.4731 1.31943 11.5773 1.3807 11.665 1.46848C11.8111 1.6146 11.8838 1.80635 11.8831 1.99787L11.8831 8.00458Z"
+              fill="#4F566B"
+            />
+          </svg>
+          <span>Export</span>
+        </button>
+        <!--<button
+          class="!tw-flex !tw-text-white !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-bg-primary !tw-border-border-secondary"
+          [routerLink]="['create']"
+          cButton
+          color="primary"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="13"
+            viewBox="0 0 13 13"
+            fill="none"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.38306 5.75H11.8831C12.2973 5.75 12.6331 6.08579 12.6331 6.5C12.6331 6.91421 12.2973 7.25 11.8831 7.25H7.38306V11.75C7.38306 12.1642 7.04727 12.5 6.63306 12.5C6.21884 12.5 5.88306 12.1642 5.88306 11.75V7.25H1.38306C0.968843 7.25 0.633057 6.91421 0.633057 6.5C0.633057 6.08579 0.968843 5.75 1.38306 5.75H5.88306V1.25C5.88306 0.835786 6.21884 0.5 6.63306 0.5C7.04727 0.5 7.38306 0.835786 7.38306 1.25V5.75Z"
+              fill="white"
+            />
+          </svg>
+          <span>Nouvelle demande</span>
+        </button>-->
+      </div>
+    </div>
+
+    <div class="nav-demande tw-my-4">
+      <c-nav class="!tw-border-b !tw-border-gray-200" variant="underline">
+        @for (navv of navs; track navv; let i = $index) {
+          <c-nav-item class="tw-px-2" [ngClass]="{'tw-pl-0': i === 0}">
+            <a
+
+              [active]="activeLink === navv.link"
+              (click)="onClickNav(navv.link)"
+              cNavLink
+            >
+
+              {{ navv.title }}
+              @if(activeLink === navv.link){
+                <span
+                  class="tw-inline-flex tw-items-center tw-justify-center tw-w-5 tw-h-5 tw-py-0.5 tw-px-1.5 tw-rounded-full tw-text-xs tw-font-semibold tw-text-green-700 tw-bg-green-200"
+                >{{ navv.count }}</span
+                >
+              } @else {
+                <span
+                  class="tw-inline-flex tw-items-center tw-justify-center tw-w-5 tw-h-5 tw-py-0.5 tw-px-1.5 tw-rounded-full tw-text-xs tw-font-medium tw-text-gray-500 tw-bg-gray-200"
+                >{{ navv.count }}</span
+                >
+              }
+            </a>
+          </c-nav-item>
+        }
+      </c-nav>
+    </div>
+  </div>
+}
+<router-outlet />

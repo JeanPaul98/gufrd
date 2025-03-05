@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="conformite_certificate" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="36d7c2ef-9311-427f-97e1-fe7eba82525f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="dateApplication" class="java.util.Date"/>
+	<parameter name="dateValidite" class="java.util.Date"/>
+	<parameter name="dateDelivrance" class="java.util.Date"/>
+	<parameter name="datePv" class="java.util.Date"/>
+	<parameter name="ref" class="java.lang.String"/>
+	<parameter name="version" class="java.lang.String"/>
+	<parameter name="numero" class="java.lang.String"/>
+	<parameter name="observation" class="java.lang.String"/>
+	<parameter name="substanceActive" class="java.lang.String"/>
+	<parameter name="lieu" class="java.lang.String"/>
+	<parameter name="temperature" class="java.lang.String"/>
+	<parameter name="duree" class="java.lang.String"/>
+	<parameter name="nomsProduit" class="java.lang.String"/>
+	<parameter name="poidsNet" class="java.lang.String"/>
+	<parameter name="catgQualite" class="java.lang.String"/>
+	<parameter name="exportOuImport" class="java.lang.String"/>
+	<parameter name="moyenTransport" class="java.lang.String"/>
+	<parameter name="paysOrigine" class="java.lang.String"/>
+	<parameter name="emballeur" class="java.lang.String"/>
+	<parameter name="nature" class="java.lang.String"/>
+	<parameter name="type" class="java.lang.String"/>
+	<parameter name="societe" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="702" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="9" width="130" height="60" uuid="1ea4327f-62ed-46f4-a4c2-f9e0a913744f"/>
+			</image>
+			<staticText>
+				<reportElement x="-20" y="-11" width="190" height="20" uuid="abdb41fd-452a-4804-8012-7791d4c982f0"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="50" width="220" height="20" uuid="b3ab8ffa-c1b3-40db-af0c-bffba24516c2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[CERTIFICAT DE CONFORMITE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="386" y="0" width="184" height="40" uuid="e15b5995-7eea-48a8-8590-6442576467cf"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Référence : \u00a0 "  + $P{ref}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="386" y="50" width="184" height="40" uuid="fa847fd3-673d-4155-bb51-6bc7b82f2b4a"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Version : \u00a0 "  + $P{version}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="90" width="184" height="71" uuid="d1588eb9-1495-4fed-90cb-487af873cb4c"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Date d'application : \u00a0 " +  new SimpleDateFormat("MM/dd/yyyy").format($P{dateApplication})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="100" width="240" height="61" uuid="e5100cc8-bfcb-40b0-9e02-aa50f90fbb83"/>
+				<textElement>
+					<font fontName="Arial" size="18" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° : \u00a0 "  + $P{numero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="200" width="570" height="30" uuid="6f452078-0844-430b-9884-835a2c5f839a"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. Société importatrice/Exportatrice : \u00a0"  + $P{societe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="236" width="560" height="30" uuid="e0a66665-0ecb-44a9-9d90-3ae821476d50"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["2.Emaballeur identifié sur l'emballage si différent : \u00a0"  + $P{emballeur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="270" width="560" height="30" uuid="5a32b0f3-758e-4069-b9ae-b6ae4f6b831d"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["3. Lieu de contrôle/Pays d'origine :"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="310" width="560" height="30" uuid="e02450e8-5163-4e5b-ab6d-b1020f216c5f"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["4.Pays de destination  : \u00a0"  + $P{paysOrigine}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="340" width="560" height="30" uuid="8fc0849d-86a0-4806-88bb-124858bddc0e"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["5.Identification du moyen de transport : \u00a0"  + $P{moyenTransport}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="370" width="557" height="30" uuid="0dcc4e82-62e7-47af-84dd-86dec4c452c8"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["6.Interne :   \u00a0"  + $P{exportOuImport}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="400" width="560" height="30" uuid="62ef8bda-2e28-49af-9711-5305bcfbe697"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["7.Colis(Nombre et type) :   \u00a0"  + $P{type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-2" y="440" width="560" height="30" uuid="7f6e3f33-0e2f-454b-ace6-e5880bc609e7"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["8.Nature du produit/Variété si la norme le précise :  \u00a0"  + $P{nature}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="470" width="280" height="40" uuid="55132d13-2bf9-418d-ad9c-36b3e40eafb1"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["9.Catégorie de qualité  : \u00a0"  + $P{catgQualite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="470" width="280" height="40" uuid="02a5b1ee-200e-4101-9f09-c57b045e2eeb"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["10.Poids net total en Kg : \u00a0"  + $P{poidsNet}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="480" y="170" width="34" height="20" uuid="9a66c948-163f-498b-8d5c-268b7933bc95"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="170" width="30" height="20" uuid="fb2eedab-aead-4707-8647-7220c14db2b0"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="450" y="170" width="30" height="20" uuid="0dc617a7-0f89-4c55-9087-aa1d2d665318"/>
+				<text><![CDATA[sur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="170" width="30" height="20" uuid="e31733ec-b732-4cb3-afeb-35d2dc71b02b"/>
+				<text><![CDATA[Date :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="510" width="560" height="30" uuid="3ca53f9d-02fa-4e3d-9d5c-4ee5017dd01d"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["11. Noms botaniques de végétaux / Produits végétaux : \u00a0"  + $P{nomsProduit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="540" width="560" height="28" uuid="bcb84086-9598-4bba-9bed-e4f5d84df339"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["12.Traitement du produit (Substance active  , concentration, température : , durée)  : \u00a0"  + $P{substanceActive} +"\u00a0"  + $P{temperature} + "\u00a0"  + $P{duree}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="570" width="560" height="40" uuid="dac35d43-a3fa-4a31-a17c-1f69ca315538"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["13. Observations : \u00a0"  + $P{observation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="5" y="620" width="560" height="78" uuid="de77979c-282f-461f-a51e-be92c3eab79b"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["14. Considérant le Rapport/ Procès Verbal d'inspection N°\u00a0"  + $P{lieu}+" , du  \u00a0" + new SimpleDateFormat("MM/dd/yyyy").format($P{datePv}) +", l'envoi visé ci-dessus est conforme,  au moment de la délivrance dudit certificat, aux normes internationales de commercialisation  en vigueur."]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="60" width="190" height="30" uuid="8de2a57f-3c19-4b80-93dd-1efc21d96015"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Cachet de poste d'inspection ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="367" y="70" width="190" height="20" uuid="297ec800-6184-46dd-bfeb-f7c86a6c4f91"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Signature]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="5" width="330" height="45" uuid="6e652e76-b3ce-4a73-bfc1-1af491cb047c"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Valable jusqu'au (date) :  \u00a0" + new SimpleDateFormat("MM/dd/yyyy").format($P{dateValidite})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="340" y="10" width="225" height="60" uuid="658f8407-cc76-4504-883a-6e1f6dcb3423"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Lieu et date de délivrance : \u00a0"  + $P{lieu}+ "\u00a0" +new SimpleDateFormat("MM/dd/yyyy").format($P{dateDelivrance})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

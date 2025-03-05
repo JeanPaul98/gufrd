@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="agrement" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5d0316a3-615b-4060-b7bf-dfb44c1113bb">
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nomSociete" class="java.lang.String"/>
+	<field name="numeroAgrement" class="java.lang.String"/>
+	<field name="activite" class="java.lang.String"/>
+	<field name="adresse" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="49" width="210" height="30" uuid="5d27d1fb-f93b-453a-b706-e1b9391e739a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AGREMENT SANITAIRE]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="226b50d1-e1a2-46ce-bf51-37e918674cc3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df67b264-8759-4a11-be6e-c2b3abfa82d0"/>
+				</reportElement>
+				<text><![CDATA[nomSociete]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="112" y="0" width="100" height="30" uuid="345696e8-9667-487d-ab25-ae114499923a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f3578b9-c345-40a3-8c60-4f869f1cca96"/>
+				</reportElement>
+				<text><![CDATA[numeroAgrement]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="0" width="100" height="30" uuid="66425e23-bcff-4262-9714-a378b9533e05">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4c35f47f-9df6-4e37-a867-db7308f84047"/>
+				</reportElement>
+				<text><![CDATA[activite]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="0" width="100" height="30" uuid="d0b5c70b-9edb-4f79-b4ef-f9d89d966b48">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95ddad00-be15-4026-b451-48bdcf990085"/>
+				</reportElement>
+				<text><![CDATA[adresse]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="-1" y="13" width="100" height="30" uuid="0b3e75ee-e294-4d70-b966-17a6c2032ec0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="df67b264-8759-4a11-be6e-c2b3abfa82d0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nomSociete}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="112" y="11" width="100" height="30" uuid="f68e6628-6cd5-442d-8c7e-acf72e524449">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9f3578b9-c345-40a3-8c60-4f869f1cca96"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{numeroAgrement}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="7" width="100" height="30" uuid="b5e3950c-90d2-42fc-9cfa-91b864dfa70b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4c35f47f-9df6-4e37-a867-db7308f84047"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{activite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="349" y="4" width="100" height="30" uuid="4ac96e9a-5543-43f3-a8ee-ba66361b1de8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95ddad00-be15-4026-b451-48bdcf990085"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{adresse}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

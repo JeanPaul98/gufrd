@@ -1,0 +1,252 @@
+<div class="tw-relative">
+  <div class="accordion-body">
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-lg">
+          Recapitulatif formulaire
+        </p>
+        <p class="tw-text-gray-600 tw-mb-10 tw-font-normal tw-text-base">
+          Résumés des champs renseignés pour confirmation
+        </p>
+      </div>
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information navire
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations Navires fournis
+        </p>
+      </div>
+      <div class="content tw-flex-grow">
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Point d'entrée</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.pointEntree }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Lieu inspection</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.lieuInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date application</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.dateApplication }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date arrivée</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.datearrivee }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date PV</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.datePv }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Date inspection</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.dateInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Expediteur</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.expediteur }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Destinataire</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.destinataire }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Numéro enregistrement</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.numeroEnregistrement }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Agent PV</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.agentPv }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Contrôle technique</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.controleTechnique }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Résultat inspection</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.resultatInspection }}</div>
+        </div>
+        <div class="tw-flex tw-flex-row tw-mb-3 tw-font tw-justify-between">
+          <div class="tw-font-medium tw-text-gray-600">Remarque</div>
+          <div class="tw-text-gray-900 tw-font">{{ step1LocalData.remarque }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les produits
+        </p>
+      </div>
+      <div class="accordion-body">
+        <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+          <thead>
+          <tr>
+            <th class="tw-text-sm !tw-text-secondary">#</th>
+            <th class="tw-text-sm !tw-text-secondary">Libellé</th>
+            <th class="tw-text-sm !tw-text-secondary">Quantité</th>
+            <th class="tw-text-sm !tw-text-secondary">Origine</th>
+            <th class="tw-text-sm !tw-text-secondary">Emplacement</th>
+            <th class="tw-text-sm !tw-text-secondary">Mesure</th>
+            <th class="tw-text-sm !tw-text-secondary">Moyen de transport</th>
+            <th class="tw-text-sm !tw-text-secondary">Matiere active</th>
+
+            <!--                <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th>-->
+            <!--                <th class="tw-text-sm !tw-text-secondary">Origine</th>-->
+            <!--                <th class="tw-text-sm !tw-text-secondary">Date de production</th>-->
+          </tr>
+          </thead>
+          <tbody >
+
+
+            @for(produit of step2LocalData.detPvProduitDtos; track produit; let index = $index){
+              @if(index + 1 < step2LocalData.detPvProduitDtos.length){
+                <tr>
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ produit.nomProduit }}</td>
+                  <td>{{ produit.quantite }}</td>
+                  <td>{{ produit.origine }}</td>
+                  <td>{{ produit.emplacement }}</td>
+                  <td>{{ produit.mesure }}</td>
+                  <td>{{ produit.moyenTransport }}</td>
+                  <td>{{ produit.matiereActive }}</td>
+
+                </tr>
+              }
+            } @empty {
+              <tr>
+                <td colspan="7">Aucun produit</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Inspecteurs pour la visite
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations les inspecteurs pour la visite
+        </p>
+      </div>
+      <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+        <thead>
+        <tr>
+          <th class="tw-text-sm !tw-text-secondary">#</th>
+          <th class="tw-text-sm !tw-text-secondary">Inspecteur</th>
+          <th class="tw-text-sm !tw-text-secondary">Fonction</th>
+
+          <!--                <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th>-->
+          <!--                <th class="tw-text-sm !tw-text-secondary">Origine</th>-->
+          <!--                <th class="tw-text-sm !tw-text-secondary">Date de production</th>-->
+        </tr>
+        </thead>
+        <tbody >
+
+
+          @for(inspecteur of step3LocalData.detPVInspecteurDtos; track inspecteur; let index = $index){
+            @if(index + 1 < step3LocalData.detPVInspecteurDtos.length){
+              <tr>
+                <td>{{ index + 1 }}</td>
+                <td>{{ inspecteur.nomInspecteur }}</td>
+                <td>{{ inspecteur.fonction }}</td>
+              </tr>
+            }
+          } @empty {
+            <tr>
+              <td colspan="7">Aucun produit</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-my-4"></div>
+    <div class="tw-flex tw-flex-col">
+      <div class="sub-title ">
+        <p class="tw-text-blue-600 tw-mb-1 tw-font-semibold tw-text-base">
+          Information traitement produits
+        </p>
+        <p class="tw-text-blue-800 tw-mb-6 tw-font-normal tw-text-base">
+          Informations sur les traitements
+        </p>
+      </div>
+      <div class="accordion-body">
+        <table  [responsive]="true" [bordered]="true" class="!tw-divide-gray-200" cTable>
+          <thead>
+          <tr>
+            <th class="tw-text-sm !tw-text-secondary">#</th>
+            <th class="tw-text-sm tw-text-secondary">Produit</th>
+            <th class="tw-text-sm tw-text-secondary">Substance active</th>
+            <th class="tw-text-sm tw-text-secondary">Température</th>
+            <th class="tw-text-sm tw-text-secondary">Nom société</th>
+            <th class="tw-text-sm tw-text-secondary">Nature traitement</th>
+            <th class="tw-text-sm tw-text-secondary">Heure début traitement</th>
+            <th class="tw-text-sm tw-text-secondary">Concentration</th>
+            <th class="tw-text-sm tw-text-secondary">Durée</th>
+
+
+
+            <!--                <th class="tw-text-sm !tw-text-secondary">Nombre de cartons</th>-->
+            <!--                <th class="tw-text-sm !tw-text-secondary">Origine</th>-->
+            <!--                <th class="tw-text-sm !tw-text-secondary">Date de production</th>-->
+          </tr>
+          </thead>
+          <tbody >
+
+
+            @for(produit of step4LocalData.detTraitementProduitDtos; track produit; let index = $index){
+              @if(index + 1 < step4LocalData.detTraitementProduitDtos.length){
+                <tr>
+                  <td>{{ index + 1 }}</td>
+                  <td>{{ produit.nomProduit }}</td>
+                  <td>{{ produit.substanceActive }}</td>
+                  <td>{{ produit.temperature }}</td>
+                  <td>{{ produit.nomSociete }}</td>
+                  <td>{{ produit.natureTraitement }}</td>
+                  <td>{{ produit.heureDebTrait }}</td>
+                  <td>{{ produit.concentration }}</td>
+                  <td>{{ produit.duree }}</td>
+
+                </tr>
+              }
+            } @empty {
+              <tr>
+                <td colspan="7">Aucun produit</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>  -->
+  <div class="title tw-flex tw-flex-row tw-mt-8 tw-items-center tw-justify-end">
+    <div
+      class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+    >
+      <button
+        (click)="onClickPrevious()"
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        cButton
+        color="light"
+      >
+        <span>Précédent</span>
+      </button>
+      <button
+        (click)="onClickNext()"
+        class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+        cButton
+        color="primary"
+      >
+        <span>Créer le PV</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,141 @@
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($agriculture-theme);
+/* You can add global styles to this file, and also import other style files */
+@use "tippy.js/dist/tippy.css";
+@use 'tippy.js/dist/border.css';
+
+@use "tailwindcss/base";
+@use "tailwindcss/components";
+@use "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --faw-raw--white: #ffffff;
+    --faw-raw--secondary: #414552;
+    --faw-raw--fg-secondary: #697386;
+    --faw-raw--fg-secondary02: #bebdbd;
+    --faw-raw--secondary-light: #f1f1f1;
+    --faw-raw--border-secondary: #e0e6eb;
+    --faw-raw--primary: #18a148;
+    --faw-raw--metal: #565584;
+    --faw-raw--tahiti: #3ab7bf;
+    --faw-raw--silver: #ecebff;
+    --faw-raw--bubble-gum: #ff77e9;
+    --faw-raw--bermuda: #78dcca;
+    --faw-raw-fg-accent-green: #006908;
+    --faw-raw-bg-accent-light-green: #dbf9c9;
+    --faw-raw-fg-accent-red: #B3093C;
+    --faw-raw-bg-accent-light-red: #FFE7F2;
+    --faw-raw-fg-accent-yellow: #983705;
+    --faw-raw-bg-accent-light-yellow: #F6E6B9;
+    --faw-raw-fg-accent-blue: #0055BC;
+    --faw-raw-bg-accent-light-blue: #CFF5F6;
+    --faw-focus-input-color: #e0f6d3;
+    --faw-focus-light-input-color: #f1f9ec;
+    --faw-focus-input-border-color: #0b7e33;
+
+  }
+}
+
+$faw-white: var(--faw-raw--white);
+$faw-secondary: var(--faw-raw--secondary);
+$faw-fg-secondary: var(--faw-raw--fg-secondary);
+$faw-secondary-light: var(--faw-raw--secondary-light);
+$faw-border-secondary: var(--faw-raw--border-secondary);
+$faw-primary: var(--faw-raw--primary);
+$faw-metal: var(--faw-raw--metal);
+$faw-tahiti: var(--faw-raw--tahiti);
+$faw-silver: var(--faw-raw--silver);
+$faw-bubble-gum: var(--faw-raw--bubble-gum);
+$faw-bermuda: var(--faw-raw--bermuda);
+$faw-fg-accent-green: var(--faw-raw-fg-accent-green);
+$faw-bg-accent-light-green: var(--faw-raw-bg-accent-light-green);
+$faw-fg-accent-red: var(--faw-raw-fg-accent-red);
+$faw-bg-accent-light-red: var(--faw-raw-bg-accent-light-red);
+$faw-fg-accent-yellow: var(--faw-raw-fg-accent-yellow);
+$faw-bg-accent-light-yellow: var(--faw-raw-bg-accent-light-yellow);
+$faw-fg-accent-blue: var(--faw-raw-fg-accent-blue);
+$faw-bg-accent-light-blue: var(--faw-raw-bg-accent-light-blue);
+$faw-focus-input-color: var(--faw-focus-input-color);
+$faw-focus-input-border-color: var(--faw-focus-input-border-color);
+$faw-focus-light-input-color: var(--faw-focus-light-input-color);
+
+// If you want to add mixins CSS you can put it here.
+@import "mixin";
+
+// If you want to override variables do it here
+@import "variables";
+
+// Import styles with default layout.
+@import "@coreui/coreui/scss/coreui";
+
+// Import Chart.js custom tooltips styles
+@import "@coreui/chartjs/scss/coreui-chartjs";
+
+// Custom styles for this theme
+@import "theme";
+
+// Some temp fixes
+//@import "fixes";
+
+@import "@ng-select/ng-select/themes/default.theme.css";
+
+@import "tippy";
+// If you want to add custom CSS you can put it here.
+@import "custom";
+
+// Examples
+// We use those styles to show code examples, you should remove them in your application.
+@import "examples";
+
+// Keenicons
+@import "../assets/keenicons/duotone/style.css";
+@import "../assets/keenicons/filled/style.css";
+@import "../assets/keenicons/outline/style.css";
+@import "../assets/keenicons/solid/style.css";
+
+html,
+body {
+  height: 100%;
+}
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url("inter/Inter-roman.var.woff2?v=3.18") format("woff2");
+}
+
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url("inter/Inter-italic.var.woff2?v=3.18") format("woff2");
+}
+
+
+@layer base {
+  * {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11" on !important;
+    -webkit-font-feature-settings: "cv02", "cv03", "cv04", "cv11" on !important;
+    -moz-font-feature-settings: "cv02", "cv03", "cv04", "cv11" on !important;
+  }
+
+  html, body {
+    font-family: "Inter var", system-ui, sans-serif !important;
+    letter-spacing: -0.08px;
+  }
+
+  // div {
+  //   letter-spacing: -0.08px;
+  // }
+}
+
+.sidebar {
+  //   --cui-sidebar-bg: #106eea;
+}
+
+

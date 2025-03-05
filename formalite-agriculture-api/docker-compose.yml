@@ -1,0 +1,11 @@
+services:
+  server-agri-backoffice-atd:
+    build:
+      context: .
+      dockerfile: Dockerfileupdate
+    ports:
+      - "7006:7006"
+    volumes:
+      - F:\formalite:/uploads
+      - F:\jasper:/jasper
+    restart: always

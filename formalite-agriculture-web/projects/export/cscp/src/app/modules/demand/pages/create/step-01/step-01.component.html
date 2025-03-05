@@ -1,0 +1,131 @@
+<div class="tw-relative">
+  <form [formGroup]="step1InfoNavireFrom" (submit)="onSubmit()">
+    <div class="accordion-body">
+      <!-- <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations sur le navire
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant le navire
+        </p>
+      </div> -->
+
+    <div class="accordion-body">
+
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-moyenTransport" class=" "
+              >Moyen Transport<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'moyenTransport'"
+              cFormControl
+              type="text"
+              id="input-moyenTransport"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-expediteur" class=" "
+              >Expéditeur<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'expediteur'"
+              cFormControl
+              type="text"
+              id="input-expediteur"
+              class=""
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-lieuExpedition" class=" "
+              >lieu Expedition<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'lieuExpedition'"
+              cFormControl
+              type="text"
+              id="input-lieuExpedition"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-traitement" class=" "
+              >Traitement<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'traitement'"
+              cFormControl
+              type="text"
+              id="input-traitement"
+              class=""
+            />
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-destinataire" class=" "
+              >Destinataire<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'destinataire'"
+              cFormControl
+              type="text"
+              id="input-destinataire"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-identification" class=" "
+              >Identification<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'identification'"
+              cFormControl
+              type="text"
+              id="input-identification"
+              class=""
+            />
+          </div>
+        </div>
+
+    </div>
+
+
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+          <button
+              type="submit"
+              [disabled]="!step1InfoNavireFrom.valid"
+              (click)="onClickNext()"
+              class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+              cButton
+              color="primary"
+            >
+            <span>Suivant</span>
+          </button>
+    
+      </div>
+    </div>
+  </form>
+</div>

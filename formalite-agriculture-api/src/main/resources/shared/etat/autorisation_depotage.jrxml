@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="petsHealthCertificate" pageWidth="655" pageHeight="1200" columnWidth="615" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2207ca2-f425-4eee-98bd-44c341ab3924">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="dateProduction" class="java.util.Date"/>
+	<parameter name="nSgde" class="java.lang.String"/>
+	<parameter name="numeroEnregistrement" class="java.lang.String"/>
+	<parameter name="importateur" class="java.lang.String"/>
+	<parameter name="designation" class="java.lang.String"/>
+	<parameter name="poidsNet" class="java.lang.String"/>
+	<parameter name="conteneur" class="java.lang.String"/>
+	<parameter name="provenance" class="java.lang.String"/>
+	<parameter name="nomPrenoms" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="251" height="30" uuid="bf6eea6f-46a2-47e0-ae07-7146ce199351"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MINISTERE DE L'AGRICULTURE,DE L'ELEVAGE ET DU DEVELOPPEMENT RURAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="20" width="80" height="20" uuid="a954074d-6ee3-4925-bc40-0b782fe31fc5"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="140" height="30" uuid="49e480a0-b6f9-4dbd-ba4c-164d66d5bb69"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPUBLIQUE TOGOLAISE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="10" width="140" height="20" uuid="62164556-2c3d-46e3-8134-2f0990ac4664"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Travail-Liberté-Patrie]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="30" width="80" height="20" uuid="3a860f12-2bb1-4878-96bb-8e1cc8086719"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="30" width="90" height="20" uuid="5af71b40-1520-41bc-9d92-a45fe3e97792"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CABINET]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="85" y="40" width="80" height="20" uuid="285c8fda-6b5e-4356-be47-62035d5bc0f1"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="60" width="170" height="20" uuid="13f17e6c-323b-430a-a76a-6a4fd0ef7ea1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SECRETARIAT GENERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="95" y="60" width="60" height="20" uuid="4286e714-acf8-4d34-b86e-e0bacac02c70"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="77" splitType="Stretch">
+			<staticText>
+				<reportElement x="90" y="-10" width="60" height="20" uuid="38f633d4-df2c-461d-bfd4-e392e27be911"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[..................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="48" y="10" width="145" height="20" uuid="ca169b75-c89b-416a-a08f-5de310e70362"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DIRECTION DE L'ELEVAGE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="2" y="57" width="128" height="20" uuid="b6eb4e5f-6179-421d-9f6a-3290fedddbfb"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["N° \u00a0"  + $P{nSgde}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="130" y="57" width="130" height="20" uuid="01225c4e-7c18-4673-b16b-9276f391bed0"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[/MAEDR/CAB/SG/DE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="22" width="70" height="30" uuid="3b9f8cb4-a3c5-4770-a827-a9a3731c3598"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lomé, le]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM, yyyy">
+				<reportElement x="380" y="27" width="160" height="30" uuid="219a0527-88ef-402b-94f2-03424e0a57dc"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="120" y="10" width="450" height="20" uuid="7e404f81-df9c-4187-81d2-d361ba01a5c6"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[AUTORISATION DE DEPOTAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="50" width="440" height="20" uuid="f90d4204-1b21-4f63-bc56-9f7a92271710"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LE MINISTRE DE L'AGRICULTURE,DE L'ELEVAGE ET DU DEVELOPPEMENT RURAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="842" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="10" width="540" height="50" uuid="e07b504b-a275-4f08-8296-9bd63a065db5"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vu l'arrêté N° 18/MEFP/MAEH/MICDZF/MS du 09 juin 1999, portant interdiction d'importation de produits en provenance de la Belgique;]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="820" width="603" height="22" uuid="db9cac64-bbde-4c40-86e3-b7caa062451e"/>
+				<textElement>
+					<font fontName="Serif" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[BP: 385 Lomé-Togo tel : (228) 22500711  secretariat.ministre@agriculture.gouv.tg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="330" y="620" width="282" height="19" uuid="e9197a0c-919f-44d0-b64f-0aabbfc55721"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Signature du ministre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="130" width="540" height="60" uuid="851a3385-6965-4166-b3f1-cbbb8ae2c4fe"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vu la note de serviceN°114/MAEP/SG/DEPdu 18 juin 1999, portant dispositions pratiques pour l'application de l'Arrêté interministériel.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="220" width="540" height="60" uuid="387bb538-4829-43cf-827a-82fe435322af"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Vu le dossier de demande de l'importateur enregistré sous le numéro : \u00a0"  + $P{numeroEnregistrement}+"\u00a0 du \u00a0" + DATEFORMAT($P{dateProduction}, "dd/MM/yyyy HH:MM:ss")+ "\u00a0 ;"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="40" y="290" width="540" height="40" uuid="0f2bc6c2-7ad1-4ff0-8e7c-73446c4c3570"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUTORISE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="340" width="540" height="40" uuid="fc0aab70-5778-4eca-a295-5f84b995710b"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\u00a0"  + $P{importateur}+" \u00a0 à procéder au dépotage des marchandises ci-après: "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="400" width="500" height="40" uuid="b53123cb-ca82-46ee-a8ff-a277f309a5c6"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Désignation : \u00a0"  + $P{designation}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="450" width="500" height="40" uuid="f98fb564-e941-4a63-b268-9b6768c24d8a"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Poids Net :  \u00a0"  + $P{poidsNet}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="500" width="500" height="40" uuid="007a52a7-231d-42c2-bb25-546302ca09a0"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Conteneur :  \u00a0"  + $P{conteneur}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="817" width="610" height="3" backcolor="#0A0808" uuid="c0d6ccf2-3ac0-4bfe-ae92-6a66f6adcbd8"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Double"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="560" width="500" height="40" uuid="21a227b0-1580-48e2-8e52-d4265040e2f3"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Provenance : \u00a0"  + $P{provenance}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="37" y="60" width="540" height="60" uuid="8536a16a-793f-45b8-8260-f8f0052f98ec"/>
+				<textElement>
+					<font fontName="Arial" size="16" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Vu l'arrêté  N° 69/MAEH/CAB/SG/DEP du 12 décembre 2006, portant fixation des conditions d'importation  et de dépotage d'animaux vivants et de denrées alimentaires d'origine animale;]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="340" y="740" width="282" height="19" uuid="02ce7d84-2a6a-4e8e-a211-af89e008cf03"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" \u00a0"  + $P{nomPrenoms}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

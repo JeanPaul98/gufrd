@@ -1,0 +1,120 @@
+<div class="tw-relative">
+  <form [formGroup]="step1InfoNavireFrom" (submit)="onSubmit()">
+    <div class="accordion-body">
+      <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations sur l'agrément
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant l'agrément
+        </p>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <div class="tw-flex tw-items-center tw-justify-between">
+            <label for="num-atp" class=" "
+            >Choisir un numéro agrément &nbsp;<span class="!tw-font-bold"
+            ><app-info-tooltip [message]="'Numéro de l\'accord pour l\'autorisation'"/></span></label
+            >
+          </div>
+          <ng-select
+            [formControlName]="'numeroAgrement'"
+            [searchFn]="customSearchFn"
+            [bindLabel]="'numero'"
+            [items]="agreementList()"
+            (change)="onProductSelectChange($event)"
+            [appendTo]="'body'"   >
+<!--            @for (agreement of agreementList(); track agreement.numero) {-->
+<!--              <ng-option  [value]="agreement"></ng-option>-->
+<!--            }-->
+
+            <ng-template ng-label-tmp let-item="item">
+              <span  class="tw-text-sm text">{{item.numero}}</span>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index">
+              <span  class=" !tw-font-mono !tw-font-medium">{{item.numero}}</span>
+              <div class="!tw-font-medium">{{item.raisonSocialSociete}}</div>
+            </ng-template>
+          </ng-select>
+        </div>
+      </div>
+
+
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-raisonSocial" class=" "
+          >Raison Sociale <span class="!tw-font-normal">(auto-rempli)</span></label
+          >
+          <input
+            [formControlName]="'raisonSocial'"
+            cFormControl
+            type="text"
+            id="input-raisonSocial"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-activite" class=" "
+          >Activité <span class="!tw-font-normal">(auto-rempli)</span></label
+          >
+          <input
+            [formControlName]="'activite'"
+            cFormControl
+            type="text"
+            id="input-activite"
+            class=""
+          />
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-provenance" class=" "
+          >Provenance marchandise<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'provenance'"
+            cFormControl
+            type="text"
+            id="input-provenance"
+            class=""
+          />
+        </div>
+        <div class="col-md-6 col-12 tw-max-w-sm">
+          <label for="input-embarquement" class=" "
+          >Date de l'embarquement<span class="!tw-font-bold tw-text-red-600"
+          >*</span
+          ></label
+          >
+          <input
+            [formControlName]="'dateEmbarquement'"
+            cFormControl
+            type="datetime-local"
+            id="input-embarquement"
+            class=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+          type="submit"
+          [disabled]="
+            checkIfFormIsValid()
+          "
+          (click)="onClickNext()"
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          cButton
+          color="primary"
+        >
+          <span>Suivant</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

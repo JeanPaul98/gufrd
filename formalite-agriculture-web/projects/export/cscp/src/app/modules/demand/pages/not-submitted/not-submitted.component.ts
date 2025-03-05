@@ -1,0 +1,148 @@
+import {Component, ComponentRef, OnInit, signal, ViewContainerRef, WritableSignal} from '@angular/core';
+import { DemandService } from '../../services/demand.service';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import {DemandiocavModel} from "../../../../../../../../../src/app/models/demand-iocav.model";
+import {Row} from "@tanstack/angular-table";
+import {toast} from "ngx-sonner";
+import {NiceToastComponent} from "../../../../../../../../../src/components/nice-toast/nice-toast.component";
+import {finalize} from "rxjs";
+import {delay, tap} from "rxjs/operators";
+import {Router} from "@angular/router";
+
+@UntilDestroy()
+@Component({
+  selector: 'app-not-submitted',
+  templateUrl: './not-submitted.component.html',
+  styleUrl: './not-submitted.component.scss'
+})
+export class NotSubmittedComponent implements OnInit {
+  elements: any[] = [1,2,3,4,5];
+  demand!: DemandiocavModel;
+  private niceToastComponentRef!: ComponentRef<NiceToastComponent>;
+  demands: WritableSignal<DemandiocavModel[]> = signal<DemandiocavModel[]>([]);
+  modalVisible: boolean = false;
+  loadingSubmit: boolean = false;
+  loadingDemands: boolean = false;
+  type: string = 'confirm';
+  title: string = 'Confirmer la soumission';
+  message: string = 'Cliquer sur le bouton "Confirmer" pour soumettre la demande!';
+  cancelButton: string = 'Annuler';
+  confirmButton: string = 'Confirmer';
+
+  constructor(private demandService: DemandService,private viewContainerRef: ViewContainerRef, private router: Router) {
+    console.log('constructor');
+
+  }
+
+  ngOnInit(): void {
+    this.getDemandNotSubmitted();
+  }
+
+
+  getDemandNotSubmitted() {
+    this.loadingDemands = true;
+    this.demandService.getDemandNotSubmitted().pipe(
+      untilDestroyed(this),
+      finalize(() => {
+        if(this.demands() !== undefined) {
+          this.loadingDemands = false;
+          this.demandService.currentDemandsSubject.next(this.demands());
+        }
+      })
+    ).subscribe((res) => {
+      console.log('res', res);
+      this.demands.set(res as DemandiocavModel[]);
+
+    });
+  }
+
+  openModal(demand: DemandiocavModel, type: string = 'confirm', title: string = 'Confirmer la soumission', message: string = 'Cliquer sur le bouton "Confirmer" pour soumettre la demande!', cancelButton: string = 'Annuler', confirmButton: string = 'Confirmer') {
+    this.title = title;
+    this.message = message;
+    this.cancelButton = cancelButton;
+    this.confirmButton = confirmButton;
+    this.type = type;
+    this.demand = demand;
+    this.modalVisible = true;
+  }
+
+  choiceOnSubmit(type: string) {
+    if(type === 'confirm') {
+      this.onSubmit();
+    } else if(type === 'delete') {
+      this.onDelete();
+    }
+  }
+
+  onDelete() {
+    console.log('onDelete', this.demand);
+    this.loadingSubmit = true;
+    this.demandService.nowDeleteDemand({
+      idFormalite: this.demand.idFormalite,
+      // numGenere: this.demand.numGenerer,
+    }).pipe(
+      untilDestroyed(this),
+      tap(() => {
+
+        toast.custom(NiceToastComponent, {
+          position: 'top-center',
+          componentProps:{
+            texto: 'Demande supprimée',
+            state: 'success'
+          }
+        });
+        this.getDemandNotSubmitted();
+      }),
+      finalize(() => {
+        this.modalVisible = false;
+        this.loadingSubmit = false;
+      })
+    ).subscribe((res) => {
+      console.log('res', res);
+    });
+
+  }
+
+  onSubmit() {
+    console.log('onSubmit', this.demand);
+    this.loadingSubmit = true;
+    this.demandService.nowSubmitDemand({
+      idFormalite: this.demand.idFormalite,
+      // numGenere: this.demand.numGenerer,
+    }).pipe(
+      untilDestroyed(this),
+      tap(() => {
+
+        toast.custom(NiceToastComponent, {
+          position: 'top-center',
+          componentProps:{
+            texto: 'Demande soumise',
+            state: 'success'
+          }
+        });
+        this.getDemandNotSubmitted();
+      }),
+      finalize(() => {
+        this.modalVisible = false;
+        this.loadingSubmit = false;
+      })
+    ).subscribe((res) => {
+      console.log('res', res);
+    });
+
+  }
+
+  xendDetailsInfo(demand: DemandiocavModel) {
+    this.demandService.currentDemandSubject.next(demand);
+    localStorage.setItem('demandDetail', JSON.stringify(demand));
+
+  }
+
+
+  onCancel() {
+    this.modalVisible = false;
+    this.loadingSubmit = false;
+  }
+
+
+}

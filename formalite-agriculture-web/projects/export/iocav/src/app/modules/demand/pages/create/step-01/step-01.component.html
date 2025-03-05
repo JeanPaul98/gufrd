@@ -1,0 +1,193 @@
+<div class="tw-relative">
+  <form [formGroup]="step1InfoNavireFrom" (submit)="onSubmit()">
+    <div class="accordion-body">
+      <!-- <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations sur le navire
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant le navire
+        </p>
+      </div> -->
+
+      <div class="accordion-body">
+
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-paysExpediteur" class=" "
+              >Pays de l'expéditeur<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'paysExpediteur'"
+              cFormControl
+              type="text"
+              id="input-paysExpediteur"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-expediteur" class=" "
+              >Expéditeur<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'expediteur'"
+              cFormControl
+              type="text"
+              id="input-expediteur"
+              class=""
+            />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-paysOrigine" class=" "
+              >Pays d'origine<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'paysOrigine'"
+              cFormControl
+              type="text"
+              id="input-paysOrigine"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-lieuOrigine" class=" "
+              >lieu d'origine<span class="!tw-font-bold tw-text-red-600"
+                >*</span
+              ></label
+            >
+            <input
+              [formControlName]="'lieuOrigine'"
+              cFormControl
+              type="text"
+              id="input-lieuOrigine"
+              class=""
+            />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-paysDestination" class=" "
+            >Pays de destination<span class="!tw-font-bold tw-text-red-600"
+            >*</span
+            ></label
+            >
+            <input
+              [formControlName]="'paysDestination'"
+              cFormControl
+              type="text"
+              id="input-paysDestination"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-nomDestinataire" class=" "
+            >Nom Destinataire<span class="!tw-font-bold tw-text-red-600"
+            >*</span
+            ></label
+            >
+            <input
+              [formControlName]="'nomDestinataire'"
+              cFormControl
+              type="text"
+              id="input-nomDestinataire"
+              class=""
+            />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-lieuChargement" class=" "
+            >Lieu de chargement<span class="!tw-font-bold tw-text-red-600"
+            >*</span
+            ></label
+            >
+            <input
+              [formControlName]="'lieuChargement'"
+              cFormControl
+              type="text"
+              id="input-lieuChargement"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-moyenTransport" class=" "
+            >Moyen de transport:<span class="!tw-font-bold tw-text-red-600"
+            >*</span
+            ></label
+            >
+            <input
+              [formControlName]="'moyenTransport'"
+              cFormControl
+              type="text"
+              id="input-moyenTransport"
+              class=""
+            />
+          </div>
+        </div>
+  
+        <div class="row mb-3">
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-posteFrontalier" class=" "
+            >Poste frontalier<span class="!tw-font-bold tw-text-red-600"
+            >*</span
+            ></label
+            >
+            <input
+              [formControlName]="'posteFrontalier'"
+              cFormControl
+              type="text"
+              id="input-posteFrontalier"
+              class=""
+            />
+          </div>
+          <div class="col-md-6 col-12 tw-max-w-sm">
+            <label for="input-dateDepart" class=" "
+            >Date depart<span class="!tw-font-bold tw-text-red-600"
+            >*</span
+            ></label
+            >
+            <input
+              [formControlName]="'dateDepart'"
+              cFormControl
+              type="date"
+              id="input-dateDepart"
+              class=""
+            />
+          </div>
+        </div>
+  
+      </div>
+
+
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+          <button
+              type="submit"
+              [disabled]="!step1InfoNavireFrom.valid"
+              (click)="onClickNext()"
+              class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+              cButton
+              color="primary"
+            >
+            <span>Suivant</span>
+          </button>
+    
+      </div>
+    </div>
+  </form>
+</div>

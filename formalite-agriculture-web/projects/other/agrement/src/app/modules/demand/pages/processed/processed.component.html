@@ -1,0 +1,126 @@
+<table bordered  cTable>
+  <thead >
+  <tr>
+    <th class="tw-text-sm tw-text-secondary" scope="col">N° ORDRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">N° DEMANDE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">ATP</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">NOM NAVIRE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">IMO</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">REDEVANCE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">STATUS DEMANDE</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">STATUS PAIEMENT</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">DATE TRAITEMENT</th>
+    <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+  </tr>
+    @if (loadingDemands) {
+      <tr>
+        <td colspan="9" class="tw-text-center !tw-my-0 !tw-p-0">
+          <app-loading-bar></app-loading-bar>
+        </td>
+      </tr>
+    }
+  </thead>
+    <tbody>
+      @for(demand of demands(); track demand; ) {
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>
+            <a [routerLink]="['/demand/details', demand.idFormalite]"  (click)="xendDetailsInfo(demand)"
+               class="tw-inline-flex tw-items-center tw-font-medium tw-text-blue-600 hover:tw-cursor-pointer hover:tw-underline">
+              {{ demand.numGenerer }}
+              <svg class="tw-w-5 tw-h-5 tw-ms-2 rtl:tw-rotate-180" xmlns="http://www.w3.org/2000/svg" width="18"
+                   height="18" viewBox="0 0 24 24">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M11 4H4v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5M9 15L20 4m-5 0h5v5"/>
+              </svg>
+            </a>
+          </td>
+          <td scope="row">
+            {{ demand.atp }}
+          </td>
+          <td>{{ demand.nomNavire }}</td>
+          <td>{{ demand.imo }}</td>
+          <td>{{ demand.montantRedevance | price}}</td>
+          <td>
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-lime-200 tw-text-[#228403] tw-rounded-full"
+              >
+                {{demand.etat === 'TRAITER' && 'Tratée'}}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M0.273315 8.93997L3.99998 12.6666L4.93998 11.72L1.21998 7.99997M14.8266 3.71997L7.77332 10.78L4.99998 7.99997L4.04665 8.93997L7.77332 12.6666L15.7733 4.66664M12 4.66664L11.06 3.71997L6.82665 7.9533L7.77332 8.8933L12 4.66664Z"
+                    fill="#228403"
+                  />
+                </svg>
+              </span>
+          </td>
+          <td>
+            @if (demand.montantRedevance === 0) {
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-zinc-200 tw-text-zinc-600 tw-rounded-full"
+              >
+              {{demand.montantRedevance > 0  ? demand.statutPaiement : 'Gratuit' }}
+              </span>
+            } @else if (demand.montantRedevance > 0 && demand.statutPaiement === 'PAYER') {
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-emerald-100 tw-text-emerald-700 tw-rounded-full"
+              >
+              {{demand.montantRedevance > 0  ? demand.statutPaiement : 'Payé' }}
+              </span>
+            } @else if (demand.montantRedevance > 0 && demand.statutPaiement === 'IMPAYER') {
+              <span
+                class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium  tw-bg-orange-100 tw-text-orange-600 tw-rounded-full"
+              >
+              {{demand.montantRedevance > 0  ? demand.statutPaiement : 'Impayé' }}
+              </span>
+            }
+          </td>
+          <td>{{demand.dateTraitement | date: 'dd/MM/yyyy: HH:mm'}}</td>
+          <td>
+            <button (click)="generateAutorisationPdf(demand)" appTippyDirective
+                    [tooltip]="'Générer autorisation'"
+                    [tooltipOptions]="{placement: 'top', theme: 'faw-light', arrow: true}"
+                    class="!tw-text-primary !tw-bg-green-100 hover:!tw-text-green-700 !tw-mr-3" cButton color="light">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="currentColor" d="M14.5 23.5v-1h7v1zm3.5-3.212L14.712 17l.688-.688l2.1 2.1v-4.887h1v4.887l2.1-2.1l.688.688zM6.116 19.5q-.652 0-1.134-.482T4.5 17.884V4.116q0-.652.482-1.134T6.116 2.5H13L18.5 8v3.14h-6.384v8.36zm6.384-11h5l-5-5z"/></svg>
+
+
+
+            </button>
+          </td>
+          </tr>
+    } @empty {
+        <tr>
+          <td colspan="9" class="tw-text-center">Aucun résultat</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  <div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+    <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+      <div>{{demands().length}} resultats</div>
+    </div>
+    <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+        cButton
+        color="light"
+      >
+        <span>Préçédent</span>
+      </button>
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+        cButton
+        color="light"
+      >
+        <span>Suivant</span>
+      </button>
+    </div>
+  </div>

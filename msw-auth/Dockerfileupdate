@@ -1,0 +1,8 @@
+
+FROM eclipse-temurin:17-jdk-jammy as base
+VOLUME /tmp
+COPY target/*.jar msw-auth
+ENTRYPOINT ["java","-jar","/msw-auth"]
+
+#Add non-free repositories to get MS fonts
+

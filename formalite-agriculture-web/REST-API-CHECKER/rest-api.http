@@ -1,0 +1,339 @@
+@BASE_URL = {{BASE_URL}}
+
+
+POST {{BASE_URL}}/farms
+Content-Type: application/json
+
+{
+  "name": "test",
+  "address": "test",
+  "phone": "test",
+  "email": "test",
+  "farmType": "test",
+  "status": "test",
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "owner": {
+    "name": "test",
+    "phone": "test",
+    "email": "test"
+  },
+  "farmContacts": [
+    {
+      "name": "test",
+      "phone": "test",
+      "email": "test"
+    }
+  ],
+  "farmProducts": [
+    {
+      "name": "test",
+      "price": 0,
+      "quantity": 0,
+      "description": "test",
+      "image": "test"
+    }
+  ],
+  "farmGardens": [
+    {
+      "name": "test",
+      "gardenType": "test",
+      "location": {
+        "lat": 0,
+        "lng": 0
+      },
+      "gardenContacts": [
+        {
+          "name": "test",
+          "phone": "test",
+          "email": "test"
+        }
+      ],
+      "gardenProducts": [
+        {
+          "name": "test",
+          "price": 0,
+          "quantity": 0,
+          "description": "test",
+          "image": "test"
+        }
+      ]
+    }
+  ]
+}
+
+###
+
+GET {{BASE_URL}}/farms
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}/farms/1
+Content-Type: application/json
+
+###
+
+PUT {{BASE_URL}}/farms/1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "address": "test",
+  "phone": "test",
+  "email": "test",
+  "farmType": "test",
+  "status": "test",
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "owner": {
+    "name": "test",
+    "phone": "test",
+    "email": "test"
+  },
+  "farmContacts": [
+    {
+      "name": "test",
+      "phone": "test",
+      "email": "test"
+    }
+  ],
+  "farmProducts": [
+    {
+      "name": "test",
+      "price": 0,
+      "quantity": 0,
+      "description": "test",
+      "image": "test"
+    }
+  ],
+  "farmGardens": [
+    {
+      "name": "test",
+      "gardenType": "test",
+      "location": {
+        "lat": 0,
+        "lng": 0
+      },
+      "gardenContacts": [
+        {
+          "name": "test",
+          "phone": "test",
+          "email": "test"
+        }
+      ],
+      "gardenProducts": [
+        {
+          "name": "test",
+          "price": 0,
+          "quantity": 0,
+          "description": "test",
+          "image": "test"
+        }
+      ]
+    }
+  ]
+}
+
+###
+
+DELETE {{BASE_URL}}/farms/1
+Content-Type: application/json
+
+###
+
+POST {{BASE_URL}}/farms/1/gardens
+Content-Type: application/json
+
+{
+  "name": "test",
+  "gardenType": "test",
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "gardenContacts": [
+    {
+      "name": "test",
+      "phone": "test",
+      "email": "test"
+    }
+  ],
+  "gardenProducts": [
+    {
+      "name": "test",
+      "price": 0,
+      "quantity": 0,
+      "description": "test",
+      "image": "test"
+    }
+  ]
+}
+
+###
+
+GET {{BASE_URL}}/farms/1/gardens
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}/farms/1/gardens/1
+Content-Type: application/json
+
+###
+
+PUT {{BASE_URL}}/farms/1/gardens/1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "gardenType": "test",
+  "location": {
+    "lat": 0,
+    "lng": 0
+  },
+  "gardenContacts": [
+    {
+      "name": "test",
+      "phone": "test",
+      "email": "test"
+    }
+  ],
+  "gardenProducts": [
+    {
+      "name": "test",
+      "price": 0,
+      "quantity": 0,
+      "description": "test",
+      "image": "test"
+    }
+  ]
+}
+
+###
+
+DELETE {{BASE_URL}}/farms/1/gardens/1
+Content-Type: application/json
+
+###
+
+POST {{BASE_URL}}/farms/1/products
+Content-Type: application/json
+
+{
+  "name": "test",
+  "price": 0,
+  "quantity": 0,
+  "description": "test",
+  "image": "test"
+}
+
+###
+
+GET {{BASE_URL}}/farms/1/products
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}/farms/1/products/1
+Content-Type: application/json
+
+###
+
+PUT {{BASE_URL}}/farms/1/products/1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "price": 0,
+  "quantity": 0,
+  "description": "test",
+  "image": "test"
+}
+
+###
+
+DELETE {{BASE_URL}}/farms/1/products/1
+Content-Type: application/json
+
+###
+
+POST {{BASE_URL}}/farms/1/contacts
+Content-Type: application/json
+
+{
+  "name": "test",
+  "phone": "test",
+  "email": "test"
+}
+
+###
+
+GET {{BASE_URL}}/farms/1/contacts
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}/farms/1/contacts/1
+Content-Type: application/json
+
+###
+
+PUT {{BASE_URL}}/farms/1/contacts/1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "phone": "test",
+  "email": "test"
+}
+
+###
+
+DELETE {{BASE_URL}}/farms/1/contacts/1
+Content-Type: application/json
+
+###
+
+POST {{BASE_URL}}/farms/1/gardens/1/products
+Content-Type: application/json
+
+{
+  "name": "test",
+  "price": 0,
+  "quantity": 0,
+  "description": "test",
+  "image": "test"
+}
+
+###
+
+GET {{BASE_URL}}/farms/1/gardens/1/products
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}/farms/1/gardens/1/products/1
+Content-Type: application/json
+
+###
+
+PUT {{BASE_URL}}/farms/1/gardens/1/products/1
+Content-Type: application/json
+
+{
+  "name": "test",
+  "price": 0,
+  "quantity": 0,
+  "description": "test",
+  "image": "test"
+}
+
+###
+
+DELETE {{BASE_URL}}/farms/1/gardens/1/products/1
+Content-Type: application/json

@@ -1,0 +1,206 @@
+
+<div class="tw-relative col-md-10 offset-md-1">
+  <form  [formGroup]="step1InfoPVFrom" (ngSubmit)="onClickNext()">
+    <div class="accordion-body">
+      <div class="sub-title tw-flex-grow">
+        <p class="tw-text-gray-800 tw-mb-1 tw-font-semibold tw-text-base">
+          Informations générales sur le PV
+        </p>
+        <p class="tw-text-gray-500 tw-mb-4 tw-font-normal tw-text-base">
+          Renseignez les informations concernant le PV.
+        </p>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="navire"
+          >Navire <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'nomNavire'"
+            cFormControl
+            class=""
+            id="navire"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="affreteur-consignataire"
+          >Affréteur (Consignataire) <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            cFormControl
+            [formControlName]="'consignataire'"
+            class=""
+            id="affreteur-consignataire"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="provenance"
+          >Provenance <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'provenance'"
+            cFormControl
+            class=""
+            id="provenance"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class="" for="via"
+          >Via  <span class="!tw-font-semibold "><app-info-tooltip [message]="'Moyen de transport de la marchandise'"/></span></label
+          >
+          <input
+            [formControlName]="'via'"
+            cFormControl
+            class=""
+            id="via"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="date-arrivee"
+          >Date Arrivée <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'datearrivee'"
+            cFormControl
+            class=""
+            id="date-arrivee"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="date-inspection"
+          >Date Inspection <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'dateInspection'"
+            cFormControl
+            class=""
+            id="date-inspection"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="date-inspection"
+          >Date de départ prevue <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'dateDepartPrevue'"
+            cFormControl
+            class=""
+            id="date-inspection"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="partie-navire-visite"
+          >Partie du navire visitée <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'partieNavireVisitee'"
+            cFormControl
+            class=""
+            id="partie-navire-visite"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="officier-navire-present"
+          >Officier du navire présent à la visite <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'officierNavire'"
+            cFormControl
+            class=""
+            id="officier-navire-present"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="lieu-inspection"
+          >Lieu d'inspection <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'lieuInspection'"
+            cFormControl
+            class=""
+            id="lieu-inspection"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="nom-commandant"
+          >Nom commandant <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'commandant'"
+            cFormControl
+            class=""
+            id="nom-commandant"
+            type="text"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="nom-commandant"
+          >Date du PV <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'datePv'"
+            cFormControl
+            class=""
+            id="Date du PV"
+            type="datetime-local"
+          />
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="remark-particulier"
+          >Remarques Particulières <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <textarea
+            [formControlName]="'remarque'"
+            class="!tw-whitespace-normal"
+            id="remark-particulier"
+            tabindex="0"
+            cFormControl
+          >
+        </textarea>
+        </div>
+        <div class="col-md-6 tw-mt-1 tw-mb-3 col-12 tw-max-w-sm">
+          <label class=" " for="agent-pv"
+          >Agent PV <span class="!tw-font-semibold !tw-text-red-600">*</span></label
+          >
+          <input
+            [formControlName]="'agentPV'"
+            cFormControl
+            class=""
+            id="agent-pv"
+            type="{{'text'}}"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="!tw-border-b !tw-border-gray-200 tw-mt-8"></div>
+    <div class="title tw-flex tw-flex-row tw-items-center tw-justify-end">
+      <div
+        class="action-button tw-mt-2 tw-mb-8 tw-bg-white tw-flex tw-flex-row !tw-gap-3"
+      >
+        <button
+          [disabled]="
+            step1InfoPVFrom.invalid
+          "
+          (click)="onClickNext()"
+          cButton
+          type="submit"
+          class="!tw-flex !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-text-white !tw-bg-primary !tw-border-border-secondary"
+          color="primary"
+          type="submit"
+        >
+          <span>Suivant</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

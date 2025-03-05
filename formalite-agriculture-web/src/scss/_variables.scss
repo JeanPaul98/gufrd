@@ -1,0 +1,32 @@
+// Variable overrides
+//
+// If you want to customize your project please add your variables below.
+
+$enable-deprecation-messages: false !default;
+
+// $enable-shadows: true ;
+$primary: #18a148 !default;
+
+$nav-link-color: $faw-fg-secondary !default;
+$nav-tabs-link-active-color: $faw-primary !default;
+$nav-tabs-link-active-bg: $faw-white !default;
+$nav-link-hover-color: $faw-primary !default;
+$nav-tabs-link-active-border-color: $faw-primary !default;
+$nav-underline-border-border-color: $faw-primary !default;
+$nav-underline-link-active-color: $faw-primary !default;
+$nav-link-padding-x: 4rem !default;
+$accordion-button-active-bg : $faw-white !default;
+$accordion-button-active-color: $faw-secondary !default;
+$accordion-button-focus-border-color: $faw-white !default;
+
+$form-select-indicator:             url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M5.9999 1.81262L8.69339 4.50611C8.98655 4.79927 9.46187 4.79927 9.75503 4.50611C10.0482 4.21294 10.0482 3.73763 9.75503 3.44447L6.53023 0.21967C6.23734 -0.0732233 5.76247 -0.0732233 5.46957 0.21967L2.24478 3.44447C1.95161 3.73763 1.95161 4.21294 2.24478 4.50611C2.53794 4.79927 3.01325 4.79927 3.30642 4.50611L5.9999 1.81262Z" fill="%236A7383"/><path d="M9.75503 7.49389C9.46187 7.20073 8.98655 7.20073 8.69339 7.49389L5.9999 10.1874L3.30642 7.49389C3.01325 7.20073 2.53794 7.20073 2.24478 7.49389C1.95161 7.78706 1.95161 8.26237 2.24478 8.55553L5.46957 11.7803C5.76247 12.0732 6.23734 12.0732 6.53023 11.7803L9.75503 8.55553C10.0482 8.26237 10.0482 7.78706 9.75503 7.49389Z" fill="%236A7383"/></svg>');
+
+$input-focus-border-color: $faw-focus-input-border-color !default;
+$input-focus-box-shadow: 0 0 0 0.25rem  $faw-focus-input-color !default;
+
+$form-select-focus-border-color: $faw-focus-input-border-color !default;
+$form-select-focus-box-shadow: 0 0 0 0.25rem  $faw-focus-input-color !default;
+
+$form-check-min-height: 3rem !default;
+
+$dropdown-border-color: #e4e4e4;

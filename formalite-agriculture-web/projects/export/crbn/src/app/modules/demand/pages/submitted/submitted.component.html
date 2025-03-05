@@ -1,0 +1,189 @@
+<table bordered  cTable>
+    <thead>
+    <tr>
+        <th class="tw-text-sm tw-text-secondary" scope="col">NUMERO</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">MOTIF</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">NAVIRE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">STATUS</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">DATE</th>
+        <th class="tw-text-sm tw-text-secondary" scope="col">ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>
+        <span
+          class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-[#CFF5F6] tw-text-[#0055BC] tw-rounded-full"
+        >
+          Soumise
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="evenodd"><path
+              d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path
+              fill="currentColor"
+              d="M17.991 6.01L5.399 10.563l4.195 2.428l3.699-3.7a1 1 0 0 1 1.414 1.415l-3.7 3.7l2.43 4.194L17.99 6.01Zm.323-2.244c1.195-.433 2.353.725 1.92 1.92l-5.282 14.605c-.434 1.198-2.07 1.344-2.709.241l-3.217-5.558l-5.558-3.217c-1.103-.639-.957-2.275.241-2.709z"/></g>
+          </svg>
+
+        </span>
+      </td>
+      <td>Otto</td>
+      <td>
+        <c-dropdown>
+          <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+            >
+              <path
+                d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                fill="#4F566B"
+              />
+              <path
+                d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                fill="#4F566B"
+              />
+              <path
+                d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                fill="#4F566B"
+              />
+            </svg>
+          </button>
+          <ul cDropdownMenu>
+            <li><a [routerLink]="[]" cDropdownItem>Details</a></li>
+            <li><a [routerLink]="[]" cDropdownItem>Soumettre</a></li>
+            <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+          </ul>
+        </c-dropdown>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>
+        <span
+          class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-[#CFF5F6] tw-text-[#0055BC] tw-rounded-full"
+        >
+          Soumise
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="evenodd"><path
+              d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path
+              fill="currentColor"
+              d="M17.991 6.01L5.399 10.563l4.195 2.428l3.699-3.7a1 1 0 0 1 1.414 1.415l-3.7 3.7l2.43 4.194L17.99 6.01Zm.323-2.244c1.195-.433 2.353.725 1.92 1.92l-5.282 14.605c-.434 1.198-2.07 1.344-2.709.241l-3.217-5.558l-5.558-3.217c-1.103-.639-.957-2.275.241-2.709z"/></g>
+          </svg>
+
+        </span>
+      </td>
+      <td>Otto</td>
+      <td>
+        <c-dropdown>
+          <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+            >
+              <path
+                d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                fill="#4F566B"
+              />
+              <path
+                d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                fill="#4F566B"
+              />
+              <path
+                d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                fill="#4F566B"
+              />
+            </svg>
+          </button>
+          <ul cDropdownMenu>
+            <li><a [routerLink]="[]" cDropdownItem>Details</a></li>
+            <li><a [routerLink]="[]" cDropdownItem>Soumettre</a></li>
+            <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+          </ul>
+        </c-dropdown>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry the Bird</td>
+      <td>Larry the Bird</td>
+      <td>
+      <span
+        class="tw-py-1 tw-px-2 tw-inline-flex tw-items-center tw-gap-x-1 tw-font-medium tw-bg-[#CFF5F6] tw-text-[#0055BC] tw-rounded-full"
+      >
+          Soumise
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24">
+            <g fill="none" fill-rule="evenodd"><path
+              d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036q-.016-.004-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"/><path
+              fill="currentColor"
+              d="M17.991 6.01L5.399 10.563l4.195 2.428l3.699-3.7a1 1 0 0 1 1.414 1.415l-3.7 3.7l2.43 4.194L17.99 6.01Zm.323-2.244c1.195-.433 2.353.725 1.92 1.92l-5.282 14.605c-.434 1.198-2.07 1.344-2.709.241l-3.217-5.558l-5.558-3.217c-1.103-.639-.957-2.275.241-2.709z"/></g>
+          </svg>
+        </span>
+      </td>
+      <td>Otto</td>
+      <td>
+        <c-dropdown>
+          <button cDropdownToggle [caret]="false" cButton color="light" variant="ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+            >
+              <path
+                d="M2.13306 8C2.96148 8 3.63306 7.32843 3.63306 6.5C3.63306 5.67157 2.96148 5 2.13306 5C1.30463 5 0.633057 5.67157 0.633057 6.5C0.633057 7.32843 1.30463 8 2.13306 8Z"
+                fill="#4F566B"
+              />
+              <path
+                d="M6.63306 8C7.46148 8 8.13306 7.32843 8.13306 6.5C8.13306 5.67157 7.46148 5 6.63306 5C5.80463 5 5.13306 5.67157 5.13306 6.5C5.13306 7.32843 5.80463 8 6.63306 8Z"
+                fill="#4F566B"
+              />
+              <path
+                d="M12.6331 6.5C12.6331 7.32843 11.9615 8 11.1331 8C10.3046 8 9.63306 7.32843 9.63306 6.5C9.63306 5.67157 10.3046 5 11.1331 5C11.9615 5 12.6331 5.67157 12.6331 6.5Z"
+                fill="#4F566B"
+              />
+            </svg>
+          </button>
+          <ul cDropdownMenu>
+            <li><a [routerLink]="[]" cDropdownItem>Details</a></li>
+            <li><a [routerLink]="[]" cDropdownItem>Soumettre</a></li>
+            <li><a [routerLink]="[]" cDropdownItem>Supprimer</a></li>
+          </ul>
+        </c-dropdown>
+      </td>
+    </tr>
+    </tbody>
+</table>
+<div class="bottom-table tw-flex tw-flex-row tw-justify-between tw-item-center">
+    <div class="tw-flex tw-flex-row tw-justify-center tw-items-center">
+        <div>919 resultats</div>
+    </div>
+    <div class="action-button tw-flex tw-item-center tw-flex-row tw-justify-end !tw-gap-1">
+        <button
+                class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+                cButton
+                color="light"
+        >
+            <span>Préçédent</span>
+        </button>
+        <button
+                class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+
+                cButton
+                color="light"
+        >
+            <span>Suivant</span>
+        </button>
+    </div>
+</div>

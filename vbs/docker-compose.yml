@@ -1,0 +1,9 @@
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4210:4210"
+    restart: always

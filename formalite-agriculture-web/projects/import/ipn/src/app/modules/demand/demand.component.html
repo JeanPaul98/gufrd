@@ -1,0 +1,58 @@
+@if ((isHideDemandBar$ | async) === false) {
+  <div class="title tw-flex tw-flex-row tw-items-center tw-justify-between">
+    <div class="tw-flex tw-flex-row tw-items-center tw-gap-2">
+      <div class="tw-text-[1.1rem] md:tw-text-[1.2rem] tw-font-bold">
+        <span class="tw-text-primary tw-mb-0 tw-text-sm tw-font-medium tw-tracking-wider">IMPORTATION</span> <br>
+        <span>Demande d'inspection phytosanitaire de navire</span>
+      </div>
+    </div>
+
+    <div class="action-button tw-flex tw-flex-row !tw-gap-3">
+      <button
+        class="!tw-gap-2 !tw-flex !tw-items-center !tw-shadow-button hover:!tw-bg-secondary-light !tw-border !tw-bg-white !tw-border-border-secondary"
+        cButton color="light">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M11.8831 8.00458C11.8831 8.41903 11.5472 8.755 11.1328 8.755C10.7184 8.755 10.3825 8.41903 10.3825 8.00458V3.80418L2.42891 11.7569C2.13819 12.0477 1.66684 12.0477 1.37612 11.7569C1.0854 11.4662 1.0854 10.9948 1.37612 10.704L9.32965 2.75124H5.12993C4.71554 2.75124 4.37961 2.41527 4.37961 2.00082C4.37961 1.58638 4.71554 1.25041 5.12993 1.25041H11.0857C11.1053 1.24984 11.1248 1.24987 11.144 1.25049C11.2182 1.25158 11.2897 1.26343 11.3572 1.28456C11.4731 1.31943 11.5773 1.3807 11.665 1.46848C11.8111 1.6146 11.8838 1.80635 11.8831 1.99787L11.8831 8.00458Z"
+                fill="#4F566B"/>
+        </svg>
+        <span>Export</span>
+      </button>
+      <button
+        class="!tw-flex !tw-text-white !tw-items-center !tw-shadow-button-primary hover:!tw-bg-green-700 !tw-gap-2 !tw-border !tw-bg-primary !tw-border-border-secondary"
+        [routerLink]="['create']" cButton color="primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.38306 5.75H11.8831C12.2973 5.75 12.6331 6.08579 12.6331 6.5C12.6331 6.91421 12.2973 7.25 11.8831 7.25H7.38306V11.75C7.38306 12.1642 7.04727 12.5 6.63306 12.5C6.21884 12.5 5.88306 12.1642 5.88306 11.75V7.25H1.38306C0.968843 7.25 0.633057 6.91421 0.633057 6.5C0.633057 6.08579 0.968843 5.75 1.38306 5.75H5.88306V1.25C5.88306 0.835786 6.21884 0.5 6.63306 0.5C7.04727 0.5 7.38306 0.835786 7.38306 1.25V5.75Z"
+                fill="white"
+          />
+        </svg>
+        <span>Nouvelle demande</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-demande tw-my-4">
+    <c-nav class="!tw-border-b !tw-border-gray-200" variant="underline">
+      @for (navv of navs; track navv; let i = $index) {
+        <c-nav-item class="tw-px-2" [ngClass]="{'tw-pl-0': i === 0}">
+          <a [active]="activeLink === navv.link" (click)="onClickNav(navv.link)" cNavLink>
+            {{ navv.title }}
+            @if (activeLink === navv.link) {
+              <span
+                class="tw-inline-flex tw-items-center tw-justify-center tw-w-5 tw-h-5 tw-py-0.5 tw-px-1.5 tw-rounded-full tw-text-xs tw-font-semibold tw-text-green-700 tw-bg-green-200">
+                {{ navv.count }}
+              </span>
+            } @else {
+              <span
+                class="tw-inline-flex tw-items-center tw-justify-center tw-w-5 tw-h-5 tw-py-0.5 tw-px-1.5 tw-rounded-full tw-text-xs tw-font-medium tw-text-gray-500 tw-bg-gray-200">
+                {{ navv.count }}
+              </span>
+            }
+          </a>
+        </c-nav-item>
+      }
+    </c-nav>
+  </div>
+}
+<router-outlet/>
